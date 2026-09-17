@@ -14,21 +14,33 @@
 
 /* ═══════════════════════════════════════════════════════════════
    NurseGen — Aged Care Workforce Solutions
-   Brand: dominant #57B6B2 (teal) · secondary #575195 (deep purple)
-          accent #928CCF (light purple) · accent-2 #93DACF (soft teal)
-   Structural/animation system adapted from the CareGen Intelligence
-   site (nav pill, cap-card grid, reveal-on-scroll, CTA panel,
-   footer) — re-themed from CareGen's dark glass canvas into a
-   lighter, whitespace-led, editorial layout per NurseGen's design
-   direction: confident typography, generous space, no stock-agency
-   look, dual "provider / clinician" pathway kept visible throughout.
+   Built against the Health Generation design-system-starter.html +
+   styleguide.html: body-content sections use a light, whitespace-led
+   layout (per Maria's brief — "not another agency site"), while
+   hero, the two CTA panels and the footer use the literal shared
+   dark-glass component system (blooms, grain, frosted glass, gradient
+   parallax) from design-system-starter.html, re-tokened to NurseGen's
+   --ng-dominant/secondary/accent/accent-2 values from styleguide.html
+   (confirmed identical to the nursegen-brand skill). See chat for the
+   full list of resolved conflicts.
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
-  --ng-teal:        #57B6B2;
-  --ng-purple:      #575195;
-  --ng-purple-light:#928CCF;
-  --ng-teal-soft:   #93DACF;
+  /* Canonical tokens — match tokens/tokens.css's --ng-* values exactly */
+  --ng-dominant:  #57B6B2;
+  --ng-secondary: #575195;
+  --ng-accent:    #928CCF;
+  --ng-accent-2:  #93DACF;
+  --color-dominant:  var(--ng-dominant);
+  --color-secondary: var(--ng-secondary);
+  --color-accent:    var(--ng-accent);
+  --color-accent-2:  var(--ng-accent-2);
+
+  /* Local aliases used throughout the light body sections */
+  --ng-teal:        var(--ng-dominant);
+  --ng-purple:      var(--ng-secondary);
+  --ng-purple-light:var(--ng-accent);
+  --ng-teal-soft:   var(--ng-accent-2);
 
   --ink:    #16171F;
   --ink-2:  rgba(22,23,31,0.70);
@@ -46,7 +58,7 @@
   --radius-pill: 999px;
   --font: 'Manrope', system-ui, sans-serif;
 
-  --hero-grad: linear-gradient(158deg, #1B1930 0%, #2C2852 22%, #3F3A72 40%, #575195 62%, #6E8FA8 82%, #57B6B2 100%);
+  --grain-opacity: 0.05;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -152,17 +164,30 @@ section { position: relative; }
 .nav-drawer .nav-drawer-cta--primary { background: var(--ng-teal); }
 .nav-drawer .nav-drawer-cta--secondary { background: var(--ng-purple); }
 
-/* ═══ HERO ═══════════════════════════════════════════════════════ */
+/* ═══ HERO — literal design-system-starter component, NurseGen-tokened ═══ */
 .hero-card {
   position: relative; min-height: 92vh;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   overflow: hidden; padding: 130px 5% 90px; text-align: center;
-  background: var(--hero-grad);
 }
-.hero-glow {
-  position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(60% 50% at 20% 85%, rgba(147,218,207,0.30) 0%, transparent 65%),
-              radial-gradient(50% 45% at 85% 12%, rgba(146,140,207,0.28) 0%, transparent 65%);
+.hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-bg-parallax { position: absolute; top: 0; left: 0; right: 0; bottom: -25%; will-change: transform; transform: translateZ(0); }
+.hero-bg-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  background:
+    radial-gradient(55% 45% at 22% 88%, rgba(255,255,255,0.16) 0%, transparent 62%),
+    linear-gradient(172deg, #14131f 0%, var(--color-secondary) 22%, var(--color-dominant) 66%, var(--color-accent) 100%);
+  background-size: cover; background-position: center center;
+  animation: hero-breathe 12s ease-in-out infinite alternate;
+  will-change: transform; transform: translateZ(0);
+}
+@keyframes hero-breathe { from { transform: scale(1); } to { transform: scale(1.06); } }
+.grain-overlay { position: absolute; inset: 0; pointer-events: none; opacity: var(--grain-opacity); mix-blend-mode: overlay; z-index: 1; }
+.grain-overlay svg { width: 100%; height: 100%; display: block; }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(120% 90% at 50% 15%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.05) 75%);
+  z-index: 1;
 }
 .hero-content { position: relative; z-index: 2; max-width: 780px; display: flex; flex-direction: column; align-items: center; }
 
@@ -212,7 +237,6 @@ section { position: relative; }
 .section { padding: 110px 0; }
 .section--tint { background: var(--paper-tint); }
 .section--purple-tint { background: var(--purple-tint); }
-.section--dark { background: var(--ng-purple); color: var(--on-dark-1); }
 
 .eyebrow-teal {
   display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
@@ -268,9 +292,9 @@ section { position: relative; }
 /* ═══ WHY NURSEGEN ═══════════════════════════════════════════ */
 .why-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
 .why-list { list-style: none; margin-top: 26px; display: flex; flex-direction: column; gap: 14px; }
-.why-list li { font-size: 17px; font-weight: 600; color: #fff; padding-left: 22px; position: relative; }
-.why-list li::before { content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--ng-teal-soft); }
-.why-closing { margin-top: 26px; font-size: 15.5px; line-height: 1.75; color: var(--on-dark-2); }
+.why-list li { font-size: 17px; font-weight: 600; color: var(--ink); padding-left: 22px; position: relative; }
+.why-list li::before { content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--ng-teal); }
+.why-closing { margin-top: 26px; font-size: 15.5px; line-height: 1.75; color: var(--ink-2); }
 
 /* ═══ HG PROOF STATS ═══════════════════════════════════════════ */
 .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 44px; }
@@ -289,15 +313,23 @@ section { position: relative; }
 }
 .problem-chip:hover { background: rgba(146,140,207,0.22); border-color: rgba(87,81,149,0.35); transform: translateY(-2px); }
 
-/* ═══ CTA PANELS (candidate teaser + final CTA) ═══════════════ */
-.cta-wrap { padding: 0 2.5vw; }
-.cta-card {
-  border-radius: 32px; padding: 84px 7% 88px; text-align: center; position: relative; overflow: hidden;
-  background: var(--hero-grad);
+/* ═══ CTA PANELS (candidate teaser + final CTA) — literal cta-card/cta-bg
+   parallax component from design-system-starter.html ═══════════════ */
+.cta-wrap { padding: 0 2.5vw; position: relative; z-index: 1; }
+.cta-card { border-radius: 32px; padding: 84px 7% 88px; text-align: center; position: relative; overflow: hidden; }
+.cta-bg {
+  position: absolute; top: -120px; bottom: -120px; left: 0; right: 0;
+  z-index: 0; will-change: transform;
+  background: linear-gradient(140deg, #14131f 0%, var(--color-secondary) 30%, var(--color-dominant) 58%, color-mix(in srgb, var(--color-dominant) 40%, var(--color-accent)) 82%, var(--color-accent) 100%);
 }
 .cta-card::before {
   content: ''; position: absolute; width: 620px; height: 380px; top: -60px; left: 50%; transform: translateX(-50%);
-  background: radial-gradient(ellipse at center, rgba(147,218,207,0.30) 0%, transparent 68%); filter: blur(40px); pointer-events: none;
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--color-accent-2) 40%, transparent) 0%, transparent 68%); filter: blur(40px); pointer-events: none;
+}
+.cta-card::after {
+  content: ''; position: absolute; width: 420px; height: 420px; bottom: -120px; right: -60px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 38%, transparent) 0%, color-mix(in srgb, var(--color-dominant) 22%, transparent) 45%, transparent 72%);
+  filter: blur(55px); pointer-events: none;
 }
 .cta-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
 .cta-eyebrow { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ng-teal-soft); margin-bottom: 20px; }
@@ -319,8 +351,25 @@ section { position: relative; }
 }
 .eco-chip--current { color: #fff; background: var(--ng-teal); border-color: transparent; }
 
-/* ═══ FOOTER ═════════════════════════════════════════════════ */
-.site-footer { padding: 70px 0 40px; background: var(--ink); color: var(--on-dark-2); }
+/* ═══ FOOTER — literal glass site-footer card floating on the dark canvas ═ */
+.footer-dark-wrap {
+  position: relative; overflow: hidden;
+  background: linear-gradient(165deg, #14131f 0%, var(--color-secondary) 60%, var(--color-dominant) 145%);
+}
+.footer-dark-wrap .bloom { position: absolute; border-radius: 50%; filter: blur(130px); pointer-events: none; }
+.footer-dark-wrap .bloom--left {
+  left: -22vw; top: -20%; width: 60vw; height: 140%;
+  background: radial-gradient(ellipse at 35% 35%, var(--color-accent) 0%, transparent 68%); opacity: 0.26;
+}
+.footer-dark-wrap .bloom--right {
+  right: -22vw; bottom: -20%; width: 55vw; height: 140%;
+  background: radial-gradient(ellipse at 65% 65%, var(--color-accent-2) 0%, transparent 68%); opacity: 0.22;
+}
+.site-footer {
+  position: relative; z-index: 1; padding: 70px 0 40px;
+  background: rgba(255,255,255,0.06); border-top: 1px solid rgba(255,255,255,0.12);
+  color: var(--on-dark-2);
+}
 .footer-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 34px; flex-wrap: wrap; gap: 20px; }
 .footer-logo-img { height: 48px; width: auto; display: block; border-radius: 10px; }
 .footer-social { display: flex; gap: 10px; }
@@ -404,8 +453,21 @@ section { position: relative; }
 </div>
 
 <!-- 1. HERO -->
-<section class="hero-card" aria-label="Hero">
-  <div class="hero-glow" aria-hidden="true"></div>
+<section class="hero-wrap" aria-label="Hero">
+  <div class="hero-card">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg-parallax"><div class="hero-bg-img"></div></div>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="grain-overlay" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="heroGrain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch"/>
+          <feColorMatrix type="saturate" values="0"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#heroGrain)"/>
+      </svg>
+    </div>
   <div class="hero-content">
     <span class="hero-eyebrow">Health Generation Workforce</span>
     <h1 class="hero-heading">
@@ -417,6 +479,7 @@ section { position: relative; }
       <a href="contact.html" class="btn btn-primary">I Need Workforce</a>
       <a href="candidates.html" class="btn btn-outline">I Want to Work</a>
     </div>
+  </div>
   </div>
 </section>
 
@@ -478,11 +541,11 @@ section { position: relative; }
 </section>
 
 <!-- 4. WHY NURSEGEN -->
-<section class="section section--dark" id="why" aria-label="Why NurseGen">
+<section class="section section--tint" id="why" aria-label="Why NurseGen">
   <div class="container why-grid">
     <div>
-      <span class="eyebrow-teal eyebrow-teal--dark js-reveal">Why NurseGen?</span>
-      <h2 class="stat-heading stat-heading--dark js-reveal" data-reveal-delay="80">Aged care is what we do.</h2>
+      <span class="eyebrow-teal js-reveal">Why NurseGen?</span>
+      <h2 class="stat-heading js-reveal" data-reveal-delay="80">Aged care is what we do.</h2>
       <p class="why-closing js-reveal" data-reveal-delay="160">NurseGen isn't a generalist recruitment agency that happens to work in aged care. As part of the Health Generation ecosystem, we're connected to deep capability across clinical care, funding, workforce, compliance and operational performance. And we understand that sometimes the best workforce solution isn't more agency — it's solving the underlying workforce problem.</p>
     </div>
     <ul class="why-list js-reveal" data-reveal-delay="240">
@@ -533,6 +596,7 @@ section { position: relative; }
 <section class="section" aria-label="Looking for work">
   <div class="container cta-wrap">
     <div class="cta-card">
+      <div class="cta-bg" aria-hidden="true"></div>
       <div class="cta-content">
         <span class="cta-eyebrow">Looking for work?</span>
         <h2 class="cta-heading">More opportunities. One aged-care network.</h2>
@@ -570,6 +634,7 @@ section { position: relative; }
 <section class="section" aria-label="Get in touch">
   <div class="container cta-wrap">
     <div class="cta-card">
+      <div class="cta-bg" aria-hidden="true"></div>
       <div class="cta-content">
         <span class="cta-eyebrow">Better workforce. Stronger care.</span>
         <h2 class="cta-heading">Whether you need one person, multiple hires, or a different approach to workforce altogether — start the conversation with NurseGen.</h2>
@@ -582,7 +647,10 @@ section { position: relative; }
   </div>
 </section>
 
-<footer class="site-footer" aria-label="Site footer">
+<div class="footer-dark-wrap">
+  <div class="bloom bloom--left" aria-hidden="true"></div>
+  <div class="bloom bloom--right" aria-hidden="true"></div>
+  <footer class="site-footer" aria-label="Site footer">
   <div class="container">
     <div class="footer-top">
       <a href="index.html"><img src="images/nursegen-logo.png" alt="NurseGen" class="footer-logo-img"></a>
@@ -607,7 +675,8 @@ section { position: relative; }
     </ul>
     <p class="footer-copy">&copy; 2026 Health Generation. All rights reserved.</p>
   </div>
-</footer>
+  </footer>
+</div>
 
 <div class="mobile-cta-bar">
   <a href="candidates.html" class="mcta-work">FIND WORK</a>
@@ -642,6 +711,52 @@ section { position: relative; }
   function update() { navOuter.classList.toggle('is-scrolled', window.scrollY > 10); }
   window.addEventListener('scroll', update, { passive: true });
   update();
+})();
+</script>
+
+<!-- Hero background parallax on scroll -->
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var el = document.querySelector('.hero-bg-parallax');
+  if (!el) return;
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      el.style.transform = 'translateZ(0) translateY(-' + (window.scrollY * 0.4).toFixed(1) + 'px)';
+      ticking = false;
+    });
+  }, { passive: true });
+})();
+</script>
+
+<!-- CTA panel parallax (both cta-card instances) -->
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var pairs = [];
+  document.querySelectorAll('.cta-card').forEach(function (card) {
+    var bg = card.querySelector('.cta-bg');
+    if (bg) pairs.push({ card: card, bg: bg });
+  });
+  if (!pairs.length) return;
+  var ticking = false;
+  function render() {
+    pairs.forEach(function (p) {
+      var rect = p.card.getBoundingClientRect();
+      var shift = Math.max(-90, Math.min(90, -rect.top * 0.15));
+      p.bg.style.transform = 'translateZ(0) translateY(' + shift.toFixed(1) + 'px)';
+    });
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(render);
+  }, { passive: true });
+  render();
 })();
 </script>
 
