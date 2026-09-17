@@ -32,8 +32,10 @@
   --ng-secondary: #575195;
   --ng-accent:    #928CCF;
   --ng-accent-2:  #93DACF;
+  --ng-light:     #A6D8D5;
   --color-dominant:  var(--ng-dominant);
   --color-dark:      var(--ng-dark);
+  --color-light:     var(--ng-light);
   --color-secondary: var(--ng-secondary);
   --color-accent:    var(--ng-accent);
   --color-accent-2:  var(--ng-accent-2);
@@ -178,7 +180,7 @@ section { position: relative; }
   position: absolute; inset: 0; width: 100%; height: 100%;
   background:
     radial-gradient(55% 45% at 22% 88%, rgba(255,255,255,0.16) 0%, transparent 62%),
-    linear-gradient(172deg, var(--color-dark) 0%, color-mix(in srgb, var(--color-dark) 45%, var(--color-dominant)) 40%, var(--color-dominant) 74%, var(--color-accent-2) 100%);
+    linear-gradient(to top, var(--color-dominant) 0%, var(--color-light) 55%, var(--paper) 100%);
   background-size: cover; background-position: center center;
   animation: hero-breathe 12s ease-in-out infinite alternate;
   will-change: transform; transform: translateZ(0);
@@ -188,7 +190,8 @@ section { position: relative; }
 .grain-overlay svg { width: 100%; height: 100%; display: block; }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: radial-gradient(120% 90% at 50% 15%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.05) 75%);
+  /* Scrim only where text sits (badge → buttons); top edge stays true white, bottom stays clean over the ng-green */
+  background: linear-gradient(to bottom, transparent 0%, transparent 12%, rgba(0,0,0,0.32) 26%, rgba(0,0,0,0.32) 68%, transparent 88%);
   z-index: 1;
 }
 .hero-content { position: relative; z-index: 2; max-width: 780px; display: flex; flex-direction: column; align-items: center; }
