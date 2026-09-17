@@ -26,12 +26,14 @@
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
-  /* Canonical tokens — match tokens/tokens.css's --ng-* values exactly */
-  --ng-dominant:  #57B6B2;
+  /* Canonical tokens — corrected per Maria: ng green #59B0AB, dark green #00506B */
+  --ng-dominant:  #59B0AB;
+  --ng-dark:      #00506B;
   --ng-secondary: #575195;
   --ng-accent:    #928CCF;
   --ng-accent-2:  #93DACF;
   --color-dominant:  var(--ng-dominant);
+  --color-dark:      var(--ng-dark);
   --color-secondary: var(--ng-secondary);
   --color-accent:    var(--ng-accent);
   --color-accent-2:  var(--ng-accent-2);
@@ -176,7 +178,7 @@ section { position: relative; }
   position: absolute; inset: 0; width: 100%; height: 100%;
   background:
     radial-gradient(55% 45% at 22% 88%, rgba(255,255,255,0.16) 0%, transparent 62%),
-    linear-gradient(172deg, #0c1513 0%, color-mix(in srgb, var(--color-dominant) 45%, black) 40%, var(--color-dominant) 74%, var(--color-accent-2) 100%);
+    linear-gradient(172deg, var(--color-dark) 0%, color-mix(in srgb, var(--color-dark) 45%, var(--color-dominant)) 40%, var(--color-dominant) 74%, var(--color-accent-2) 100%);
   background-size: cover; background-position: center center;
   animation: hero-breathe 12s ease-in-out infinite alternate;
   will-change: transform; transform: translateZ(0);
@@ -320,7 +322,7 @@ section { position: relative; }
 .cta-bg {
   position: absolute; top: -120px; bottom: -120px; left: 0; right: 0;
   z-index: 0; will-change: transform;
-  background: linear-gradient(140deg, #0c1513 0%, color-mix(in srgb, var(--color-dominant) 45%, black) 32%, var(--color-dominant) 66%, var(--color-accent-2) 100%);
+  background: linear-gradient(140deg, var(--color-dark) 0%, color-mix(in srgb, var(--color-dark) 45%, var(--color-dominant)) 32%, var(--color-dominant) 66%, var(--color-accent-2) 100%);
 }
 .cta-card::before {
   content: ''; position: absolute; width: 620px; height: 380px; top: -60px; left: 50%; transform: translateX(-50%);
@@ -354,7 +356,7 @@ section { position: relative; }
 /* ═══ FOOTER — literal glass site-footer card floating on the dark canvas ═ */
 .footer-dark-wrap {
   position: relative; overflow: hidden;
-  background: linear-gradient(165deg, #0c1513 0%, color-mix(in srgb, var(--color-dominant) 45%, black) 60%, var(--color-dominant) 145%);
+  background: linear-gradient(165deg, var(--color-dark) 0%, color-mix(in srgb, var(--color-dark) 45%, var(--color-dominant)) 60%, var(--color-dominant) 145%);
 }
 .footer-dark-wrap .bloom { position: absolute; border-radius: 50%; filter: blur(130px); pointer-events: none; }
 .footer-dark-wrap .bloom--left {
