@@ -178,21 +178,11 @@ section { position: relative; }
 .hero-bg-parallax { position: absolute; top: 0; left: 0; right: 0; bottom: -25%; will-change: transform; transform: translateZ(0); }
 .hero-bg-img {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  background:
-    radial-gradient(55% 45% at 22% 88%, rgba(255,255,255,0.16) 0%, transparent 62%),
-    linear-gradient(to top, var(--color-dominant) 0%, var(--color-light) 55%, var(--paper) 100%);
+  background: linear-gradient(to top, var(--color-dominant) 0%, var(--color-light) 50%, var(--paper) 100%);
   background-size: cover; background-position: center center;
-  animation: hero-breathe 12s ease-in-out infinite alternate;
-  will-change: transform; transform: translateZ(0);
 }
-@keyframes hero-breathe { from { transform: scale(1); } to { transform: scale(1.06); } }
-.grain-overlay { position: absolute; inset: 0; pointer-events: none; opacity: var(--grain-opacity); mix-blend-mode: overlay; z-index: 1; }
-.grain-overlay svg { width: 100%; height: 100%; display: block; }
-.hero-overlay {
-  position: absolute; inset: 0;
-  /* Scrim only where text sits (badge → buttons); top edge stays true white, bottom stays clean over the ng-green */
-  background: linear-gradient(to bottom, transparent 0%, transparent 12%, rgba(0,0,0,0.32) 26%, rgba(0,0,0,0.32) 68%, transparent 88%);
-  z-index: 1;
+.grain-overlay { display: none; }
+.hero-overlay { display: none;
 }
 .hero-content { position: relative; z-index: 2; max-width: 780px; display: flex; flex-direction: column; align-items: center; }
 
