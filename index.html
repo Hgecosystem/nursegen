@@ -176,7 +176,7 @@ section { position: relative; }
   position: absolute; inset: 0; width: 100%; height: 100%;
   background:
     radial-gradient(55% 45% at 22% 88%, rgba(255,255,255,0.16) 0%, transparent 62%),
-    linear-gradient(172deg, #14131f 0%, var(--color-secondary) 22%, var(--color-dominant) 66%, var(--color-accent) 100%);
+    linear-gradient(172deg, #0c1513 0%, color-mix(in srgb, var(--color-dominant) 45%, black) 40%, var(--color-dominant) 74%, var(--color-accent-2) 100%);
   background-size: cover; background-position: center center;
   animation: hero-breathe 12s ease-in-out infinite alternate;
   will-change: transform; transform: translateZ(0);
@@ -320,7 +320,7 @@ section { position: relative; }
 .cta-bg {
   position: absolute; top: -120px; bottom: -120px; left: 0; right: 0;
   z-index: 0; will-change: transform;
-  background: linear-gradient(140deg, #14131f 0%, var(--color-secondary) 30%, var(--color-dominant) 58%, color-mix(in srgb, var(--color-dominant) 40%, var(--color-accent)) 82%, var(--color-accent) 100%);
+  background: linear-gradient(140deg, #0c1513 0%, color-mix(in srgb, var(--color-dominant) 45%, black) 32%, var(--color-dominant) 66%, var(--color-accent-2) 100%);
 }
 .cta-card::before {
   content: ''; position: absolute; width: 620px; height: 380px; top: -60px; left: 50%; transform: translateX(-50%);
@@ -328,7 +328,7 @@ section { position: relative; }
 }
 .cta-card::after {
   content: ''; position: absolute; width: 420px; height: 420px; bottom: -120px; right: -60px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 38%, transparent) 0%, color-mix(in srgb, var(--color-dominant) 22%, transparent) 45%, transparent 72%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent-2) 38%, transparent) 0%, color-mix(in srgb, var(--color-dominant) 22%, transparent) 45%, transparent 72%);
   filter: blur(55px); pointer-events: none;
 }
 .cta-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
@@ -354,12 +354,12 @@ section { position: relative; }
 /* ═══ FOOTER — literal glass site-footer card floating on the dark canvas ═ */
 .footer-dark-wrap {
   position: relative; overflow: hidden;
-  background: linear-gradient(165deg, #14131f 0%, var(--color-secondary) 60%, var(--color-dominant) 145%);
+  background: linear-gradient(165deg, #0c1513 0%, color-mix(in srgb, var(--color-dominant) 45%, black) 60%, var(--color-dominant) 145%);
 }
 .footer-dark-wrap .bloom { position: absolute; border-radius: 50%; filter: blur(130px); pointer-events: none; }
 .footer-dark-wrap .bloom--left {
   left: -22vw; top: -20%; width: 60vw; height: 140%;
-  background: radial-gradient(ellipse at 35% 35%, var(--color-accent) 0%, transparent 68%); opacity: 0.26;
+  background: radial-gradient(ellipse at 35% 35%, var(--color-dominant) 0%, transparent 68%); opacity: 0.22;
 }
 .footer-dark-wrap .bloom--right {
   right: -22vw; bottom: -20%; width: 55vw; height: 140%;
