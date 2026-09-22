@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I Want to Work | NurseGen</title>
-<meta name="description" content="Register with NurseGen and we'll match you with aged-care shifts, placements and permanent roles across Australia.">
+<title>Blog | NurseGen — Aged Care Workforce Insights</title>
+<meta name="description" content="Practical, provider-facing insight on aged care recruitment, retention and workforce strategy from NurseGen, the workforce business within the Health Generation ecosystem.">
 <link rel="icon" href="images/nursegen-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -454,34 +454,78 @@ section { position: relative; }
   .mobile-cta-bar a.mcta-staff { background: var(--ng-teal); }
   body { padding-bottom: 58px; }
 }
-
-/* ═══ SUBPAGE LEAD (spacer under fixed nav, no hero on form pages) ═══ */
-.subpage-lead { height: 132px; }
-@media (max-width: 600px) { .subpage-lead { height: 108px; } }
-
-/* ═══ FORM (structure copied from CareGen's contact.html discovery form) ═ */
-.contact-form { max-width: 520px; margin: 0 auto 8px; text-align: left; }
-.form-row { display: flex; gap: 16px; }
-.form-row .form-field { flex: 1; }
-.form-field { margin-bottom: 18px; display: flex; flex-direction: column; gap: 7px; }
-.form-field label { font-size: 12.5px; font-weight: 600; color: var(--on-dark-2); }
-.form-field input {
-  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 10px; padding: 12px 14px; color: #fff;
-  font-family: var(--font); font-size: 14.5px;
-  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+/* ═══ BLOG PAGE HERO — dark-glass banner, matches hero/CTA canvas ═══ */
+.page-hero { margin: 128px 2.5vw 0; }
+@media (max-width: 560px) { .page-hero { margin-top: 104px; } }
+.page-hero-card {
+  position: relative; overflow: hidden;
+  background: linear-gradient(140deg, var(--color-dark) 0%, color-mix(in srgb, var(--color-dark) 45%, var(--color-dominant)) 32%, var(--color-dominant) 66%, var(--color-accent-2) 100%);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 32px;
+  padding: 72px 7% 80px;
+  text-align: center;
 }
-.form-field input::placeholder { color: var(--on-dark-3); }
-.form-field input:focus {
-  outline: none; border-color: var(--color-accent-2);
-  background: rgba(255,255,255,0.10);
-  box-shadow: 0 0 0 3px rgba(147,218,207,0.22);
+.page-hero-card::before {
+  content: ''; position: absolute; width: 620px; height: 380px; top: -60px; left: 50%; transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--color-accent-2) 40%, transparent) 0%, transparent 68%); filter: blur(40px); pointer-events: none;
 }
-.contact-form-submit { width: 100%; justify-content: center; margin-top: 4px; border: none; cursor: pointer; }
-.form-success { text-align: center; padding: 8px 0 4px; max-width: 460px; margin: 0 auto; }
-.form-success-title { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-.form-success-body { font-size: 15px; color: var(--on-dark-2); line-height: 1.6; }
-@media (max-width: 600px) { .form-row { flex-direction: column; gap: 0; } }
+.page-hero-card::after {
+  content: ''; position: absolute; width: 420px; height: 420px; bottom: -140px; right: -80px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent-2) 38%, transparent) 0%, color-mix(in srgb, var(--color-dominant) 22%, transparent) 45%, transparent 72%);
+  filter: blur(55px); pointer-events: none;
+}
+@media (max-width: 780px) { .page-hero-card { padding: 64px 6% 72px; } }
+.page-hero-badge {
+  position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #fff;
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.30);
+  border-radius: 100px; padding: 7px 16px; margin-bottom: 22px;
+}
+.page-hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent-2); flex: none; }
+.page-hero-heading { position: relative; z-index: 1; font-size: clamp(30px, 4.4vw, 48px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 16px; color: #fff; text-wrap: balance; }
+.page-hero-sub { position: relative; z-index: 1; font-size: clamp(15px,1.2vw,17px); line-height: 1.7; color: var(--on-dark-2); max-width: 620px; margin: 0 auto; text-wrap: pretty; }
+
+/* ═══ BLOG FILTER BAR ═══════════════════════════════════════════ */
+.blog-filter-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 34px 2.5vw 0; }
+.blog-filter-btn {
+  font-family: var(--font); font-size: 13px; font-weight: 600; color: var(--ink-2);
+  background: var(--paper-tint); border: 1px solid rgba(22,23,31,0.10); border-radius: 100px;
+  padding: 8px 18px; cursor: pointer; transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.blog-filter-btn:hover { border-color: rgba(22,23,31,0.22); color: var(--ink); }
+.blog-filter-btn.is-active { background: var(--ng-teal); border-color: var(--ng-teal); color: #fff; }
+
+/* ═══ BLOG GRID / CARDS ═══════════════════════════════════════════ */
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 20px; }
+@media (max-width: 980px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .blog-grid { grid-template-columns: 1fr; } }
+
+.blog-card {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--paper); border: 1px solid rgba(22,23,31,0.08);
+  border-radius: var(--radius-card); overflow: hidden;
+  box-shadow: 0 2px 0 rgba(22,23,31,0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.blog-card:hover { transform: translateY(-6px); border-color: rgba(87,182,178,0.5); box-shadow: 0 20px 40px rgba(22,23,31,0.12); }
+.blog-card-media { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: linear-gradient(135deg, color-mix(in srgb, var(--color-dark) 16%, var(--paper-tint)), color-mix(in srgb, var(--color-dominant) 20%, var(--paper-tint))); }
+.blog-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.blog-card-body { padding: 24px 24px 28px; display: flex; flex-direction: column; flex: 1; }
+.blog-card-cat { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ng-teal); margin-bottom: 10px; }
+.blog-card-title { font-size: 18px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; line-height: 1.32; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.blog-card-excerpt { font-size: 14px; line-height: 1.6; color: var(--ink-2); flex: 1; margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.blog-card-meta { font-size: 12.5px; color: var(--ink-3); display: flex; align-items: center; gap: 8px; }
+.blog-card-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 13.5px; font-weight: 700; color: var(--ng-purple); }
+.blog-card-link svg { transition: transform 0.2s ease; }
+.blog-card:hover .blog-card-link svg { transform: translateX(3px); }
+
+/* ═══ BLOG PAGINATION ═══════════════════════════════════════════ */
+.blog-pagination { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin: 40px 2.5vw 0; }
+.blog-page-btn { font-family: var(--font); font-size: 14px; font-weight: 600; color: var(--ink-2); background: var(--paper-tint); border: 1px solid rgba(22,23,31,0.10); border-radius: 10px; min-width: 40px; height: 40px; padding: 0 12px; cursor: pointer; transition: background 0.18s, color 0.18s, border-color 0.18s; }
+.blog-page-btn:hover:not(:disabled) { border-color: rgba(22,23,31,0.22); color: var(--ink); }
+.blog-page-btn.is-active { background: var(--ng-teal); border-color: var(--ng-teal); color: #fff; }
+.blog-page-btn:disabled { opacity: 0.4; cursor: default; }
+
 </style>
 </head>
 <body>
@@ -492,7 +536,7 @@ section { position: relative; }
     <ul class="nav-links">
       <li><a href="index.html#solutions">Solutions</a></li>
       <li><a href="index.html#why">Why NurseGen</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="blog.html" class="is-current">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-ctas">
@@ -514,68 +558,136 @@ section { position: relative; }
   <a href="candidates.html" class="nav-drawer-cta nav-drawer-cta--secondary">I Want to Work</a>
 </div>
 
-<div class="subpage-lead" aria-hidden="true"></div>
+<!-- BLOG PAGE HERO -->
+<section class="page-hero" aria-label="Page hero">
+  <div class="page-hero-card">
+    <span class="page-hero-badge">Blog</span>
+    <h1 class="page-hero-heading">Aged care workforce insight, from the people placing it.</h1>
+    <p class="page-hero-sub">Practical, provider-facing thinking on recruitment, retention and workforce strategy in residential aged care &mdash; the same thinking behind our client work.</p>
+  </div>
+</section>
 
-<!-- I WANT TO WORK — candidate registration form (structure copied from CareGen's contact.html) -->
-<section class="section" aria-label="Register with NurseGen">
+<nav class="blog-filter-bar" aria-label="Filter articles by category">
+      <button type="button" class="blog-filter-btn is-active" data-filter="all">All</button>
+      <button type="button" class="blog-filter-btn" data-filter="Aged Care">Aged Care</button>
+      <button type="button" class="blog-filter-btn" data-filter="Recruitment">Recruitment</button>
+      <button type="button" class="blog-filter-btn" data-filter="Recruitment Sprint">Recruitment Sprint</button>
+      <button type="button" class="blog-filter-btn" data-filter="Sourcing">Sourcing</button>
+      <button type="button" class="blog-filter-btn" data-filter="Campaign">Campaign</button>
+      <button type="button" class="blog-filter-btn" data-filter="Employer branding">Employer branding</button>
+      <button type="button" class="blog-filter-btn" data-filter="EVP">EVP</button>
+      <button type="button" class="blog-filter-btn" data-filter="ROI">ROI</button>
+</nav>
+
+<section class="section" aria-label="Blog posts">
+  <div class="container container--wide">
+    <div class="blog-grid" id="blogGrid">
+      <a href="https://nursegen.com.au/f/from-recruitment-to-retention-why-the-first-90-days-matter" target="_blank" rel="noopener" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Recruitment">
+        <div class="blog-card-media"><img src="https://img1.wsimg.com/isteam/ip/3554721f-4fb1-4f17-8a6b-f10e96e82bfd/ChatGPT%20Image%20Sep%201%2C%202026%2C%2002_46_40%20PM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800" alt="From Recruitment to Retention: Why the First 90 Days Matter" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">Recruitment</span>
+          <h2 class="blog-card-title">From Recruitment to Retention: Why the First 90 Days Matter</h2>
+          <p class="blog-card-excerpt">Commencement isn&#x27;t the end of recruitment &mdash; it&#x27;s the beginning of retention. Why the first 90 days decide whether a new hire becomes part of the team, or another vacancy to fill.</p>
+          <div class="blog-card-meta"><span>11 Sept 2026</span></div>
+          <span class="blog-card-link">Read the full article
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+      <a href="https://nursegen.com.au/f/is-recruitment-really-the-problem" target="_blank" rel="noopener" class="blog-card js-reveal" data-reveal-delay="90" data-cats="Aged Care|Recruitment|Recruitment Sprint">
+        <div class="blog-card-media"><img src="https://img1.wsimg.com/isteam/ip/3554721f-4fb1-4f17-8a6b-f10e96e82bfd/ChatGPT%20Image%20Aug%2014%2C%202026%2C%2002_45_42%20PM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800" alt="Is Recruitment Really the Problem?" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">Recruitment</span>
+          <h2 class="blog-card-title">Is Recruitment Really the Problem?</h2>
+          <p class="blog-card-excerpt">When vacancies stay open and agency use climbs, it&#x27;s tempting to blame recruitment. Sometimes the real issue sits earlier &mdash; or later &mdash; in the workforce journey.</p>
+          <div class="blog-card-meta"><span>28 Aug 2026</span></div>
+          <span class="blog-card-link">Read the full article
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+      <a href="https://nursegen.com.au/f/why-good-aged-care-candidates-drop-out-of-recruitment-processes" target="_blank" rel="noopener" class="blog-card js-reveal" data-reveal-delay="180" data-cats="Aged Care|Recruitment">
+        <div class="blog-card-media"><img src="https://img1.wsimg.com/isteam/ip/3554721f-4fb1-4f17-8a6b-f10e96e82bfd/ChatGPT%20Image%20Aug%2012%2C%202026%2C%2011_15_03%20AM.png/:/rs=w:800" alt="Why Good Aged Care Candidates Drop Out of Recruitment Processes" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">Recruitment</span>
+          <h2 class="blog-card-title">Why Good Aged Care Candidates Drop Out of Recruitment Processes</h2>
+          <p class="blog-card-excerpt">Finding a strong candidate is only half the challenge. Eight reasons good candidates disappear between application and offer &mdash; and what to do about each one.</p>
+          <div class="blog-card-meta"><span>14 Aug 2026</span></div>
+          <span class="blog-card-link">Read the full article
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+      <a href="https://nursegen.com.au/f/recruitment-success-isnt-measured-by-placements" target="_blank" rel="noopener" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Aged Care|Campaign|Employer branding|EVP|Recruitment|Recruitment Sprint|ROI|Sourcing">
+        <div class="blog-card-media"><img src="https://img1.wsimg.com/isteam/ip/3554721f-4fb1-4f17-8a6b-f10e96e82bfd/ChatGPT%20Image%20Jul%2030%2C%202026%2C%2002_32_14%20PM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800" alt="Recruitment Success Isn't Measured by Placements" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">Recruitment</span>
+          <h2 class="blog-card-title">Recruitment Success Isn&#x27;t Measured by Placements</h2>
+          <p class="blog-card-excerpt">For years, recruitment success has meant one number &mdash; positions filled. Today&#x27;s workforce challenges call for a broader measure of what success actually looks like.</p>
+          <div class="blog-card-meta"><span>30 Jul 2026</span></div>
+          <span class="blog-card-link">Read the full article
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+      <a href="https://nursegen.com.au/f/recruitment-sprint-vs-traditional-recruitment-whats-different" target="_blank" rel="noopener" class="blog-card js-reveal" data-reveal-delay="90" data-cats="Aged Care|Campaign|Recruitment|Recruitment Sprint|Sourcing">
+        <div class="blog-card-media"><img src="https://img1.wsimg.com/isteam/ip/3554721f-4fb1-4f17-8a6b-f10e96e82bfd/ChatGPT%20Image%20Jul%2027%2C%202026%2C%2004_33_47%20PM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800" alt="Recruitment Sprint vs Traditional Recruitment: What's Different?" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">Recruitment Sprint</span>
+          <h2 class="blog-card-title">Recruitment Sprint vs Traditional Recruitment: What&#x27;s Different?</h2>
+          <p class="blog-card-excerpt">Is the traditional one-vacancy-at-a-time model still the right fit for today&#x27;s workforce pressures? Comparing two models built for very different workforce needs.</p>
+          <div class="blog-card-meta"><span>29 Jul 2026</span></div>
+          <span class="blog-card-link">Read the full article
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+      <a href="https://nursegen.com.au/f/are-you-ready-for-the-strengthened-aged-care-standards" target="_blank" rel="noopener" class="blog-card js-reveal" data-reveal-delay="180" data-cats="Aged Care">
+        <div class="blog-card-media"><img src="https://img1.wsimg.com/isteam/ip/3554721f-4fb1-4f17-8a6b-f10e96e82bfd/Oct%20Blog%20ACSS-d0ca8a3.png/:/rs=w:800" alt="Are You Ready for the Strengthened Aged Care Standards?" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">Aged Care</span>
+          <h2 class="blog-card-title">Are You Ready for the Strengthened Aged Care Standards?</h2>
+          <p class="blog-card-excerpt">From 1 November 2025, the Strengthened Aged Care Quality Standards replace the current framework under the Aged Care Act 2024. What&#x27;s changing, and how to get your workforce ready.</p>
+          <div class="blog-card-meta"><span>31 Oct 2025</span></div>
+          <span class="blog-card-link">Read the full article
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+      <a href="https://nursegen.com.au/f/navigating-the-challenges-of-nurse-recruitment-in-aged-care" target="_blank" rel="noopener" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Aged Care|Recruitment|Sourcing">
+        <div class="blog-card-media"><img src="https://img1.wsimg.com/isteam/ip/3554721f-4fb1-4f17-8a6b-f10e96e82bfd/Oct%20Blog%20CARR.png/:/rs=w:800" alt="Navigating the Challenges of Nurse Recruitment in Aged Care" loading="lazy"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">Recruitment</span>
+          <h2 class="blog-card-title">Navigating the Challenges of Nurse Recruitment in Aged Care</h2>
+          <p class="blog-card-excerpt">Aged care recruitment is under mounting pressure as providers compete for skilled professionals. Practical strategies for sourcing, vetting and retaining experienced nursing staff.</p>
+          <div class="blog-card-meta"><span>30 Oct 2025</span></div>
+          <span class="blog-card-link">Read the full article
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+    <nav class="blog-pagination" id="blogPagination" aria-label="Article pages"></nav>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section" aria-label="Get in touch">
   <div class="cta-wrap">
     <div class="cta-card">
       <div class="cta-bg" aria-hidden="true"></div>
       <div class="cta-content">
-        <span class="cta-eyebrow">I Want to Work</span>
-        <h1 class="cta-heading">Join NurseGen.</h1>
-        <p class="cta-body">Tell us a little about yourself and the NurseGen team will match you with opportunities across Australia's aged-care sector.</p>
-
-        <form class="contact-form" id="candidateForm" novalidate>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="cd-first">First name</label>
-              <input type="text" id="cd-first" name="firstName" autocomplete="given-name" required>
-            </div>
-            <div class="form-field">
-              <label for="cd-last">Last name</label>
-              <input type="text" id="cd-last" name="lastName" autocomplete="family-name" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="cd-mobile">Mobile</label>
-              <input type="tel" id="cd-mobile" name="mobile" autocomplete="tel" required>
-            </div>
-            <div class="form-field">
-              <label for="cd-role">Role</label>
-              <input type="text" id="cd-role" name="role" placeholder="e.g. Registered Nurse" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="cd-location">Location</label>
-              <input type="text" id="cd-location" name="location" placeholder="Suburb or region" required>
-            </div>
-            <div class="form-field">
-              <label for="cd-availability">Availability</label>
-              <input type="text" id="cd-availability" name="availability" placeholder="e.g. Casual, Full-time">
-            </div>
-          </div>
-          <div class="form-field">
-            <label for="cd-regional">Regional interest</label>
-            <input type="text" id="cd-regional" name="regionalInterest" placeholder="Open to regional or remote placements?">
-          </div>
-          <button type="submit" class="btn btn-purple contact-form-submit">Join NurseGen →</button>
-        </form>
-
-        <div class="form-success" id="candidateFormSuccess" hidden>
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 16px; display: block;">
-            <circle cx="12" cy="12" r="10" stroke="var(--color-accent-2)" stroke-width="1.5"></circle>
-            <path d="M8 12.5l2.5 2.5L16 9.5" stroke="var(--color-accent-2)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-          <p class="form-success-title">Thanks, <span id="candidateFormSuccessName">there</span>.</p>
-          <p class="form-success-body">We've got your details. We'll be in touch about opportunities that match what you're looking for.</p>
+        <span class="cta-eyebrow">Better workforce. Stronger care.</span>
+        <h2 class="cta-heading">Whether you need one person, multiple hires, or a different approach to workforce altogether &mdash; start the conversation with NurseGen.</h2>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary">I Need Workforce</a>
+          <a href="candidates.html" class="btn btn-outline">I Want to Work</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <div class="footer-dark-wrap">
   <div class="bloom bloom--left" aria-hidden="true"></div>
   <div class="bloom bloom--right" aria-hidden="true"></div>
@@ -749,45 +861,74 @@ section { position: relative; }
   }
 })();
 </script>
-<!-- Candidate registration form submit -->
+
 <script>
 (function () {
-  var form = document.getElementById('candidateForm');
-  var success = document.getElementById('candidateFormSuccess');
-  var successName = document.getElementById('candidateFormSuccessName');
-  if (!form || !success) return;
+  var bar = document.querySelector('.blog-filter-bar');
+  var grid = document.getElementById('blogGrid');
+  var pagination = document.getElementById('blogPagination');
+  if (!grid) return;
+  var PER_PAGE = 12;
+  var allCards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card'));
+  var currentFilter = 'all';
+  var currentPage = 1;
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
+  function visibleCards() {
+    return allCards.filter(function (card) {
+      var cats = (card.dataset.cats || '').split('|');
+      return currentFilter === 'all' || cats.indexOf(currentFilter) !== -1;
+    });
+  }
 
-    var first = form.firstName.value.trim();
-    var last = form.lastName.value.trim();
-    var mobile = form.mobile.value.trim();
-    var role = form.role.value.trim();
-    var location = form.location.value.trim();
-    var availability = form.availability.value.trim();
-    var regional = form.regionalInterest.value.trim();
+  function renderPagination(totalPages) {
+    if (!pagination) return;
+    if (totalPages <= 1) { pagination.innerHTML = ''; return; }
+    var parts = [];
+    parts.push('<button type="button" class="blog-page-btn blog-page-nav" data-page="' + (currentPage - 1) + '"' + (currentPage === 1 ? ' disabled' : '') + ' aria-label="Previous page">&larr;</button>');
+    for (var i = 1; i <= totalPages; i++) {
+      parts.push('<button type="button" class="blog-page-btn' + (i === currentPage ? ' is-active' : '') + '" data-page="' + i + '" aria-current="' + (i === currentPage ? 'page' : 'false') + '">' + i + '</button>');
+    }
+    parts.push('<button type="button" class="blog-page-btn blog-page-nav" data-page="' + (currentPage + 1) + '"' + (currentPage === totalPages ? ' disabled' : '') + ' aria-label="Next page">&rarr;</button>');
+    pagination.innerHTML = parts.join('');
+  }
 
-    var subject = encodeURIComponent('NurseGen Candidate Registration, ' + first + ' ' + last);
-    var bodyLines = [
-      'Name: ' + first + ' ' + last,
-      'Mobile: ' + mobile,
-      'Role: ' + role,
-      'Location: ' + location,
-      'Availability: ' + (availability || 'Not provided'),
-      'Regional interest: ' + (regional || 'Not provided')
-    ];
-    var body = encodeURIComponent(bodyLines.join('\n'));
-    var mailto = 'mailto:hello@healthgen.io?subject=' + subject + '&body=' + body;
+  function render(scroll) {
+    var visible = visibleCards();
+    var totalPages = Math.max(1, Math.ceil(visible.length / PER_PAGE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    allCards.forEach(function (card) { card.style.display = 'none'; });
+    var start = (currentPage - 1) * PER_PAGE;
+    visible.slice(start, start + PER_PAGE).forEach(function (card) { card.style.display = ''; });
+    renderPagination(totalPages);
+    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
-    if (successName) successName.textContent = first || 'there';
-    form.hidden = true;
-    success.hidden = false;
+  if (bar) {
+    bar.addEventListener('click', function (e) {
+      var btn = e.target.closest('.blog-filter-btn');
+      if (!btn) return;
+      bar.querySelectorAll('.blog-filter-btn').forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      currentFilter = btn.dataset.filter;
+      currentPage = 1;
+      render(false);
+    });
+  }
 
-    window.location.href = mailto;
-  });
+  if (pagination) {
+    pagination.addEventListener('click', function (e) {
+      var btn = e.target.closest('.blog-page-btn');
+      if (!btn || btn.disabled) return;
+      var page = parseInt(btn.dataset.page, 10);
+      if (!page || page < 1) return;
+      currentPage = page;
+      render(true);
+    });
+  }
+
+  render(false);
 })();
 </script>
+
 </body>
 </html>
