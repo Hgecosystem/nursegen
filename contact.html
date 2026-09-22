@@ -351,8 +351,12 @@ section { position: relative; }
 /* ═══ FOOTER — literal glass site-footer card floating on the dark canvas ═ */
 .footer-dark-wrap {
   position: relative; overflow: hidden;
+  margin: 0 2.5vw 40px;
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(255,255,255,0.12);
   background: linear-gradient(165deg, var(--color-dark) 0%, color-mix(in srgb, var(--color-dark) 45%, var(--color-dominant)) 60%, var(--color-dominant) 145%);
 }
+@media (max-width: 560px) { .footer-dark-wrap { margin: 0 16px 28px; } }
 .footer-dark-wrap .bloom { position: absolute; border-radius: 50%; filter: blur(130px); pointer-events: none; }
 .footer-dark-wrap .bloom--left {
   left: -22vw; top: -20%; width: 60vw; height: 140%;
