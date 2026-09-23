@@ -186,6 +186,17 @@ section { position: relative; }
 .grain-overlay { display: none; }
 .hero-overlay { display: none;
 }
+.hero-bloom { position: absolute; top: 0; border-radius: 50%; filter: blur(130px); pointer-events: none; }
+.hero-bloom--left {
+  left: -22vw; width: 46vw; height: 100%;
+  background: radial-gradient(ellipse at 30% 50%, var(--ng-secondary) 0%, color-mix(in srgb, var(--ng-secondary) 55%, transparent) 40%, color-mix(in srgb, var(--ng-secondary) 18%, transparent) 65%, transparent 85%);
+  opacity: 0.5;
+}
+.hero-bloom--right {
+  right: -22vw; width: 46vw; height: 100%;
+  background: radial-gradient(ellipse at 70% 50%, var(--ng-accent) 0%, color-mix(in srgb, var(--ng-accent) 55%, transparent) 40%, color-mix(in srgb, var(--ng-accent) 18%, transparent) 65%, transparent 85%);
+  opacity: 0.42;
+}
 .hero-content { position: relative; z-index: 2; max-width: 780px; display: flex; flex-direction: column; align-items: center; }
 
 .hero-eyebrow {
@@ -491,6 +502,8 @@ section { position: relative; }
   <div class="hero-card">
     <div class="hero-bg" aria-hidden="true">
       <div class="hero-bg-parallax"><div class="hero-bg-img"></div></div>
+      <div class="hero-bloom hero-bloom--left" aria-hidden="true"></div>
+      <div class="hero-bloom hero-bloom--right" aria-hidden="true"></div>
       <div class="hero-overlay"></div>
     </div>
     <div class="grain-overlay" aria-hidden="true">
