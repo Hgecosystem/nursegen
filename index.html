@@ -194,24 +194,31 @@ section { position: relative; }
   text-align: center;
 }
 
-.hero-cta-panels { display: flex; gap: 22px; width: 100%; margin-top: 44px; }
+/* Card size/position/colour copied from the Health Generation homepage's
+   hero .proof-panel: same margin-top, same "break out of the hero's own
+   side padding to the page's 2.5vw edge" trick, same radius/padding and
+   white-with-opacity frosted-glass treatment — split into two columns. */
 .hero-cta-panel {
-  flex: 1; border-radius: 28px; padding: 60px 24px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-self: stretch;
+  margin-top: 56px;
+  margin-left: calc(2.5vw - 5%);
+  margin-right: calc(2.5vw - 5%);
+  border-radius: 25px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  padding: 40px 4%;
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.hero-cta-col {
+  flex: 1; display: flex; align-items: center; justify-content: center;
   text-decoration: none;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 10px 30px rgba(0,80,107,0.08);
 }
-.hero-cta-panel:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(0,80,107,0.16); }
-.hero-cta-panel--purple {
-  background: linear-gradient(160deg, color-mix(in srgb, var(--ng-secondary) 62%, transparent) 0%, color-mix(in srgb, var(--ng-accent) 42%, transparent) 100%);
-}
-.hero-cta-panel--teal {
-  background: linear-gradient(160deg, color-mix(in srgb, var(--ng-teal) 40%, transparent) 0%, color-mix(in srgb, var(--ng-light) 55%, transparent) 100%);
-}
-.hero-cta-panel .btn { pointer-events: none; }
+.hero-cta-divider { width: 1px; align-self: stretch; background: rgba(255,255,255,0.16); flex: none; }
 @media (max-width: 640px) {
-  .hero-cta-panels { flex-direction: column; }
+  .hero-cta-panel { flex-direction: column; gap: 24px; }
+  .hero-cta-divider { width: 100%; height: 1px; align-self: stretch; }
 }
 
 .hero-eyebrow {
@@ -251,7 +258,7 @@ section { position: relative; }
 
 @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .hero-text-card  { opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s both; }
-.hero-cta-panels { opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
+.hero-cta-panel  { opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
 
 /* ═══ GENERIC SECTION RHYTHM ═══════════════════════════════════ */
 .section { padding: 110px 0; }
@@ -532,10 +539,15 @@ section { position: relative; }
       </h1>
       <p class="hero-sub">The right people. The right capability. When you need them. From an RN tomorrow to building your permanent workforce for the future, NurseGen provides flexible, permanent and specialist workforce solutions designed specifically for aged care.</p>
     </div>
-    <div class="hero-cta-panels">
-      <a href="candidates.html" class="hero-cta-panel hero-cta-panel--purple"><span class="btn btn-purple">I Want to Work</span></a>
-      <a href="contact.html" class="hero-cta-panel hero-cta-panel--teal"><span class="btn btn-primary">I Need Workforce</span></a>
-    </div>
+  </div>
+  <div class="hero-cta-panel">
+    <a href="candidates.html" class="hero-cta-col">
+      <span class="btn btn-purple">I Want to Work</span>
+    </a>
+    <div class="hero-cta-divider" aria-hidden="true"></div>
+    <a href="contact.html" class="hero-cta-col">
+      <span class="btn btn-primary">I Need Workforce</span>
+    </a>
   </div>
   </div>
 </section>
