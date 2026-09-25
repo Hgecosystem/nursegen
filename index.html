@@ -238,7 +238,21 @@ section { position: relative; }
 
 .hero-sub {
   font-size: clamp(15px, 1.3vw, 18px); font-weight: 400; line-height: 1.7;
-  color: var(--ng-dark); max-width: 560px; margin-bottom: 38px; text-wrap: pretty;
+  color: var(--ng-dark); margin: 0 auto 38px; text-wrap: pretty;
+  display: flex; flex-direction: column; align-items: center;
+}
+.hero-sub-line {
+  display: block; width: 100%; text-align: center;
+  white-space: nowrap;
+}
+.hero-sub-line:nth-child(1) { max-width: 620px; }
+.hero-sub-line:nth-child(2) { max-width: 520px; }
+.hero-sub-line:nth-child(3) { max-width: 430px; }
+.hero-sub-line:nth-child(4) { max-width: 330px; }
+.hero-sub-line:nth-child(5) { max-width: 230px; }
+@media (max-width: 700px) {
+  .hero-sub { display: block; max-width: 100%; }
+  .hero-sub-line { display: inline; white-space: normal; max-width: none !important; }
 }
 
 
@@ -537,7 +551,13 @@ section { position: relative; }
         <span class="hero-line-1">Aged care workforce.</span>
         <span class="hero-line-2">Backed by aged care expertise.</span>
       </h1>
-      <p class="hero-sub">The right people. The right capability. When you need them. From an RN tomorrow to building your permanent workforce for the future, NurseGen provides flexible, permanent and specialist workforce solutions designed specifically for aged care.</p>
+      <p class="hero-sub">
+        <span class="hero-sub-line">The right people. The right capability. When you need them.</span>
+        <span class="hero-sub-line">From an RN tomorrow to building your permanent</span>
+        <span class="hero-sub-line">workforce for the future, NurseGen provides</span>
+        <span class="hero-sub-line">flexible, permanent and specialist</span>
+        <span class="hero-sub-line">workforce solutions for aged care.</span>
+      </p>
     </div>
   </div>
   <div class="hero-cta-panel">
