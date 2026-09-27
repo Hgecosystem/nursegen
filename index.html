@@ -434,6 +434,19 @@ section { position: relative; z-index: 1; }
 .cap-card-link .arrow { transition: transform 0.2s ease; }
 .cap-card:hover .cap-card-link .arrow { transform: translateX(4px); }
 
+/* Inverted card — same sea gradient as the "More than filling shifts"
+   section, with text recoloured for a dark background. */
+.cap-card--inverted {
+  background: linear-gradient(160deg, #09606D 0%, #075057 45%, #D2ECF2 100%);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+.cap-card--inverted:hover { border-color: rgba(255,255,255,0.4); }
+.cap-card--inverted .cap-card-num { color: var(--ng-accent); }
+.cap-card--inverted .cap-card-heading { color: #fff; }
+.cap-card--inverted .cap-card-tag { color: var(--ng-teal-soft); }
+.cap-card--inverted .cap-card-body { color: var(--on-dark-2); }
+.cap-card--inverted .cap-card-link { color: #fff; }
+
 .cap-card, .js-reveal {
   opacity: 0; transform: translateY(28px);
   transition: opacity 0.6s ease-out, transform 0.35s ease-out, border-color 0.3s ease-out, box-shadow 0.3s ease-out;
@@ -735,7 +748,7 @@ section { position: relative; z-index: 1; }
     <h2 class="stat-heading js-reveal" data-reveal-delay="80">Whether you need immediate coverage or want to build a stronger permanent workforce, NurseGen can help.</h2>
 
     <div class="cap-grid">
-      <a href="flexible-workforce.html" class="cap-card" data-cap-delay="0">
+      <a href="flexible-workforce.html" class="cap-card cap-card--inverted" data-cap-delay="0">
         <span class="cap-card-num">01</span>
         <span class="cap-card-tag">FLEXIBLE WORKFORCE</span>
         <h3 class="cap-card-heading">People when you need them.</h3>
