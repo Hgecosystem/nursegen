@@ -332,10 +332,12 @@ section { position: relative; z-index: 1; }
 .section--purple-tint { background: var(--purple-tint); }
 .section--sea { background: linear-gradient(160deg, #09606D 0%, #075057 45%, #D2ECF2 100%); }
 
-/* Frosted glass card — same stroke/opacity/padding treatment used for
-   the Health Generation proof-panel elsewhere on this site. */
+/* Frosted glass card — exact match to Health Generation's real
+   .proof-panel (hero-nested stat band), confirmed against their
+   live site: same radius token, background, border, padding,
+   blur and shadow. */
 .frost-panel {
-  border-radius: 25px;
+  border-radius: var(--radius-card);
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.16);
   padding: 40px 4%;
