@@ -335,8 +335,10 @@ section { position: relative; z-index: 1; }
 /* Frosted glass card — exact match to Health Generation's real
    .proof-panel (hero-nested stat band), confirmed against their
    live site: same radius token, background, border, padding,
-   blur and shadow. */
+   blur, shadow, and the same 2.5vw distance from the page edge
+   (not a containered 1180px-max width). */
 .frost-panel {
+  margin: 0 2.5vw;
   border-radius: var(--radius-card);
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.16);
@@ -648,16 +650,14 @@ section { position: relative; z-index: 1; }
 
 <!-- 2. MORE THAN FILLING SHIFTS -->
 <section class="section section--sea" aria-label="More than filling shifts">
-  <div class="container">
-    <div class="frost-panel">
-      <span class="eyebrow-teal eyebrow-teal--dark js-reveal">More than filling shifts.</span>
-      <div class="mtfs-grid">
-        <h2 class="stat-heading stat-heading--dark js-reveal" data-reveal-delay="80">A workforce gap is rarely just a workforce gap.</h2>
-        <div class="lede lede--dark js-reveal" data-reveal-delay="160">
-          <p>It can affect continuity of care, clinical risk, care minutes, permanent staff workload, compliance and ultimately the experience of Older Persons.</p>
-          <p>That's why NurseGen takes an aged-care-first approach to workforce. We understand the environment our people are walking into — not just the position that needs filling.</p>
-          <p><strong style="color: #fff;">Workforce isn't separate from care. It's fundamental to it.</strong></p>
-        </div>
+  <div class="frost-panel">
+    <span class="eyebrow-teal eyebrow-teal--dark js-reveal">More than filling shifts.</span>
+    <div class="mtfs-grid">
+      <h2 class="stat-heading stat-heading--dark js-reveal" data-reveal-delay="80">A workforce gap is rarely just a workforce gap.</h2>
+      <div class="lede lede--dark js-reveal" data-reveal-delay="160">
+        <p>It can affect continuity of care, clinical risk, care minutes, permanent staff workload, compliance and ultimately the experience of Older Persons.</p>
+        <p>That's why NurseGen takes an aged-care-first approach to workforce. We understand the environment our people are walking into — not just the position that needs filling.</p>
+        <p><strong style="color: #fff;">Workforce isn't separate from care. It's fundamental to it.</strong></p>
       </div>
     </div>
   </div>
