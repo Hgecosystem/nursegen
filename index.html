@@ -521,22 +521,15 @@ section { position: relative; z-index: 1; }
   .proof-num { white-space: normal; font-size: clamp(22px, 6.5vw, 32px); }
 }
 
-/* ═══ START WITH THE PROBLEM — full-bleed card with an infinite
-   horizontally-scrolling pill row, in the same spirit as Health
-   Generation's "ONE PARTNER. CONNECTED CAPABILITY." ticker,
-   re-tokened to NurseGen's own purple/pill treatment ═══════════ */
+/* ═══ START WITH THE PROBLEM — whole section is one dark violet
+   frost-panel card (same component as "Why NurseGen?"), with the
+   eyebrow as a pill badge and an infinite horizontally-scrolling
+   pill ticker bleeding to the card's own edges, in the same spirit
+   as Health Generation's "ONE PARTNER. CONNECTED CAPABILITY."
+   ticker, re-tokened to NurseGen's own purple/pill treatment ═══ */
 .problem-scroll {
-  position: relative;
-  margin: 40px 0;
-  width: calc(100vw - 5vw);
-  margin-left: calc(50% - 50vw + 2.5vw);
-  margin-right: calc(50% - 50vw + 2.5vw);
-  border-radius: var(--radius-card);
-  background: rgba(255,255,255,0.5);
-  border: 1px solid rgba(87,81,149,0.14);
-  padding: 26px 0;
+  margin: 34px -4% 0;
   overflow: hidden;
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
 }
 .problem-track {
   display: flex; align-items: center; gap: 14px;
@@ -549,10 +542,17 @@ section { position: relative; z-index: 1; }
   to   { transform: translateX(-50%); }
 }
 .problem-chip {
+  display: inline-flex; align-items: center;
   flex-shrink: 0; white-space: nowrap;
-  font-size: 14.5px; font-weight: 600; color: var(--ink); font-style: italic;
-  background: var(--purple-tint); border: 1px solid rgba(87,81,149,0.16);
+  font-size: 14.5px; font-weight: 600; font-style: italic;
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
   border-radius: var(--radius-pill); padding: 12px 20px;
+}
+.problem-chip::before {
+  content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--ng-accent); margin-right: 10px;
 }
 @media (prefers-reduced-motion: reduce) {
   .problem-track { animation: none; }
@@ -915,11 +915,15 @@ section { position: relative; z-index: 1; }
 </section>
 
 <!-- 6. START WITH THE PROBLEM -->
-<section class="section section--purple-tint" aria-label="Start with the problem">
-  <div class="container" style="text-align:center;">
-    <span class="eyebrow-teal js-reveal">Not sure what you need?</span>
-    <h2 class="stat-heading stat-heading--center js-reveal" data-reveal-delay="80">Start with the problem.</h2>
-    <div class="problem-scroll js-reveal" data-reveal-delay="160">
+<section class="section section--sea" aria-label="Start with the problem">
+  <div class="violet-bg" aria-hidden="true"></div>
+  <div class="frost-panel" style="text-align:center;">
+    <div class="js-reveal" style="text-align:center;">
+      <span class="hero-eyebrow">Not sure what you need?</span>
+    </div>
+    <h2 class="stat-heading stat-heading--dark stat-heading--center js-reveal" data-reveal-delay="80">Start with the problem.</h2>
+    <p class="lede lede--dark lede--center js-reveal" data-reveal-delay="140">Tell us what's happening. We'll help identify the workforce solution that makes sense.</p>
+    <div class="problem-scroll js-reveal" data-reveal-delay="220">
       <div class="problem-track">
         <span class="problem-chip">"I need an RN tomorrow."</span>
         <span class="problem-chip">"We can't recruit a Care Manager."</span>
@@ -935,9 +939,8 @@ section { position: relative; z-index: 1; }
         <span class="problem-chip" aria-hidden="true">"We can't find enough people locally."</span>
       </div>
     </div>
-    <p class="lede lede--center js-reveal" data-reveal-delay="340">Tell us what's happening. We'll help identify the workforce solution that makes sense.</p>
-    <div style="margin-top:30px;">
-      <a href="contact.html" class="btn btn-purple js-reveal" data-reveal-delay="380">Talk to NurseGen<span class="btn-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <div style="margin-top:34px;">
+      <a href="contact.html" class="btn btn-outline js-reveal" data-reveal-delay="300">Talk to NurseGen<span class="btn-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
   </div>
 </section>
