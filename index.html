@@ -389,8 +389,10 @@ section { position: relative; z-index: 1; }
 }
 
 /* Network diagram — illustrates the sentence "continuity of care, clinical
-   risk, care minutes, permanent staff workload, compliance ... the
-   experience of Older Persons" as spokes into a central node. */
+   risk, care minutes, permanent staff workload, compliance ... a workforce
+   gap" as six equal-size pills, spoked into the central "Workforce gap"
+   pill. Connecting lines are pre-trimmed in the markup so they stop right
+   at each pill's stroke rather than running underneath it. */
 .mtfs-right { display: flex; align-items: center; justify-content: center; }
 .mtfs-diagram { width: 100%; max-width: 440px; height: auto; }
 .mtfs-node {
@@ -403,11 +405,9 @@ section { position: relative; z-index: 1; }
   padding: 6px 10px;
   line-height: 1.25;
 }
-.mtfs-center-node {
-  display: flex; align-items: center; justify-content: center; text-align: center;
-  width: 100%; height: 100%;
-  font-size: 15px; font-weight: 800; letter-spacing: -0.01em; color: #fff;
-  border-radius: 50%;
+.mtfs-node--center {
+  background: rgba(146,140,207,0.22);
+  border: 1px solid rgba(146,140,207,0.6);
 }
 .mtfs-transition { margin-top: 34px; font-size: 20px; font-weight: 700; color: var(--ng-purple); }
 
@@ -707,23 +707,21 @@ section { position: relative; z-index: 1; }
         </div>
       </div>
       <div class="mtfs-right js-reveal" data-reveal-delay="200">
-        <svg class="mtfs-diagram" viewBox="0 0 440 440" role="img" aria-label="Continuity of care, clinical risk, care minutes, permanent staff workload and compliance, all connected to the experience of Older Persons">
-          <circle cx="220" cy="220" r="196" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
-          <line x1="220" y1="220" x2="220" y2="80"  stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-          <line x1="220" y1="220" x2="370" y2="169" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-          <line x1="220" y1="220" x2="317" y2="349" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-          <line x1="220" y1="220" x2="123" y2="349" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-          <line x1="220" y1="220" x2="70"  y2="169" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-
-          <foreignObject x="152" y="152" width="136" height="136">
-            <div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-center-node" style="background: radial-gradient(circle at 35% 30%, #928CCF 0%, #575195 70%); box-shadow: 0 10px 26px rgba(0,0,0,0.28);">Older Persons.</div>
-          </foreignObject>
+        <svg class="mtfs-diagram" viewBox="0 0 440 440" role="img" aria-label="Continuity of care, clinical risk, care minutes, permanent staff workload and compliance, all connected to a workforce gap">
+          <!-- Spokes, each pre-trimmed to stop right at the stroke of the
+               two pills it connects (not at their centres). -->
+          <line x1="220" y1="190"   x2="220" y2="110"   stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <line x1="290" y1="196.2" x2="300" y2="192.8" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <line x1="242.6" y1="250" x2="294.4" y2="319" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <line x1="197.4" y1="250" x2="145.6" y2="319" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <line x1="150"   y1="196.2" x2="140" y2="192.8" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
 
           <foreignObject x="150" y="50"  width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node">Continuity of care</div></foreignObject>
           <foreignObject x="300" y="139" width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node">Clinical risk</div></foreignObject>
           <foreignObject x="247" y="319" width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node">Care minutes</div></foreignObject>
           <foreignObject x="53"  y="319" width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node">Permanent staff workload</div></foreignObject>
           <foreignObject x="0"   y="139" width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node">Compliance</div></foreignObject>
+          <foreignObject x="150" y="190" width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node mtfs-node--center">Workforce gap</div></foreignObject>
         </svg>
       </div>
     </div>
