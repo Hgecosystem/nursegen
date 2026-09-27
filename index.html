@@ -497,8 +497,12 @@ section { position: relative; z-index: 1; }
   border-radius: var(--radius-pill); padding: 7px 16px;
 }
 .proof-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ng-purple); flex-shrink: 0; }
+.proof-eyebrow-wrap { text-align: center; margin-bottom: 22px; }
 .proof-card {
   margin-top: 44px;
+  width: calc(100vw - 5vw);
+  margin-left: calc(50% - 50vw + 2.5vw);
+  margin-right: calc(50% - 50vw + 2.5vw);
   border-radius: var(--radius-card);
   background: rgba(255,255,255,0.55);
   border: 1px solid rgba(22,23,31,0.08);
@@ -508,13 +512,13 @@ section { position: relative; z-index: 1; }
 }
 .proof-row { display: grid; grid-template-columns: repeat(4, 1fr); }
 .proof-stat { text-align: center; padding: 0 20px; }
-.proof-num { font-size: clamp(30px, 3.4vw, 42px); font-weight: 800; color: var(--ng-purple); letter-spacing: -0.02em; }
-.proof-num--sm { font-size: clamp(20px, 2.1vw, 27px); white-space: nowrap; }
+.proof-num { font-size: clamp(30px, 3.4vw, 42px); font-weight: 800; color: var(--ng-purple); letter-spacing: -0.02em; white-space: nowrap; }
 .proof-label { font-size: 13.5px; font-weight: 600; color: var(--ink-2); margin-top: 6px; }
 .stat-caption { margin-top: 26px; font-size: 12.5px; color: var(--ink-3); text-align: center; }
 @media (max-width: 700px) {
   .proof-row { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
   .proof-stat { padding: 0 12px; }
+  .proof-num { white-space: normal; font-size: clamp(22px, 6.5vw, 32px); }
 }
 
 /* ═══ START WITH THE PROBLEM ═══════════════════════════════════ */
@@ -867,7 +871,7 @@ section { position: relative; z-index: 1; }
 <!-- 5. HG PROOF STATS -->
 <section class="section" aria-label="Backed by Health Generation">
   <div class="container">
-    <div class="js-reveal" style="text-align:center;">
+    <div class="proof-eyebrow-wrap js-reveal">
       <span class="proof-eyebrow">Backed by Health Generation</span>
     </div>
     <h2 class="stat-heading stat-heading--center js-reveal" data-reveal-delay="80">National aged-care capability behind NurseGen.</h2>
@@ -876,7 +880,7 @@ section { position: relative; z-index: 1; }
         <div class="proof-stat"><div class="proof-num">298+</div><div class="proof-label">Providers supported</div></div>
         <div class="proof-stat"><div class="proof-num">30,900+</div><div class="proof-label">Older Person reviews</div></div>
         <div class="proof-stat"><div class="proof-num">73+</div><div class="proof-label">Remediation programs</div></div>
-        <div class="proof-stat"><div class="proof-num proof-num--sm">Australia-wide</div><div class="proof-label">Aged-care capability</div></div>
+        <div class="proof-stat"><div class="proof-num">Australia-wide</div><div class="proof-label">Aged-care capability</div></div>
       </div>
     </div>
     <p class="stat-caption">Figures represent the broader experience and capability of Health Generation.</p>
