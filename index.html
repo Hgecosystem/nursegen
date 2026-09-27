@@ -396,10 +396,19 @@ section { position: relative; z-index: 1; }
   border: 1px solid rgba(255,255,255,0.16);
   border-radius: 14px;
   padding: 16px 22px;
+  transition: background 0.22s ease, border-color 0.22s ease;
 }
 .mtfs-chip--dark {
   background: rgba(0,0,0,0.28);
   border-color: rgba(0,0,0,0.32);
+}
+.mtfs-chips--grid .mtfs-chip:hover {
+  background: rgba(0,0,0,0.32);
+  border-color: rgba(0,0,0,0.38);
+}
+.mtfs-chips--grid .mtfs-chip--dark:hover {
+  background: rgba(0,0,0,0.46);
+  border-color: rgba(0,0,0,0.5);
 }
 .mtfs-chip-icon {
   display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
