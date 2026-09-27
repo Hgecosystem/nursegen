@@ -373,8 +373,38 @@ section { position: relative; z-index: 1; }
 .lede--center { margin-left: auto; margin-right: auto; text-align: center; }
 
 /* ═══ "MORE THAN FILLING SHIFTS" ═══════════════════════════════ */
-.mtfs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.mtfs-grid .lede p + p { margin-top: 18px; }
+.mtfs-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: center; }
+.mtfs-left { display: flex; flex-direction: column; }
+.mtfs-chips { display: flex; flex-direction: column; gap: 14px; margin-top: 30px; }
+.mtfs-chip {
+  font-size: 15px; font-weight: 500; line-height: 1.5; color: #fff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 14px;
+  padding: 16px 22px;
+}
+
+/* Network diagram — illustrates the sentence "continuity of care, clinical
+   risk, care minutes, permanent staff workload, compliance ... the
+   experience of Older Persons" as spokes into a central node. */
+.mtfs-right { display: flex; align-items: center; justify-content: center; }
+.mtfs-diagram { width: 100%; max-width: 440px; height: auto; }
+.mtfs-node {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  width: 100%; height: 100%;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.01em; color: #fff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 14px;
+  padding: 6px 10px;
+  line-height: 1.25;
+}
+.mtfs-center-node {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  width: 100%; height: 100%;
+  font-size: 15px; font-weight: 800; letter-spacing: -0.01em; color: #fff;
+  border-radius: 50%;
+}
 .mtfs-transition { margin-top: 34px; font-size: 20px; font-weight: 700; color: var(--ng-purple); }
 
 /* ═══ CAP-CARD (reused for the Four Solutions grid + service listings) ═ */
@@ -660,13 +690,37 @@ section { position: relative; z-index: 1; }
 <section class="section section--sea" aria-label="More than filling shifts">
   <div class="sea-bg" aria-hidden="true"></div>
   <div class="frost-panel">
-    <span class="eyebrow-teal eyebrow-teal--dark js-reveal">More than filling shifts.</span>
     <div class="mtfs-grid">
-      <h2 class="stat-heading stat-heading--dark js-reveal" data-reveal-delay="80">A workforce gap is rarely just a workforce gap.</h2>
-      <div class="lede lede--dark js-reveal" data-reveal-delay="160">
-        <p>It can affect continuity of care, clinical risk, care minutes, permanent staff workload, compliance and ultimately the experience of Older Persons.</p>
-        <p>That's why NurseGen takes an aged-care-first approach to workforce. We understand the environment our people are walking into — not just the position that needs filling.</p>
-        <p><strong style="color: #fff;">Workforce isn't separate from care. It's fundamental to it.</strong></p>
+      <div class="mtfs-left">
+        <span class="eyebrow-teal eyebrow-teal--dark js-reveal">More than filling shifts.</span>
+        <h2 class="stat-heading stat-heading--dark js-reveal" data-reveal-delay="80">A workforce gap is rarely just a workforce gap.</h2>
+        <div class="lede lede--dark js-reveal" data-reveal-delay="160">
+          <p>It can affect continuity of care, clinical risk, care minutes, permanent staff workload, compliance and ultimately the experience of Older Persons.</p>
+        </div>
+        <div class="mtfs-chips">
+          <div class="mtfs-chip js-reveal" data-reveal-delay="220">NurseGen takes an aged-care-first approach to workforce — we understand the environment our people are walking into, not just the position that needs filling.</div>
+          <div class="mtfs-chip js-reveal" data-reveal-delay="280"><strong>Workforce isn't separate from care. It's fundamental to it.</strong></div>
+        </div>
+      </div>
+      <div class="mtfs-right js-reveal" data-reveal-delay="200">
+        <svg class="mtfs-diagram" viewBox="0 0 440 440" role="img" aria-label="Continuity of care, clinical risk, care minutes, permanent staff workload and compliance, all connected to the experience of Older Persons">
+          <circle cx="220" cy="220" r="196" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+          <line x1="220" y1="220" x2="220" y2="80"  stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <line x1="220" y1="220" x2="370" y2="169" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <line x1="220" y1="220" x2="317" y2="349" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <line x1="220" y1="220" x2="123" y2="349" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <line x1="220" y1="220" x2="70"  y2="169" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+
+          <foreignObject x="152" y="152" width="136" height="136">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-center-node" style="background: radial-gradient(circle at 35% 30%, #928CCF 0%, #575195 70%); box-shadow: 0 10px 26px rgba(0,0,0,0.28);">Older Persons.</div>
+          </foreignObject>
+
+          <foreignObject x="150" y="50"  width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node">Continuity of care</div></foreignObject>
+          <foreignObject x="300" y="139" width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node">Clinical risk</div></foreignObject>
+          <foreignObject x="247" y="319" width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node">Care minutes</div></foreignObject>
+          <foreignObject x="53"  y="319" width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node">Permanent staff workload</div></foreignObject>
+          <foreignObject x="0"   y="139" width="140" height="60"><div xmlns="http://www.w3.org/1999/xhtml" class="mtfs-node">Compliance</div></foreignObject>
+        </svg>
       </div>
     </div>
   </div>
