@@ -568,7 +568,21 @@ section { position: relative; z-index: 1; }
   .problem-track { animation: none; }
 }
 
-/* ═══ CTA PANELS (candidate teaser + final CTA) — literal cta-card/cta-bg
+/* ═══ CANDIDATE TEASER — plain two-column layout, no card: text on
+   the left, all the work-type tags stacked in the right column ══ */
+.candidate-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+.candidate-left { display: flex; flex-direction: column; }
+.candidate-tags { display: flex; flex-direction: column; gap: 12px; }
+.candidate-tag {
+  font-size: 14.5px; font-weight: 600; color: var(--ink);
+  background: var(--paper-tint); border: 1px solid rgba(22,23,31,0.08);
+  border-radius: var(--radius-pill); padding: 14px 22px;
+}
+@media (max-width: 900px) {
+  .candidate-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* ═══ CTA PANEL (final CTA) — literal cta-card/cta-bg
    parallax component from design-system-starter.html ═══════════════ */
 .cta-wrap { padding: 0 2.5vw; position: relative; z-index: 1; }
 .cta-card { border-radius: 32px; padding: 84px 7% 88px; text-align: center; position: relative; overflow: hidden; }
@@ -956,22 +970,23 @@ section { position: relative; z-index: 1; }
 
 <!-- 7. CANDIDATE TEASER -->
 <section class="section" aria-label="Looking for work">
-  <div class="cta-wrap">
-    <div class="cta-card">
-      <div class="cta-bg" aria-hidden="true"></div>
-      <div class="cta-content">
-        <span class="cta-eyebrow">Looking for work?</span>
-        <h2 class="cta-heading">More opportunities. One aged-care network.</h2>
-        <p class="cta-body">NurseGen connects nurses, care professionals and experienced aged-care leaders with opportunities across Australia. Whether you're looking for regular work, additional shifts around your existing commitments, or your next career move, we'd like to hear from you.</p>
-        <div class="cta-tags">
-          <span class="cta-tag">Casual Shifts</span>
-          <span class="cta-tag">Block Bookings</span>
-          <span class="cta-tag">Regional Placements</span>
-          <span class="cta-tag">Travel Nursing</span>
-          <span class="cta-tag">Permanent Roles</span>
-          <span class="cta-tag">Clinical &amp; Leadership Assignments</span>
+  <div class="container">
+    <div class="candidate-grid">
+      <div class="candidate-left">
+        <span class="eyebrow-teal js-reveal">Looking for work?</span>
+        <h2 class="stat-heading js-reveal" data-reveal-delay="80">More opportunities. One aged-care network.</h2>
+        <p class="lede js-reveal" data-reveal-delay="140">NurseGen connects nurses, care professionals and experienced aged-care leaders with opportunities across Australia. Whether you're looking for regular work, additional shifts around your existing commitments, or your next career move, we'd like to hear from you.</p>
+        <div style="margin-top:30px;">
+          <a href="candidates.html" class="btn btn-primary js-reveal" data-reveal-delay="200">Join NurseGen<span class="btn-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </div>
-        <div class="cta-actions"><a href="candidates.html" class="btn btn-primary">Join NurseGen<span class="btn-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+      </div>
+      <div class="candidate-tags js-reveal" data-reveal-delay="160">
+        <span class="candidate-tag">Casual Shifts</span>
+        <span class="candidate-tag">Block Bookings</span>
+        <span class="candidate-tag">Regional Placements</span>
+        <span class="candidate-tag">Travel Nursing</span>
+        <span class="candidate-tag">Permanent Roles</span>
+        <span class="candidate-tag">Clinical &amp; Leadership Assignments</span>
       </div>
     </div>
   </div>
