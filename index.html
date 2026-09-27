@@ -375,6 +375,10 @@ section { position: relative; z-index: 1; }
 /* ═══ "MORE THAN FILLING SHIFTS" ═══════════════════════════════ */
 .mtfs-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: center; }
 .mtfs-left { display: flex; flex-direction: column; }
+/* Heading/paragraph sizes matched exactly to Health Generation's real
+   "What are you trying to solve?" section (.cap-heading / .cap-sub). */
+.mtfs-left .stat-heading { font-size: clamp(28px, 3.2vw, 42px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.12; }
+.mtfs-left .lede { font-size: 16px; font-weight: 400; line-height: 1.6; }
 .mtfs-chips { display: flex; flex-direction: column; gap: 14px; margin-top: 30px; }
 .mtfs-chip {
   font-size: 15px; font-weight: 500; line-height: 1.5; color: #fff;
