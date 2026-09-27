@@ -338,6 +338,13 @@ section { position: relative; z-index: 1; }
   z-index: 0; will-change: transform;
   background: linear-gradient(160deg, #09606D 0%, #075057 45%, #D2ECF2 100%);
 }
+/* Same oversized/parallax treatment, different palette — used on
+   "Why NurseGen?". */
+.violet-bg {
+  position: absolute; top: -20%; bottom: -20%; left: 0; right: 0;
+  z-index: 0; will-change: transform;
+  background: linear-gradient(160deg, #583E8B 0%, #EBA3FE 100%);
+}
 
 /* Frosted glass card — exact match to Health Generation's real
    .proof-panel (hero-nested stat band), confirmed against their
@@ -785,7 +792,7 @@ section { position: relative; z-index: 1; }
 
 <!-- 4. WHY NURSEGEN -->
 <section class="section section--sea" id="why" aria-label="Why NurseGen">
-  <div class="sea-bg" aria-hidden="true"></div>
+  <div class="violet-bg" aria-hidden="true"></div>
   <div class="frost-panel">
     <div class="mtfs-grid">
       <div class="mtfs-left">
@@ -1030,13 +1037,13 @@ section { position: relative; z-index: 1; }
 })();
 </script>
 
-<!-- "More than filling shifts" sea-gradient background parallax -->
+<!-- Gradient-background section parallax (sea-bg / violet-bg) -->
 <script>
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var pairs = [];
   document.querySelectorAll('.section--sea').forEach(function (section) {
-    var bg = section.querySelector('.sea-bg');
+    var bg = section.querySelector('.sea-bg, .violet-bg');
     if (bg) pairs.push({ section: section, bg: bg });
   });
   if (!pairs.length) return;
