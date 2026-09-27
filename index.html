@@ -186,6 +186,13 @@ section { position: relative; }
 .grain-overlay { display: none; }
 .hero-overlay { display: none;
 }
+.hero-bloom {
+  position: absolute; z-index: 1; pointer-events: none;
+  right: -10%; bottom: -16%;
+  width: 50vw; height: 50vw; max-width: 680px; max-height: 680px;
+  background: radial-gradient(circle at 65% 65%, color-mix(in srgb, #41A39E 95%, transparent) 0%, color-mix(in srgb, #41A39E 55%, transparent) 45%, transparent 72%);
+  filter: blur(42px);
+}
 .hero-content { position: relative; z-index: 2; max-width: 1100px; width: 100%; display: flex; flex-direction: column; align-items: center; }
 
 .hero-text-card {
@@ -534,6 +541,7 @@ section { position: relative; }
     <div class="hero-bg" aria-hidden="true">
       <div class="hero-bg-parallax"><div class="hero-bg-img"></div></div>
       <div class="hero-overlay"></div>
+      <div class="hero-bloom" aria-hidden="true"></div>
     </div>
     <div class="grain-overlay" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg">
