@@ -359,15 +359,42 @@ section { position: relative; z-index: 1; }
   .proof-num { white-space: normal; font-size: clamp(22px, 6.5vw, 32px); }
 }
 
-/* ═══ START WITH THE PROBLEM ═══════════════════════════════════ */
-.problem-chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 40px 0 40px; }
+/* ═══ START WITH THE PROBLEM — full-bleed card with an infinite
+   horizontally-scrolling pill row, in the same spirit as Health
+   Generation's "ONE PARTNER. CONNECTED CAPABILITY." ticker,
+   re-tokened to NurseGen's own purple/pill treatment ═══════════ */
+.problem-scroll {
+  position: relative;
+  margin: 40px 0;
+  width: calc(100vw - 5vw);
+  margin-left: calc(50% - 50vw + 2.5vw);
+  margin-right: calc(50% - 50vw + 2.5vw);
+  border-radius: var(--radius-card);
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(87,81,149,0.14);
+  padding: 26px 0;
+  overflow: hidden;
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+.problem-track {
+  display: flex; align-items: center; gap: 14px;
+  width: max-content;
+  animation: problem-scroll-x 26s linear infinite;
+}
+.problem-scroll:hover .problem-track { animation-play-state: paused; }
+@keyframes problem-scroll-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 .problem-chip {
+  flex-shrink: 0; white-space: nowrap;
   font-size: 14.5px; font-weight: 600; color: var(--ink); font-style: italic;
   background: var(--purple-tint); border: 1px solid rgba(87,81,149,0.16);
   border-radius: var(--radius-pill); padding: 12px 20px;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
-.problem-chip:hover { background: rgba(146,140,207,0.22); border-color: rgba(87,81,149,0.35); transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) {
+  .problem-track { animation: none; }
+}
 
 /* ═══ CTA PANELS (candidate teaser + final CTA) — literal cta-card/cta-bg
    parallax component from design-system-starter.html ═══════════════ */
