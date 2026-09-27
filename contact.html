@@ -216,7 +216,7 @@ section { position: relative; z-index: 1; }
 
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--ng-dark);
   background: rgba(255,255,255,0.10);
   border: 1px solid rgba(0,80,107,0.55);
@@ -267,7 +267,7 @@ section { position: relative; z-index: 1; }
 .section--purple-tint { background: var(--purple-tint); }
 
 .eyebrow-teal {
-  display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  display: inline-block; font-size: 11.5px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--ng-teal); margin-bottom: 16px;
 }
 .eyebrow-teal--dark { color: var(--ng-teal-soft); }
@@ -305,7 +305,7 @@ section { position: relative; z-index: 1; }
 }
 .cap-card-num { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; color: var(--ng-purple-light); margin-bottom: 14px; }
 .cap-card-heading { font-size: 20px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 4px; }
-.cap-card-tag { font-size: 13.5px; font-weight: 700; color: var(--ng-teal); margin-bottom: 10px; }
+.cap-card-tag { font-size: 13.5px; font-weight: 400; color: var(--ng-teal); margin-bottom: 10px; }
 .cap-card-body { font-size: 14.5px; line-height: 1.7; color: var(--ink-2); margin-bottom: 20px; flex-grow: 1; }
 .cap-card-link { font-size: 13.5px; font-weight: 700; color: var(--ng-purple); display: inline-flex; align-items: center; gap: 6px; }
 .cap-card-link .arrow { transition: transform 0.2s ease; }
@@ -325,11 +325,38 @@ section { position: relative; z-index: 1; }
 .why-closing { margin-top: 26px; font-size: 15.5px; line-height: 1.75; color: var(--ink-2); }
 
 /* ═══ HG PROOF STATS ═══════════════════════════════════════════ */
-.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 44px; }
-.stat-tile { text-align: center; padding: 30px 14px; border-radius: var(--radius-card); background: var(--paper); border: 1px solid rgba(22,23,31,0.08); }
-.stat-tile-num { font-size: clamp(30px, 3.4vw, 42px); font-weight: 800; color: var(--ng-purple); letter-spacing: -0.02em; }
-.stat-tile-label { font-size: 13.5px; font-weight: 600; color: var(--ink-2); margin-top: 6px; }
+.proof-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ng-purple);
+  background: var(--purple-tint);
+  border: 1px solid rgba(87,81,149,0.28);
+  border-radius: var(--radius-pill); padding: 7px 16px;
+}
+.proof-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ng-purple); flex-shrink: 0; }
+.proof-eyebrow-wrap { text-align: center; margin-bottom: 22px; }
+.proof-card {
+  margin-top: 44px;
+  width: calc(100vw - 5vw);
+  margin-left: calc(50% - 50vw + 2.5vw);
+  margin-right: calc(50% - 50vw + 2.5vw);
+  border-radius: var(--radius-card);
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(22,23,31,0.08);
+  padding: 44px 3%;
+  box-shadow: 0 2px 0 rgba(22,23,31,0.02);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+.proof-row { display: grid; grid-template-columns: repeat(4, 1fr); }
+.proof-stat { text-align: center; padding: 0 20px; }
+.proof-num { font-size: clamp(30px, 3.4vw, 42px); font-weight: 800; color: var(--ng-purple); letter-spacing: -0.02em; white-space: nowrap; }
+.proof-label { font-size: 13.5px; font-weight: 400; color: var(--ink-2); margin-top: 6px; }
 .stat-caption { margin-top: 26px; font-size: 12.5px; color: var(--ink-3); text-align: center; }
+@media (max-width: 700px) {
+  .proof-row { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+  .proof-stat { padding: 0 12px; }
+  .proof-num { white-space: normal; font-size: clamp(22px, 6.5vw, 32px); }
+}
 
 /* ═══ START WITH THE PROBLEM ═══════════════════════════════════ */
 .problem-chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 40px 0 40px; }
@@ -360,17 +387,17 @@ section { position: relative; z-index: 1; }
   filter: blur(55px); pointer-events: none;
 }
 .cta-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
-.cta-eyebrow { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ng-teal-soft); margin-bottom: 20px; }
+.cta-eyebrow { display: inline-block; font-size: 10.5px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ng-teal-soft); margin-bottom: 20px; }
 .cta-heading { font-size: clamp(28px, 4vw, 46px); font-weight: 800; color: #fff; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 18px; text-wrap: balance; }
 .cta-body { font-size: clamp(15px, 1.3vw, 17px); line-height: 1.7; color: var(--on-dark-2); max-width: 560px; margin: 0 auto 32px; text-wrap: pretty; }
 .cta-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 0 32px; }
-.cta-tag { font-size: 12.5px; font-weight: 700; color: #fff; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); border-radius: var(--radius-pill); padding: 7px 14px; }
+.cta-tag { font-size: 12.5px; font-weight: 400; color: #fff; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); border-radius: var(--radius-pill); padding: 7px 14px; }
 .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 
 /* ═══ ECOSYSTEM ═══════════════════════════════════════════════ */
 .eco-wrap { text-align: center; }
 .eco-heading { font-size: clamp(22px, 3vw, 34px); font-weight: 800; color: var(--ink); letter-spacing: -0.02em; margin: 22px 0 40px; }
-.eco-parent { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+.eco-parent { font-size: 13px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
 .eco-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .eco-chip {
   font-size: 13.5px; font-weight: 700; letter-spacing: 0.02em; color: var(--ink-2);
@@ -460,7 +487,6 @@ section { position: relative; z-index: 1; }
 @media (max-width: 980px) {
   .cap-grid { grid-template-columns: repeat(2, 1fr); }
   .mtfs-grid, .why-grid { grid-template-columns: 1fr; gap: 32px; }
-  .stat-row { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 80px 0; }
 }
 
