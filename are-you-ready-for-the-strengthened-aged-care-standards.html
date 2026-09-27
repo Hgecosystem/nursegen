@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | NurseGen — Aged Care Workforce Insights</title>
-<meta name="description" content="Practical, provider-facing insight on aged care recruitment, retention and workforce strategy from NurseGen, the workforce business within the Health Generation ecosystem.">
 <link rel="icon" href="images/nursegen-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<title>Are You Ready for the Strengthened Aged Care Standards? | NurseGen Blog</title>
+<meta name="description" content="Are You Ready for the Strengthened Aged Care Standards? &mdash; insights on aged care workforce and recruitment from NurseGen.">
 <style>
 
 /* ═══════════════════════════════════════════════════════════════
@@ -553,7 +553,29 @@ section { position: relative; z-index: 1; }
 .blog-page-btn.is-active { background: var(--ng-teal); border-color: var(--ng-teal); color: #fff; }
 .blog-page-btn:disabled { opacity: 0.4; cursor: default; }
 
+
+/* ═══ POST ARTICLE (individual blog post pages) ═══════════════════ */
+.post-article { margin: 128px 0 0; }
+@media (max-width: 560px) { .post-article { margin-top: 104px; } }
+.post-wrap { max-width: 760px; margin: 0 auto; padding: 0 2.5vw; }
+.post-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--ink-2); margin-bottom: 28px; transition: color 0.18s; }
+.post-back:hover { color: var(--ink); }
+.post-cats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.post-cat-chip { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: var(--paper-tint); border: 1px solid rgba(22,23,31,0.10); border-radius: 100px; padding: 6px 14px; }
+.post-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.14; margin-bottom: 20px; color: var(--ink); text-wrap: balance; }
+.post-meta { font-size: 13.5px; color: var(--ink-3); margin-bottom: 36px; display: flex; align-items: center; gap: 8px; }
+.post-hero-media { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: var(--radius-card); overflow: hidden; margin-bottom: 44px; background: linear-gradient(135deg, color-mix(in srgb, var(--color-dark) 16%, var(--paper-tint)), color-mix(in srgb, var(--color-dominant) 20%, var(--paper-tint))); }
+.post-hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-body { font-size: 16.5px; line-height: 1.8; color: var(--ink-2); }
+.post-body p { margin-bottom: 22px; }
+.post-body h3 { font-size: 21px; font-weight: 800; color: var(--ink); letter-spacing: -0.015em; line-height: 1.3; margin: 40px 0 16px; }
+.post-body ul { list-style: none; margin: 0 0 22px; padding: 0; }
+.post-body li { position: relative; padding-left: 26px; margin-bottom: 12px; }
+.post-body li::before { content: ''; position: absolute; left: 4px; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--ng-purple); }
+.post-body a { color: var(--ng-teal); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.post-body a:hover { color: var(--ng-purple); }
 </style>
+
 </head>
 <body>
 
@@ -587,119 +609,77 @@ section { position: relative; z-index: 1; }
   <a href="contact.html" class="nav-drawer-cta nav-drawer-cta--primary">I Need Workforce</a>
   <a href="candidates.html" class="nav-drawer-cta nav-drawer-cta--secondary">I Want to Work</a>
 </div>
-
-<!-- BLOG PAGE HERO -->
-<section class="page-hero" aria-label="Page hero">
-  <div class="page-hero-card">
-    <span class="page-hero-badge">Blog</span>
-    <h1 class="page-hero-heading">Aged care workforce insight, from the people placing it.</h1>
-    <p class="page-hero-sub">Practical, provider-facing thinking on recruitment, retention and workforce strategy in residential aged care &mdash; the same thinking behind our client work.</p>
-  </div>
-</section>
-
-<nav class="blog-filter-bar" aria-label="Filter articles by category">
-      <button type="button" class="blog-filter-btn is-active" data-filter="all">All</button>
-      <button type="button" class="blog-filter-btn" data-filter="Aged Care">Aged Care</button>
-      <button type="button" class="blog-filter-btn" data-filter="Recruitment">Recruitment</button>
-      <button type="button" class="blog-filter-btn" data-filter="Recruitment Sprint">Recruitment Sprint</button>
-      <button type="button" class="blog-filter-btn" data-filter="Sourcing">Sourcing</button>
-      <button type="button" class="blog-filter-btn" data-filter="Campaign">Campaign</button>
-      <button type="button" class="blog-filter-btn" data-filter="Employer branding">Employer branding</button>
-      <button type="button" class="blog-filter-btn" data-filter="EVP">EVP</button>
-      <button type="button" class="blog-filter-btn" data-filter="ROI">ROI</button>
-</nav>
-
-<section class="section section--blog-grid" aria-label="Blog posts">
-  <div class="container container--wide">
-    <div class="blog-grid" id="blogGrid">
-      <a href="from-recruitment-to-retention-why-the-first-90-days-matter.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Recruitment">
-        <div class="blog-card-media"><img src="images/blog/from-recruitment-to-retention-why-the-first-90-days-matter.jpg" alt="From Recruitment to Retention: Why the First 90 Days Matter" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">From Recruitment to Retention: Why the First 90 Days Matter</h2>
-          <p class="blog-card-excerpt">Commencement isn&#x27;t the end of recruitment &mdash; it&#x27;s the beginning of retention. Why the first 90 days decide whether a new hire becomes part of the team, or another vacancy to fill.</p>
-          <div class="blog-card-meta"><span>11 Sept 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="is-recruitment-really-the-problem.html" class="blog-card js-reveal" data-reveal-delay="90" data-cats="Aged Care|Recruitment|Recruitment Sprint">
-        <div class="blog-card-media"><img src="images/blog/is-recruitment-really-the-problem.jpg" alt="Is Recruitment Really the Problem?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Is Recruitment Really the Problem?</h2>
-          <p class="blog-card-excerpt">When vacancies stay open and agency use climbs, it&#x27;s tempting to blame recruitment. Sometimes the real issue sits earlier &mdash; or later &mdash; in the workforce journey.</p>
-          <div class="blog-card-meta"><span>28 Aug 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="why-good-aged-care-candidates-drop-out-of-recruitment-processes.html" class="blog-card js-reveal" data-reveal-delay="180" data-cats="Aged Care|Recruitment">
-        <div class="blog-card-media"><img src="images/blog/why-good-aged-care-candidates-drop-out-of-recruitment-processes.jpg" alt="Why Good Aged Care Candidates Drop Out of Recruitment Processes" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Why Good Aged Care Candidates Drop Out of Recruitment Processes</h2>
-          <p class="blog-card-excerpt">Finding a strong candidate is only half the challenge. Eight reasons good candidates disappear between application and offer &mdash; and what to do about each one.</p>
-          <div class="blog-card-meta"><span>14 Aug 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="recruitment-success-isnt-measured-by-placements.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Aged Care|Campaign|Employer branding|EVP|Recruitment|Recruitment Sprint|ROI|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/recruitment-success-isnt-measured-by-placements.jpg" alt="Recruitment Success Isn't Measured by Placements" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Recruitment Success Isn&#x27;t Measured by Placements</h2>
-          <p class="blog-card-excerpt">For years, recruitment success has meant one number &mdash; positions filled. Today&#x27;s workforce challenges call for a broader measure of what success actually looks like.</p>
-          <div class="blog-card-meta"><span>30 Jul 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="recruitment-sprint-vs-traditional-recruitment-whats-different.html" class="blog-card js-reveal" data-reveal-delay="90" data-cats="Aged Care|Campaign|Recruitment|Recruitment Sprint|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/recruitment-sprint-vs-traditional-recruitment-whats-different.jpg" alt="Recruitment Sprint vs Traditional Recruitment: What's Different?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment Sprint</span>
-          <h2 class="blog-card-title">Recruitment Sprint vs Traditional Recruitment: What&#x27;s Different?</h2>
-          <p class="blog-card-excerpt">Is the traditional one-vacancy-at-a-time model still the right fit for today&#x27;s workforce pressures? Comparing two models built for very different workforce needs.</p>
-          <div class="blog-card-meta"><span>29 Jul 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="are-you-ready-for-the-strengthened-aged-care-standards.html" class="blog-card js-reveal" data-reveal-delay="180" data-cats="Aged Care">
-        <div class="blog-card-media"><img src="images/blog/are-you-ready-for-the-strengthened-aged-care-standards.jpg" alt="Are You Ready for the Strengthened Aged Care Standards?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Aged Care</span>
-          <h2 class="blog-card-title">Are You Ready for the Strengthened Aged Care Standards?</h2>
-          <p class="blog-card-excerpt">From 1 November 2025, the Strengthened Aged Care Quality Standards replace the current framework under the Aged Care Act 2024. What&#x27;s changing, and how to get your workforce ready.</p>
-          <div class="blog-card-meta"><span>31 Oct 2025</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="navigating-the-challenges-of-nurse-recruitment-in-aged-care.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Aged Care|Recruitment|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/navigating-the-challenges-of-nurse-recruitment-in-aged-care.jpg" alt="Navigating the Challenges of Nurse Recruitment in Aged Care" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Navigating the Challenges of Nurse Recruitment in Aged Care</h2>
-          <p class="blog-card-excerpt">Aged care recruitment is under mounting pressure as providers compete for skilled professionals. Practical strategies for sourcing, vetting and retaining experienced nursing staff.</p>
-          <div class="blog-card-meta"><span>30 Oct 2025</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
+<article class="post-article">
+  <div class="post-wrap">
+    <a href="blog.html" class="post-back">&larr; Back to all articles</a>
+    <div class="post-cats">
+          <span class="post-cat-chip">Aged Care</span>
     </div>
-    <nav class="blog-pagination" id="blogPagination" aria-label="Article pages"></nav>
+    <h1 class="post-title">Are You Ready for the Strengthened Aged Care Standards?</h1>
+    <div class="post-meta"><span>NurseGen</span><span>&middot;</span><span>31 Oct 2025</span><span>&middot;</span><span>3 min read</span></div>
+    <div class="post-hero-media"><img src="images/blog/are-you-ready-for-the-strengthened-aged-care-standards.jpg" alt="Are You Ready for the Strengthened Aged Care Standards?" loading="lazy"></div>
+    <div class="post-body">
+<p>The aged care sector is about to enter a new chapter. From 1 November 2025, the Strengthened Aged Care Quality Standards will replace the current framework as part of the Aged Care Act 2024.</p>
+<p>These changes aren&rsquo;t simply about compliance &mdash; they&rsquo;re about raising the bar for safety, dignity, and quality of life for older Australians. For providers, it&rsquo;s an opportunity to strengthen trust, improve care, and future-proof services.</p>
+<p>But preparation is key. Here&rsquo;s what you need to know, what&rsquo;s different, and how to get your workforce and organisation ready.</p>
+<h3>What&rsquo;s Changing?</h3>
+<p>The new framework introduces seven streamlined Standards (down from eight), but they&rsquo;re more detailed, measurable, and resident-focused.</p>
+<p>The main changes include:</p>
+<ul>
+<li>Clearer, measurable outcomes &mdash; the Standards are written in plainer language and focus on what older people should experience, not just what providers do.</li>
+<li>Food &amp; Nutrition elevated &mdash; meals and dining now have their own dedicated Standard (Standard 6), reflecting the importance of nutrition and dignity in everyday care.</li>
+<li>Governance &amp; accountability &mdash; leaders and boards are expected to be actively responsible for safety, strategy, and quality outcomes.</li>
+<li>Greater focus on clinical care &mdash; stronger expectations in areas like dementia support, wound management, medications, and pain care.</li>
+<li>Graded audits &mdash; providers will receive ratings (conformance, minor/major non-conformance, exceeding), with results visible in the Star Ratings system.</li>
+</ul>
+<p>In short: these Standards aim to deliver care that is safer, more transparent, and more person-centred.</p>
+<h3>Why This Matters for Providers</h3>
+<p>For residents and families, the strengthened Standards offer peace of mind. For providers, they mean:</p>
+<ul>
+<li>Higher accountability &mdash; greater oversight and public reporting of outcomes.</li>
+<li>Workforce expectations &mdash; staff must be trained, competent, and confident in applying the Standards in daily practice.</li>
+<li>Increased resident voice &mdash; feedback and lived experience will carry more weight in assessments.</li>
+<li>Preparation is non-negotiable &mdash; compliance gaps will be more visible, with reputational and financial impacts.</li>
+</ul>
+<h3>Practical Recommendations: Steps You Can Take Now</h3>
+<p>Getting ready doesn&rsquo;t need to be overwhelming. Breaking it into manageable actions can help your organisation feel confident.</p>
+<p><strong>1. Educate &amp; Engage Your Workforce</strong></p>
+<ul>
+<li>Provide training so staff understand the seven Standards and how they apply in practice.</li>
+<li>Run workshops or scenario-based learning around food, clinical care, and resident choice.</li>
+</ul>
+<p><strong>2. Audit Your Current Practices</strong></p>
+<ul>
+<li>Review policies, procedures, and evidence against the new Standards.</li>
+<li>Conduct mock audits to test readiness and identify improvement areas.</li>
+</ul>
+<p><strong>3. Focus on Food &amp; Nutrition</strong></p>
+<ul>
+<li>Review meal planning, dining environments, and feedback mechanisms.</li>
+<li>Invest in skilled chefs and kitchen leaders who understand nutrition, cultural diversity, and resident preferences.</li>
+<li>Explore technology like meal selection apps or dining innovations (such as VR experiences) to improve resident engagement.</li>
+</ul>
+<p><strong>4. Strengthen Governance</strong></p>
+<ul>
+<li>Ensure your board and leadership team are across their responsibilities.</li>
+<li>Align governance frameworks to prioritise safety, risk management, and quality improvement.</li>
+</ul>
+<p><strong>5. Listen to Residents &amp; Families</strong></p>
+<ul>
+<li>Gather feedback through surveys, interviews, and daily interactions.</li>
+<li>Show residents how their feedback has led to tangible improvements.</li>
+</ul>
+<p><strong>6. Plan for Transparency</strong></p>
+<ul>
+<li>Establish internal reporting systems so you can track progress and identify issues early.</li>
+<li>Be ready to communicate openly about your audit grades and star ratings.</li>
+</ul>
+<p>The Strengthened Aged Care Standards are not just about compliance &mdash; they&rsquo;re about creating an aged care system where older Australians feel safe, respected, and valued.</p>
+<p>By preparing now &mdash; strengthening your workforce, reviewing practices, and embracing innovation &mdash; you&rsquo;ll be well placed to meet the Standards and deliver exceptional care.</p>
+
+    </div>
   </div>
-</section>
+</article>
 
 <!-- FINAL CTA -->
 <section class="section" aria-label="Get in touch">
@@ -717,7 +697,6 @@ section { position: relative; z-index: 1; }
     </div>
   </div>
 </section>
-
 <div class="footer-dark-wrap">
   <div class="bloom bloom--left" aria-hidden="true"></div>
   <div class="bloom bloom--right" aria-hidden="true"></div>
@@ -889,74 +868,6 @@ section { position: relative; z-index: 1; }
     }, { threshold: 0.15 });
     reveals.forEach(function (el) { revealObserver.observe(el); });
   }
-})();
-</script>
-
-<script>
-(function () {
-  var bar = document.querySelector('.blog-filter-bar');
-  var grid = document.getElementById('blogGrid');
-  var pagination = document.getElementById('blogPagination');
-  if (!grid) return;
-  var PER_PAGE = 12;
-  var allCards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card'));
-  var currentFilter = 'all';
-  var currentPage = 1;
-
-  function visibleCards() {
-    return allCards.filter(function (card) {
-      var cats = (card.dataset.cats || '').split('|');
-      return currentFilter === 'all' || cats.indexOf(currentFilter) !== -1;
-    });
-  }
-
-  function renderPagination(totalPages) {
-    if (!pagination) return;
-    if (totalPages <= 1) { pagination.innerHTML = ''; return; }
-    var parts = [];
-    parts.push('<button type="button" class="blog-page-btn blog-page-nav" data-page="' + (currentPage - 1) + '"' + (currentPage === 1 ? ' disabled' : '') + ' aria-label="Previous page">&larr;</button>');
-    for (var i = 1; i <= totalPages; i++) {
-      parts.push('<button type="button" class="blog-page-btn' + (i === currentPage ? ' is-active' : '') + '" data-page="' + i + '" aria-current="' + (i === currentPage ? 'page' : 'false') + '">' + i + '</button>');
-    }
-    parts.push('<button type="button" class="blog-page-btn blog-page-nav" data-page="' + (currentPage + 1) + '"' + (currentPage === totalPages ? ' disabled' : '') + ' aria-label="Next page">&rarr;</button>');
-    pagination.innerHTML = parts.join('');
-  }
-
-  function render(scroll) {
-    var visible = visibleCards();
-    var totalPages = Math.max(1, Math.ceil(visible.length / PER_PAGE));
-    if (currentPage > totalPages) currentPage = totalPages;
-    allCards.forEach(function (card) { card.style.display = 'none'; });
-    var start = (currentPage - 1) * PER_PAGE;
-    visible.slice(start, start + PER_PAGE).forEach(function (card) { card.style.display = ''; });
-    renderPagination(totalPages);
-    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  if (bar) {
-    bar.addEventListener('click', function (e) {
-      var btn = e.target.closest('.blog-filter-btn');
-      if (!btn) return;
-      bar.querySelectorAll('.blog-filter-btn').forEach(function (b) { b.classList.remove('is-active'); });
-      btn.classList.add('is-active');
-      currentFilter = btn.dataset.filter;
-      currentPage = 1;
-      render(false);
-    });
-  }
-
-  if (pagination) {
-    pagination.addEventListener('click', function (e) {
-      var btn = e.target.closest('.blog-page-btn');
-      if (!btn || btn.disabled) return;
-      var page = parseInt(btn.dataset.page, 10);
-      if (!page || page < 1) return;
-      currentPage = page;
-      render(true);
-    });
-  }
-
-  render(false);
 })();
 </script>
 

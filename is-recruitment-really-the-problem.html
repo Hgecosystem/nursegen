@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | NurseGen — Aged Care Workforce Insights</title>
-<meta name="description" content="Practical, provider-facing insight on aged care recruitment, retention and workforce strategy from NurseGen, the workforce business within the Health Generation ecosystem.">
 <link rel="icon" href="images/nursegen-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<title>Is Recruitment Really the Problem? | NurseGen Blog</title>
+<meta name="description" content="Is Recruitment Really the Problem? &mdash; insights on aged care workforce and recruitment from NurseGen.">
 <style>
 
 /* ═══════════════════════════════════════════════════════════════
@@ -553,7 +553,29 @@ section { position: relative; z-index: 1; }
 .blog-page-btn.is-active { background: var(--ng-teal); border-color: var(--ng-teal); color: #fff; }
 .blog-page-btn:disabled { opacity: 0.4; cursor: default; }
 
+
+/* ═══ POST ARTICLE (individual blog post pages) ═══════════════════ */
+.post-article { margin: 128px 0 0; }
+@media (max-width: 560px) { .post-article { margin-top: 104px; } }
+.post-wrap { max-width: 760px; margin: 0 auto; padding: 0 2.5vw; }
+.post-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--ink-2); margin-bottom: 28px; transition: color 0.18s; }
+.post-back:hover { color: var(--ink); }
+.post-cats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.post-cat-chip { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: var(--paper-tint); border: 1px solid rgba(22,23,31,0.10); border-radius: 100px; padding: 6px 14px; }
+.post-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.14; margin-bottom: 20px; color: var(--ink); text-wrap: balance; }
+.post-meta { font-size: 13.5px; color: var(--ink-3); margin-bottom: 36px; display: flex; align-items: center; gap: 8px; }
+.post-hero-media { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: var(--radius-card); overflow: hidden; margin-bottom: 44px; background: linear-gradient(135deg, color-mix(in srgb, var(--color-dark) 16%, var(--paper-tint)), color-mix(in srgb, var(--color-dominant) 20%, var(--paper-tint))); }
+.post-hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-body { font-size: 16.5px; line-height: 1.8; color: var(--ink-2); }
+.post-body p { margin-bottom: 22px; }
+.post-body h3 { font-size: 21px; font-weight: 800; color: var(--ink); letter-spacing: -0.015em; line-height: 1.3; margin: 40px 0 16px; }
+.post-body ul { list-style: none; margin: 0 0 22px; padding: 0; }
+.post-body li { position: relative; padding-left: 26px; margin-bottom: 12px; }
+.post-body li::before { content: ''; position: absolute; left: 4px; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--ng-purple); }
+.post-body a { color: var(--ng-teal); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.post-body a:hover { color: var(--ng-purple); }
 </style>
+
 </head>
 <body>
 
@@ -587,119 +609,156 @@ section { position: relative; z-index: 1; }
   <a href="contact.html" class="nav-drawer-cta nav-drawer-cta--primary">I Need Workforce</a>
   <a href="candidates.html" class="nav-drawer-cta nav-drawer-cta--secondary">I Want to Work</a>
 </div>
-
-<!-- BLOG PAGE HERO -->
-<section class="page-hero" aria-label="Page hero">
-  <div class="page-hero-card">
-    <span class="page-hero-badge">Blog</span>
-    <h1 class="page-hero-heading">Aged care workforce insight, from the people placing it.</h1>
-    <p class="page-hero-sub">Practical, provider-facing thinking on recruitment, retention and workforce strategy in residential aged care &mdash; the same thinking behind our client work.</p>
-  </div>
-</section>
-
-<nav class="blog-filter-bar" aria-label="Filter articles by category">
-      <button type="button" class="blog-filter-btn is-active" data-filter="all">All</button>
-      <button type="button" class="blog-filter-btn" data-filter="Aged Care">Aged Care</button>
-      <button type="button" class="blog-filter-btn" data-filter="Recruitment">Recruitment</button>
-      <button type="button" class="blog-filter-btn" data-filter="Recruitment Sprint">Recruitment Sprint</button>
-      <button type="button" class="blog-filter-btn" data-filter="Sourcing">Sourcing</button>
-      <button type="button" class="blog-filter-btn" data-filter="Campaign">Campaign</button>
-      <button type="button" class="blog-filter-btn" data-filter="Employer branding">Employer branding</button>
-      <button type="button" class="blog-filter-btn" data-filter="EVP">EVP</button>
-      <button type="button" class="blog-filter-btn" data-filter="ROI">ROI</button>
-</nav>
-
-<section class="section section--blog-grid" aria-label="Blog posts">
-  <div class="container container--wide">
-    <div class="blog-grid" id="blogGrid">
-      <a href="from-recruitment-to-retention-why-the-first-90-days-matter.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Recruitment">
-        <div class="blog-card-media"><img src="images/blog/from-recruitment-to-retention-why-the-first-90-days-matter.jpg" alt="From Recruitment to Retention: Why the First 90 Days Matter" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">From Recruitment to Retention: Why the First 90 Days Matter</h2>
-          <p class="blog-card-excerpt">Commencement isn&#x27;t the end of recruitment &mdash; it&#x27;s the beginning of retention. Why the first 90 days decide whether a new hire becomes part of the team, or another vacancy to fill.</p>
-          <div class="blog-card-meta"><span>11 Sept 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="is-recruitment-really-the-problem.html" class="blog-card js-reveal" data-reveal-delay="90" data-cats="Aged Care|Recruitment|Recruitment Sprint">
-        <div class="blog-card-media"><img src="images/blog/is-recruitment-really-the-problem.jpg" alt="Is Recruitment Really the Problem?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Is Recruitment Really the Problem?</h2>
-          <p class="blog-card-excerpt">When vacancies stay open and agency use climbs, it&#x27;s tempting to blame recruitment. Sometimes the real issue sits earlier &mdash; or later &mdash; in the workforce journey.</p>
-          <div class="blog-card-meta"><span>28 Aug 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="why-good-aged-care-candidates-drop-out-of-recruitment-processes.html" class="blog-card js-reveal" data-reveal-delay="180" data-cats="Aged Care|Recruitment">
-        <div class="blog-card-media"><img src="images/blog/why-good-aged-care-candidates-drop-out-of-recruitment-processes.jpg" alt="Why Good Aged Care Candidates Drop Out of Recruitment Processes" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Why Good Aged Care Candidates Drop Out of Recruitment Processes</h2>
-          <p class="blog-card-excerpt">Finding a strong candidate is only half the challenge. Eight reasons good candidates disappear between application and offer &mdash; and what to do about each one.</p>
-          <div class="blog-card-meta"><span>14 Aug 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="recruitment-success-isnt-measured-by-placements.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Aged Care|Campaign|Employer branding|EVP|Recruitment|Recruitment Sprint|ROI|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/recruitment-success-isnt-measured-by-placements.jpg" alt="Recruitment Success Isn't Measured by Placements" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Recruitment Success Isn&#x27;t Measured by Placements</h2>
-          <p class="blog-card-excerpt">For years, recruitment success has meant one number &mdash; positions filled. Today&#x27;s workforce challenges call for a broader measure of what success actually looks like.</p>
-          <div class="blog-card-meta"><span>30 Jul 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="recruitment-sprint-vs-traditional-recruitment-whats-different.html" class="blog-card js-reveal" data-reveal-delay="90" data-cats="Aged Care|Campaign|Recruitment|Recruitment Sprint|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/recruitment-sprint-vs-traditional-recruitment-whats-different.jpg" alt="Recruitment Sprint vs Traditional Recruitment: What's Different?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment Sprint</span>
-          <h2 class="blog-card-title">Recruitment Sprint vs Traditional Recruitment: What&#x27;s Different?</h2>
-          <p class="blog-card-excerpt">Is the traditional one-vacancy-at-a-time model still the right fit for today&#x27;s workforce pressures? Comparing two models built for very different workforce needs.</p>
-          <div class="blog-card-meta"><span>29 Jul 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="are-you-ready-for-the-strengthened-aged-care-standards.html" class="blog-card js-reveal" data-reveal-delay="180" data-cats="Aged Care">
-        <div class="blog-card-media"><img src="images/blog/are-you-ready-for-the-strengthened-aged-care-standards.jpg" alt="Are You Ready for the Strengthened Aged Care Standards?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Aged Care</span>
-          <h2 class="blog-card-title">Are You Ready for the Strengthened Aged Care Standards?</h2>
-          <p class="blog-card-excerpt">From 1 November 2025, the Strengthened Aged Care Quality Standards replace the current framework under the Aged Care Act 2024. What&#x27;s changing, and how to get your workforce ready.</p>
-          <div class="blog-card-meta"><span>31 Oct 2025</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="navigating-the-challenges-of-nurse-recruitment-in-aged-care.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Aged Care|Recruitment|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/navigating-the-challenges-of-nurse-recruitment-in-aged-care.jpg" alt="Navigating the Challenges of Nurse Recruitment in Aged Care" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Navigating the Challenges of Nurse Recruitment in Aged Care</h2>
-          <p class="blog-card-excerpt">Aged care recruitment is under mounting pressure as providers compete for skilled professionals. Practical strategies for sourcing, vetting and retaining experienced nursing staff.</p>
-          <div class="blog-card-meta"><span>30 Oct 2025</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
+<article class="post-article">
+  <div class="post-wrap">
+    <a href="blog.html" class="post-back">&larr; Back to all articles</a>
+    <div class="post-cats">
+          <span class="post-cat-chip">Aged Care</span>
+          <span class="post-cat-chip">Recruitment</span>
+          <span class="post-cat-chip">Recruitment Sprint</span>
     </div>
-    <nav class="blog-pagination" id="blogPagination" aria-label="Article pages"></nav>
+    <h1 class="post-title">Is Recruitment Really the Problem?</h1>
+    <div class="post-meta"><span>NurseGen</span><span>&middot;</span><span>28 Aug 2026</span><span>&middot;</span><span>9 min read</span></div>
+    <div class="post-hero-media"><img src="images/blog/is-recruitment-really-the-problem.jpg" alt="Is Recruitment Really the Problem?" loading="lazy"></div>
+    <div class="post-body">
+<p>When vacancies remain open, agency usage increases or rosters become difficult to fill, the obvious conclusion is often: we have a recruitment problem.</p>
+<p>And sometimes, that&rsquo;s exactly right.</p>
+<p>There may genuinely be too few suitable candidates in the market. A location may be difficult to recruit to. A particular clinical or leadership skill set may be in high demand. Or an organisation may simply need greater recruitment capacity to reach and engage suitable candidates.</p>
+<p>But sometimes recruitment is only where the problem becomes visible.</p>
+<p>The actual issue may have started much earlier or may occur much later in the employee journey.</p>
+<p>If candidates aren&rsquo;t applying, that&rsquo;s one problem. If they&rsquo;re applying but withdrawing, that&rsquo;s another. If they&rsquo;re accepting offers but leaving within six months, that&rsquo;s something else entirely.</p>
+<p>Understanding where the workforce challenge actually sits is an important first step towards solving it.</p>
+<h3>Start with the whole workforce journey</h3>
+<p>Rather than looking at recruitment as an isolated activity, consider the complete journey: attraction &rarr; application &rarr; selection &rarr; offer &rarr; onboarding &rarr; retention.</p>
+<p>Each stage can tell you something different about your workforce.</p>
+<p>And importantly, each problem requires a different response.</p>
+<p>Increasing advertising may help an attraction problem. It won&rsquo;t necessarily solve an offer acceptance problem.</p>
+<p>Additional sourcing may help you reach more RNs. It won&rsquo;t fix a roster that candidates consistently decline.</p>
+<p>A recruitment campaign may fill several vacancies. It won&rsquo;t prevent those employees leaving again if the underlying retention issue remains.</p>
+<p>Before deciding on the solution, diagnose the problem.</p>
+<h3>Challenge 1: We&rsquo;re not getting enough applications</h3>
+<p>This is where organisations most clearly have an attraction challenge. Vacancies are being advertised, but there simply aren&rsquo;t enough suitable people entering the recruitment process.</p>
+<p>Start by looking at the opportunity from the candidate&rsquo;s perspective.</p>
+<ul>
+<li>Is the job advertisement compelling?</li>
+<li>Is the salary or hourly rate competitive?</li>
+<li>Is the roster clear?</li>
+<li>Does the advertisement explain what makes the opportunity different?</li>
+<li>Are you advertising where your target candidates are actually looking?</li>
+<li>Are you relying entirely on active job seekers?</li>
+</ul>
+<p>For some difficult-to-fill positions, advertising alone may not be enough.</p>
+<p>Experienced Registered Nurses, Clinical Managers, Facility Managers and other senior professionals aren&rsquo;t always actively searching job boards. Reaching those candidates may require proactive sourcing, existing networks and direct engagement.</p>
+<p>What to look at: application numbers, application quality, advertising performance, candidate source, market salary, roster requirements, location, and your employer value proposition.</p>
+<p>If suitable people simply aren&rsquo;t entering the process, attraction and sourcing may be where you need to focus.</p>
+<h3>Challenge 2: We&rsquo;re getting lots of applications, but few suitable candidates</h3>
+<p>More applications don&rsquo;t necessarily mean better recruitment outcomes.</p>
+<p>An advertisement might generate 150 applications, but if only three candidates meet the essential requirements, the recruitment team still has a problem.</p>
+<p>In fact, high application volumes can create additional work by requiring recruiters or hiring managers to screen large numbers of unsuitable applicants.</p>
+<p>This can indicate a targeting problem. Look at the advertisement itself.</p>
+<ul>
+<li>Does the job title accurately reflect the position?</li>
+<li>Are essential requirements obvious?</li>
+<li>Is the level of experience required clear?</li>
+<li>Is the advertisement reaching the right audience?</li>
+<li>Are your recruitment channels appropriate for the role?</li>
+</ul>
+<p>The goal isn&rsquo;t simply more applications. It&rsquo;s more relevant applications.</p>
+<h3>Challenge 3: Good candidates apply but disappear during recruitment</h3>
+<p>Now the issue has shifted. You&rsquo;ve attracted suitable candidates. They were interested enough to apply. Perhaps they completed a screening call. Maybe they even interviewed.</p>
+<p>Then they withdraw or stop responding.</p>
+<p>This can indicate a recruitment process or candidate experience problem.</p>
+<p>Map the recruitment process: application &rarr; screening &rarr; interview &rarr; feedback &rarr; references &rarr; approval &rarr; offer.</p>
+<ul>
+<li>How much time passes between each stage?</li>
+<li>Who owns the next step?</li>
+<li>Are candidates receiving updates?</li>
+<li>Are hiring managers providing feedback promptly?</li>
+<li>Are approvals delaying offers?</li>
+</ul>
+<p>Good candidates rarely have only one opportunity.</p>
+<p>If another employer completes their process while yours is still progressing internally, you may lose someone you had already successfully attracted.</p>
+<h3>Challenge 4: Candidates interview but don&rsquo;t want to progress</h3>
+<p>If candidates regularly withdraw following interview, it&rsquo;s worth exploring what they&rsquo;re learning during that conversation.</p>
+<p>Perhaps the roster wasn&rsquo;t what they expected. Perhaps the responsibilities are broader than the advertisement suggested. Maybe salary expectations aren&rsquo;t aligned. Perhaps they&rsquo;re concerned about workload or support. Or maybe the organisation simply hasn&rsquo;t given them a compelling reason to continue.</p>
+<p>Remember: you&rsquo;re interviewing the candidate, but they&rsquo;re also interviewing you.</p>
+<p>The interview is often the point where the candidate moves from reading about the opportunity to deciding whether they can actually picture themselves doing it.</p>
+<p>Track candidate withdrawals and, where appropriate, ask why they&rsquo;ve decided not to continue. Patterns can be extremely useful.</p>
+<h3>Challenge 5: We&rsquo;re making offers but candidates aren&rsquo;t accepting them</h3>
+<p>This is different again.</p>
+<p>If candidates successfully progress through your entire recruitment process but regularly decline at offer stage, the issue probably isn&rsquo;t candidate attraction. You&rsquo;ve already proven you can attract them.</p>
+<p>Instead, look at the offer.</p>
+<ul>
+<li>Is remuneration competitive?</li>
+<li>Did the candidate understand the roster?</li>
+<li>Were expectations discussed early?</li>
+<li>How long did the offer take?</li>
+<li>Did another organisation move faster?</li>
+<li>Was there a counteroffer?</li>
+<li>Did something change during the recruitment process?</li>
+<li>Was the opportunity compelling enough to make leaving their current employer worthwhile?</li>
+</ul>
+<p>One declined offer may simply be an individual decision. Repeated declined offers should become workforce data.</p>
+<p>Track the reason: salary, roster, location, counteroffer, accepted another position, career progression, flexibility, changed mind about leaving, timing, or unknown.</p>
+<p>Over time, this information can help identify what may need to change.</p>
+<h3>Challenge 6: We&rsquo;re successfully recruiting people but they don&rsquo;t stay</h3>
+<p>This is where organisations need to be careful not to automatically respond with more recruitment.</p>
+<p>If you successfully recruit five employees but regularly need to replace three of them within the next six months, your recruitment team may actually be doing its job.</p>
+<p>The bigger issue may be retention.</p>
+<p>Look at what happens after commencement.</p>
+<ul>
+<li>Was the employee properly onboarded?</li>
+<li>Did the reality of the position match what was discussed during recruitment?</li>
+<li>Was the roster as expected?</li>
+<li>Did they receive appropriate orientation?</li>
+<li>Did they have sufficient clinical or leadership support?</li>
+<li>Were expectations clear?</li>
+<li>How did their manager engage with them?</li>
+<li>Were early concerns addressed?</li>
+<li>Did anyone check in after the first few weeks?</li>
+</ul>
+<p>Recruitment gets someone through the door. The experience that follows has a significant influence on whether they stay.</p>
+<h3>Challenge 7: We&rsquo;re constantly recruiting the same positions</h3>
+<p>Repeated vacancies deserve attention.</p>
+<p>Sometimes this is simply the reality of a large workforce. But if a particular home, team, role, shift or manager consistently experiences higher turnover, look for the pattern.</p>
+<p>For example: are night-duty RN vacancies consistently difficult to fill? Does one location have significantly higher turnover? Are new Clinical Managers leaving within their first year? Does a particular roster rely heavily on agency staff? Are employees leaving after similar lengths of service?</p>
+<p>Patterns like these can help distinguish between an individual resignation and a broader workforce issue.</p>
+<p>Rather than simply asking &ldquo;how do we recruit another person?&rdquo;, it may be worth asking &ldquo;why do we keep needing to recruit this position?&rdquo;</p>
+<h3>Challenge 8: Our internal recruitment team simply doesn&rsquo;t have enough capacity</h3>
+<p>There is another workforce challenge that shouldn&rsquo;t be overlooked.</p>
+<p>Sometimes the recruitment strategy is sound. The roles are attractive. The organisation knows what needs to happen. There is simply too much recruitment to manage at once.</p>
+<p>Perhaps several vacancies have appeared simultaneously. A new service is opening. An acquisition or organisational change has created additional demand. There is a backlog of vacancies. Internal People &amp; Culture teams are managing recruitment alongside numerous other priorities. Or a group of difficult-to-fill roles requires more proactive sourcing than the internal team has capacity to provide.</p>
+<p>This isn&rsquo;t necessarily a recruitment strategy problem. It may be a recruitment capacity problem.</p>
+<p>Recognising that distinction matters.</p>
+<p>Adding short-term recruitment capacity can sometimes be more appropriate than permanently increasing an internal team or allowing vacancies to remain open while existing staff try to manage the additional workload.</p>
+<h3>Turn recruitment activity into workforce intelligence</h3>
+<p>One of the most valuable things an organisation can do is start tracking what happens throughout the recruitment journey.</p>
+<p>You don&rsquo;t necessarily need sophisticated analytics. Start with some basic questions.</p>
+<p><strong>Attraction</strong> &mdash; how many applications are we receiving? Where are candidates coming from? Which roles receive very few suitable applications?</p>
+<p><strong>Selection</strong> &mdash; what percentage of applicants progress? Where do candidates withdraw? How long does each recruitment stage take?</p>
+<p><strong>Offer</strong> &mdash; how many offers are made? How many are accepted? Why are offers declined?</p>
+<p><strong>Commencement</strong> &mdash; how many candidates accept but don&rsquo;t commence? Why?</p>
+<p><strong>Retention</strong> &mdash; how many new hires remain after 90 days? Six months? Twelve months? Which positions are repeatedly becoming vacant?</p>
+<p>When this information is reviewed together, recruitment data becomes more than a measure of activity. It becomes workforce intelligence.</p>
+<h3>Diagnose first. Then decide where to invest.</h3>
+<p>When an aged care provider has vacancies, there is understandable pressure to act quickly.</p>
+<p>But more recruitment activity isn&rsquo;t automatically the answer.</p>
+<p>If you aren&rsquo;t attracting candidates, invest in attraction and sourcing. If you&rsquo;re attracting the wrong candidates, improve targeting. If good candidates are withdrawing, examine the recruitment process. If offers are being rejected, understand why. If employees aren&rsquo;t staying, investigate retention. If the strategy is working but the team can&rsquo;t manage the volume, consider additional recruitment capacity.</p>
+<p>The solution should match the problem.</p>
+<h3>A stronger workforce strategy starts with the right question</h3>
+<p>The question isn&rsquo;t always &ldquo;how do we find more candidates?&rdquo;</p>
+<p>Sometimes it&rsquo;s &ldquo;why aren&rsquo;t candidates applying?&rdquo; Or: &ldquo;why are we losing them?&rdquo; &ldquo;why aren&rsquo;t they accepting?&rdquo; &ldquo;why aren&rsquo;t they staying?&rdquo; &ldquo;why are we repeatedly recruiting the same role?&rdquo;</p>
+<p>Or simply: &ldquo;do we have enough capacity to manage the recruitment demand we currently have?&rdquo;</p>
+<p>Those questions lead to very different solutions.</p>
+<p>And that&rsquo;s why effective aged care recruitment should be viewed as part of a broader workforce strategy &mdash; not simply a response to an empty position.</p>
+<h3>Need additional recruitment capacity?</h3>
+<p>For aged care providers experiencing a recruitment backlog, multiple vacancies or a period of increased hiring demand, NurseGen&rsquo;s Recruitment Sprint provides focused recruitment support for a defined period or project.</p>
+<p>It can provide additional recruitment capacity when your internal team needs support to move priority vacancies forward without necessarily adding permanent recruitment headcount.</p>
+<p>Because sometimes the problem really is recruitment. And sometimes you simply need more capacity to get it done.</p>
+
+    </div>
   </div>
-</section>
+</article>
 
 <!-- FINAL CTA -->
 <section class="section" aria-label="Get in touch">
@@ -717,7 +776,6 @@ section { position: relative; z-index: 1; }
     </div>
   </div>
 </section>
-
 <div class="footer-dark-wrap">
   <div class="bloom bloom--left" aria-hidden="true"></div>
   <div class="bloom bloom--right" aria-hidden="true"></div>
@@ -889,74 +947,6 @@ section { position: relative; z-index: 1; }
     }, { threshold: 0.15 });
     reveals.forEach(function (el) { revealObserver.observe(el); });
   }
-})();
-</script>
-
-<script>
-(function () {
-  var bar = document.querySelector('.blog-filter-bar');
-  var grid = document.getElementById('blogGrid');
-  var pagination = document.getElementById('blogPagination');
-  if (!grid) return;
-  var PER_PAGE = 12;
-  var allCards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card'));
-  var currentFilter = 'all';
-  var currentPage = 1;
-
-  function visibleCards() {
-    return allCards.filter(function (card) {
-      var cats = (card.dataset.cats || '').split('|');
-      return currentFilter === 'all' || cats.indexOf(currentFilter) !== -1;
-    });
-  }
-
-  function renderPagination(totalPages) {
-    if (!pagination) return;
-    if (totalPages <= 1) { pagination.innerHTML = ''; return; }
-    var parts = [];
-    parts.push('<button type="button" class="blog-page-btn blog-page-nav" data-page="' + (currentPage - 1) + '"' + (currentPage === 1 ? ' disabled' : '') + ' aria-label="Previous page">&larr;</button>');
-    for (var i = 1; i <= totalPages; i++) {
-      parts.push('<button type="button" class="blog-page-btn' + (i === currentPage ? ' is-active' : '') + '" data-page="' + i + '" aria-current="' + (i === currentPage ? 'page' : 'false') + '">' + i + '</button>');
-    }
-    parts.push('<button type="button" class="blog-page-btn blog-page-nav" data-page="' + (currentPage + 1) + '"' + (currentPage === totalPages ? ' disabled' : '') + ' aria-label="Next page">&rarr;</button>');
-    pagination.innerHTML = parts.join('');
-  }
-
-  function render(scroll) {
-    var visible = visibleCards();
-    var totalPages = Math.max(1, Math.ceil(visible.length / PER_PAGE));
-    if (currentPage > totalPages) currentPage = totalPages;
-    allCards.forEach(function (card) { card.style.display = 'none'; });
-    var start = (currentPage - 1) * PER_PAGE;
-    visible.slice(start, start + PER_PAGE).forEach(function (card) { card.style.display = ''; });
-    renderPagination(totalPages);
-    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  if (bar) {
-    bar.addEventListener('click', function (e) {
-      var btn = e.target.closest('.blog-filter-btn');
-      if (!btn) return;
-      bar.querySelectorAll('.blog-filter-btn').forEach(function (b) { b.classList.remove('is-active'); });
-      btn.classList.add('is-active');
-      currentFilter = btn.dataset.filter;
-      currentPage = 1;
-      render(false);
-    });
-  }
-
-  if (pagination) {
-    pagination.addEventListener('click', function (e) {
-      var btn = e.target.closest('.blog-page-btn');
-      if (!btn || btn.disabled) return;
-      var page = parseInt(btn.dataset.page, 10);
-      if (!page || page < 1) return;
-      currentPage = page;
-      render(true);
-    });
-  }
-
-  render(false);
 })();
 </script>
 

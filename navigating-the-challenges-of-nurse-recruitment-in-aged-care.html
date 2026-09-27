@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | NurseGen — Aged Care Workforce Insights</title>
-<meta name="description" content="Practical, provider-facing insight on aged care recruitment, retention and workforce strategy from NurseGen, the workforce business within the Health Generation ecosystem.">
 <link rel="icon" href="images/nursegen-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<title>Navigating the Challenges of Nurse Recruitment in Aged Care | NurseGen Blog</title>
+<meta name="description" content="Navigating the Challenges of Nurse Recruitment in Aged Care &mdash; insights on aged care workforce and recruitment from NurseGen.">
 <style>
 
 /* ═══════════════════════════════════════════════════════════════
@@ -553,7 +553,29 @@ section { position: relative; z-index: 1; }
 .blog-page-btn.is-active { background: var(--ng-teal); border-color: var(--ng-teal); color: #fff; }
 .blog-page-btn:disabled { opacity: 0.4; cursor: default; }
 
+
+/* ═══ POST ARTICLE (individual blog post pages) ═══════════════════ */
+.post-article { margin: 128px 0 0; }
+@media (max-width: 560px) { .post-article { margin-top: 104px; } }
+.post-wrap { max-width: 760px; margin: 0 auto; padding: 0 2.5vw; }
+.post-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--ink-2); margin-bottom: 28px; transition: color 0.18s; }
+.post-back:hover { color: var(--ink); }
+.post-cats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.post-cat-chip { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: var(--paper-tint); border: 1px solid rgba(22,23,31,0.10); border-radius: 100px; padding: 6px 14px; }
+.post-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.14; margin-bottom: 20px; color: var(--ink); text-wrap: balance; }
+.post-meta { font-size: 13.5px; color: var(--ink-3); margin-bottom: 36px; display: flex; align-items: center; gap: 8px; }
+.post-hero-media { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: var(--radius-card); overflow: hidden; margin-bottom: 44px; background: linear-gradient(135deg, color-mix(in srgb, var(--color-dark) 16%, var(--paper-tint)), color-mix(in srgb, var(--color-dominant) 20%, var(--paper-tint))); }
+.post-hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-body { font-size: 16.5px; line-height: 1.8; color: var(--ink-2); }
+.post-body p { margin-bottom: 22px; }
+.post-body h3 { font-size: 21px; font-weight: 800; color: var(--ink); letter-spacing: -0.015em; line-height: 1.3; margin: 40px 0 16px; }
+.post-body ul { list-style: none; margin: 0 0 22px; padding: 0; }
+.post-body li { position: relative; padding-left: 26px; margin-bottom: 12px; }
+.post-body li::before { content: ''; position: absolute; left: 4px; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--ng-purple); }
+.post-body a { color: var(--ng-teal); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.post-body a:hover { color: var(--ng-purple); }
 </style>
+
 </head>
 <body>
 
@@ -587,119 +609,71 @@ section { position: relative; z-index: 1; }
   <a href="contact.html" class="nav-drawer-cta nav-drawer-cta--primary">I Need Workforce</a>
   <a href="candidates.html" class="nav-drawer-cta nav-drawer-cta--secondary">I Want to Work</a>
 </div>
-
-<!-- BLOG PAGE HERO -->
-<section class="page-hero" aria-label="Page hero">
-  <div class="page-hero-card">
-    <span class="page-hero-badge">Blog</span>
-    <h1 class="page-hero-heading">Aged care workforce insight, from the people placing it.</h1>
-    <p class="page-hero-sub">Practical, provider-facing thinking on recruitment, retention and workforce strategy in residential aged care &mdash; the same thinking behind our client work.</p>
-  </div>
-</section>
-
-<nav class="blog-filter-bar" aria-label="Filter articles by category">
-      <button type="button" class="blog-filter-btn is-active" data-filter="all">All</button>
-      <button type="button" class="blog-filter-btn" data-filter="Aged Care">Aged Care</button>
-      <button type="button" class="blog-filter-btn" data-filter="Recruitment">Recruitment</button>
-      <button type="button" class="blog-filter-btn" data-filter="Recruitment Sprint">Recruitment Sprint</button>
-      <button type="button" class="blog-filter-btn" data-filter="Sourcing">Sourcing</button>
-      <button type="button" class="blog-filter-btn" data-filter="Campaign">Campaign</button>
-      <button type="button" class="blog-filter-btn" data-filter="Employer branding">Employer branding</button>
-      <button type="button" class="blog-filter-btn" data-filter="EVP">EVP</button>
-      <button type="button" class="blog-filter-btn" data-filter="ROI">ROI</button>
-</nav>
-
-<section class="section section--blog-grid" aria-label="Blog posts">
-  <div class="container container--wide">
-    <div class="blog-grid" id="blogGrid">
-      <a href="from-recruitment-to-retention-why-the-first-90-days-matter.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Recruitment">
-        <div class="blog-card-media"><img src="images/blog/from-recruitment-to-retention-why-the-first-90-days-matter.jpg" alt="From Recruitment to Retention: Why the First 90 Days Matter" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">From Recruitment to Retention: Why the First 90 Days Matter</h2>
-          <p class="blog-card-excerpt">Commencement isn&#x27;t the end of recruitment &mdash; it&#x27;s the beginning of retention. Why the first 90 days decide whether a new hire becomes part of the team, or another vacancy to fill.</p>
-          <div class="blog-card-meta"><span>11 Sept 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="is-recruitment-really-the-problem.html" class="blog-card js-reveal" data-reveal-delay="90" data-cats="Aged Care|Recruitment|Recruitment Sprint">
-        <div class="blog-card-media"><img src="images/blog/is-recruitment-really-the-problem.jpg" alt="Is Recruitment Really the Problem?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Is Recruitment Really the Problem?</h2>
-          <p class="blog-card-excerpt">When vacancies stay open and agency use climbs, it&#x27;s tempting to blame recruitment. Sometimes the real issue sits earlier &mdash; or later &mdash; in the workforce journey.</p>
-          <div class="blog-card-meta"><span>28 Aug 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="why-good-aged-care-candidates-drop-out-of-recruitment-processes.html" class="blog-card js-reveal" data-reveal-delay="180" data-cats="Aged Care|Recruitment">
-        <div class="blog-card-media"><img src="images/blog/why-good-aged-care-candidates-drop-out-of-recruitment-processes.jpg" alt="Why Good Aged Care Candidates Drop Out of Recruitment Processes" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Why Good Aged Care Candidates Drop Out of Recruitment Processes</h2>
-          <p class="blog-card-excerpt">Finding a strong candidate is only half the challenge. Eight reasons good candidates disappear between application and offer &mdash; and what to do about each one.</p>
-          <div class="blog-card-meta"><span>14 Aug 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="recruitment-success-isnt-measured-by-placements.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Aged Care|Campaign|Employer branding|EVP|Recruitment|Recruitment Sprint|ROI|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/recruitment-success-isnt-measured-by-placements.jpg" alt="Recruitment Success Isn't Measured by Placements" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Recruitment Success Isn&#x27;t Measured by Placements</h2>
-          <p class="blog-card-excerpt">For years, recruitment success has meant one number &mdash; positions filled. Today&#x27;s workforce challenges call for a broader measure of what success actually looks like.</p>
-          <div class="blog-card-meta"><span>30 Jul 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="recruitment-sprint-vs-traditional-recruitment-whats-different.html" class="blog-card js-reveal" data-reveal-delay="90" data-cats="Aged Care|Campaign|Recruitment|Recruitment Sprint|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/recruitment-sprint-vs-traditional-recruitment-whats-different.jpg" alt="Recruitment Sprint vs Traditional Recruitment: What's Different?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment Sprint</span>
-          <h2 class="blog-card-title">Recruitment Sprint vs Traditional Recruitment: What&#x27;s Different?</h2>
-          <p class="blog-card-excerpt">Is the traditional one-vacancy-at-a-time model still the right fit for today&#x27;s workforce pressures? Comparing two models built for very different workforce needs.</p>
-          <div class="blog-card-meta"><span>29 Jul 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="are-you-ready-for-the-strengthened-aged-care-standards.html" class="blog-card js-reveal" data-reveal-delay="180" data-cats="Aged Care">
-        <div class="blog-card-media"><img src="images/blog/are-you-ready-for-the-strengthened-aged-care-standards.jpg" alt="Are You Ready for the Strengthened Aged Care Standards?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Aged Care</span>
-          <h2 class="blog-card-title">Are You Ready for the Strengthened Aged Care Standards?</h2>
-          <p class="blog-card-excerpt">From 1 November 2025, the Strengthened Aged Care Quality Standards replace the current framework under the Aged Care Act 2024. What&#x27;s changing, and how to get your workforce ready.</p>
-          <div class="blog-card-meta"><span>31 Oct 2025</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="navigating-the-challenges-of-nurse-recruitment-in-aged-care.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Aged Care|Recruitment|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/navigating-the-challenges-of-nurse-recruitment-in-aged-care.jpg" alt="Navigating the Challenges of Nurse Recruitment in Aged Care" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Navigating the Challenges of Nurse Recruitment in Aged Care</h2>
-          <p class="blog-card-excerpt">Aged care recruitment is under mounting pressure as providers compete for skilled professionals. Practical strategies for sourcing, vetting and retaining experienced nursing staff.</p>
-          <div class="blog-card-meta"><span>30 Oct 2025</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
+<article class="post-article">
+  <div class="post-wrap">
+    <a href="blog.html" class="post-back">&larr; Back to all articles</a>
+    <div class="post-cats">
+          <span class="post-cat-chip">Aged Care</span>
+          <span class="post-cat-chip">Recruitment</span>
+          <span class="post-cat-chip">Sourcing</span>
     </div>
-    <nav class="blog-pagination" id="blogPagination" aria-label="Article pages"></nav>
+    <h1 class="post-title">Navigating the Challenges of Nurse Recruitment in Aged Care</h1>
+    <div class="post-meta"><span>NurseGen</span><span>&middot;</span><span>30 Oct 2025</span><span>&middot;</span><span>5 min read</span></div>
+    <div class="post-hero-media"><img src="images/blog/navigating-the-challenges-of-nurse-recruitment-in-aged-care.jpg" alt="Navigating the Challenges of Nurse Recruitment in Aged Care" loading="lazy"></div>
+    <div class="post-body">
+<p>Aged care recruitment is encountering mounting pressures as healthcare providers strive to deliver high-quality care amidst a growing demand for skilled professionals. In today&rsquo;s fast-paced industry, the complexities in sourcing, vetting, and retaining experienced nursing staff are impacting not only operational efficiency but overall care standards as well. This introduction sets the stage to explore practical solutions to common obstacles, emphasising actionable tips and insights.</p>
+<p>Understanding the core challenges is essential. Providers are grappling with:</p>
+<ul>
+<li>Limited local talent pools in regional and remote areas across Australia.</li>
+<li>Increased competition for experienced professionals.</li>
+<li>The integration of international qualifications with domestic regulatory standards.</li>
+</ul>
+<p>Through this guide, readers will learn strategies to refine recruitment processes, optimise candidate sourcing, and implement efficient onboarding practices, all while maintaining industry compliance. By addressing these issues holistically, aged care facilities can enhance nurse retention, improve care outcomes, and ensure that every shift benefits from the right mix of skills and dedication. Dive in to discover how to transform recruitment hurdles into opportunities for enhancing care quality.</p>
+<h3>Unpacking the Nurse Shortage Dilemma</h3>
+<p>The current landscape for aged care nurse recruitment is marked by persistent shortages influenced by several intertwined factors. Rising demand for quality aged care services coincides with an ageing population, creating a gap between service requirements and available nursing professionals. This imbalance is further intensified by the following challenges:</p>
+<ul>
+<li>Workforce Planning Issues &mdash; limited training opportunities and delayed professional upskilling have led to fewer qualified nurses entering the aged care field.</li>
+<li>Retention Hurdles &mdash; competitive job markets and demanding work environments contribute to higher turnover rates, making retention a daily struggle.</li>
+<li>Regulatory Constraints &mdash; strict compliance and evolving healthcare standards add pressure on aged care facilities to maintain the ideal nurse-to-patient ratios without sufficient staffing.</li>
+<li>Geographic Disparities &mdash; regional and remote service areas across Australia face intensified staffing shortages due to a limited recruitment pool and local talent migration.</li>
+</ul>
+<p>These issues underscore the need for adaptive recruitment strategies and innovative workforce planning to bridge the gap in aged care services and ensure sustainable long-term care for our ageing communities.</p>
+<h3>Mastering the Art of Aged Care Nurse Recruitment</h3>
+<p>Boost your recruitment strategy by following these actionable steps to effectively source top-tier aged care nurses:</p>
+<p><strong>Identify Recruitment Needs.</strong> Begin with a thorough analysis of your facility&rsquo;s requirements. Outline the roles, skill sets, and certifications needed. Tailor these criteria to reflect the unique demands of aged care settings, ensuring clarity for potential candidates.</p>
+<p><strong>Leverage Digital Platforms.</strong> Utilise advanced technology like online recruitment tools, applicant tracking systems, and targeted job portals. Optimise your postings with location-specific keywords to attract local talent.</p>
+<p><strong>Build Community Partnerships.</strong> Establish strong connections with local nursing schools, community centres, and professional associations. Collaborate to host job fairs or informational webinars, enabling face-to-face interactions and enhancing trust within the community.</p>
+<p><strong>Implement Ongoing Engagement.</strong> Maintain regular communication with prospective hires and current staff through newsletters, social media, or virtual meet-ups. Share best practices and industry updates to foster a dynamic recruitment ecosystem.</p>
+<p>Follow these steps to ensure a structured, efficient, and community-focused approach to recruiting aged care nurses.</p>
+<h3>Embracing Cultural Richness in Aged Care Nursing</h3>
+<p>Cultural diversity in aged care not only enriches the resident experience but also brings fresh perspectives and innovative approaches to nursing practice. International nurses introduce varied care techniques and communication styles, which can be leveraged to offer more personalised and empathetic care to older Australians. This blend of culturally diverse expertise supports improved resident outcomes and a more harmonious work environment.</p>
+<p>For aged care providers seeking to integrate international talent effectively, consider these actionable strategies:</p>
+<ul>
+<li>Cultural Sensitivity Training &mdash; equip staff with tools to understand and respect varying cultural backgrounds.</li>
+<li>Mentorship Programs &mdash; pair seasoned local nurses with international recruits to facilitate a smoother transition.</li>
+<li>Tailored Orientation &mdash; customise onboarding processes to address language nuances and local care practices.</li>
+<li>Regular Feedback Sessions &mdash; create an open dialogue, encouraging integration while honouring diverse traditions.</li>
+</ul>
+<p>Providers across metropolitan, regional and remote Australia can benefit from such approaches, ensuring seamless integration and enhanced care. Embracing global talent not only diversifies the workforce but also elevates the standard of aged care nursing.</p>
+<h3>FAQs on Aged Care Nursing Recruitment Solutions</h3>
+<p><strong>Q: What essential qualifications should aged care nurses possess?</strong><br>A: Candidates should hold current AHPRA registration, specialised training in geriatric care, and demonstrable experience in clinical settings. Emphasising empathy and adaptability ensures high-quality resident care.</p>
+<p><strong>Q: How can providers overcome staffing shortages efficiently?</strong><br>A: By utilising advanced recruitment platforms and pre-screening techniques, aged care facilities can quickly match domestic and international talent to immediate staffing needs. This approach minimises downtime and sustains service levels.</p>
+<p><strong>Q: What steps ensure a smooth integration of new hires?</strong><br>A: Comprehensive onboarding programs, mentorship, and regular performance reviews help new nurses transition effectively, ensuring they adapt to the facility&rsquo;s protocols and contribute immediately to resident care.</p>
+<p><strong>Q: How does location impact nurse recruitment in aged care?</strong><br>A: Leveraging location-specific strategies, such as targeted outreach in regional communities, can build community trust and foster local candidate pools, while digital platforms extend the search nationally.</p>
+<p><strong>Q: What role does technology play in enhancing recruitment?</strong><br>A: Automated systems streamline candidate sourcing and manage application processes efficiently, reducing manual workloads and ensuring timely responses to recruitment challenges.</p>
+<h3>Final Thoughts</h3>
+<p>Concluding our exploration on overcoming nurse recruitment hurdles in aged care, it&rsquo;s clear that a proactive, strategic approach is essential. Emphasising streamlined processes and targeted outreach can significantly enhance your recruitment outcomes. In today&rsquo;s competitive environment, aligning recruitment strategies with industry best practices is not just beneficial&mdash;it&rsquo;s imperative for sustainable growth across Australia&rsquo;s aged care sector.</p>
+<p>Key takeaways include:</p>
+<ul>
+<li>Recognising the importance of tailored candidate searches.</li>
+<li>Prioritising effective communication strategies and transparent onboarding processes.</li>
+<li>Leveraging community connections and local network insights to tap into the talent pool.</li>
+</ul>
+<p>As you refine your approach, consider integrating actionable steps such as auditing current recruitment systems, enhancing candidate engagement, and continuously monitoring your strategies for improvements. These steps will not only improve efficiency but also ensure that the right professionals are matched with the right opportunities in aged care. Embrace these insights, and move forward with a renewed focus on proactive, solution-based recruitment strategies. Your commitment today lays the groundwork for a robust, resilient future.</p>
+
+    </div>
   </div>
-</section>
+</article>
 
 <!-- FINAL CTA -->
 <section class="section" aria-label="Get in touch">
@@ -717,7 +691,6 @@ section { position: relative; z-index: 1; }
     </div>
   </div>
 </section>
-
 <div class="footer-dark-wrap">
   <div class="bloom bloom--left" aria-hidden="true"></div>
   <div class="bloom bloom--right" aria-hidden="true"></div>
@@ -889,74 +862,6 @@ section { position: relative; z-index: 1; }
     }, { threshold: 0.15 });
     reveals.forEach(function (el) { revealObserver.observe(el); });
   }
-})();
-</script>
-
-<script>
-(function () {
-  var bar = document.querySelector('.blog-filter-bar');
-  var grid = document.getElementById('blogGrid');
-  var pagination = document.getElementById('blogPagination');
-  if (!grid) return;
-  var PER_PAGE = 12;
-  var allCards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card'));
-  var currentFilter = 'all';
-  var currentPage = 1;
-
-  function visibleCards() {
-    return allCards.filter(function (card) {
-      var cats = (card.dataset.cats || '').split('|');
-      return currentFilter === 'all' || cats.indexOf(currentFilter) !== -1;
-    });
-  }
-
-  function renderPagination(totalPages) {
-    if (!pagination) return;
-    if (totalPages <= 1) { pagination.innerHTML = ''; return; }
-    var parts = [];
-    parts.push('<button type="button" class="blog-page-btn blog-page-nav" data-page="' + (currentPage - 1) + '"' + (currentPage === 1 ? ' disabled' : '') + ' aria-label="Previous page">&larr;</button>');
-    for (var i = 1; i <= totalPages; i++) {
-      parts.push('<button type="button" class="blog-page-btn' + (i === currentPage ? ' is-active' : '') + '" data-page="' + i + '" aria-current="' + (i === currentPage ? 'page' : 'false') + '">' + i + '</button>');
-    }
-    parts.push('<button type="button" class="blog-page-btn blog-page-nav" data-page="' + (currentPage + 1) + '"' + (currentPage === totalPages ? ' disabled' : '') + ' aria-label="Next page">&rarr;</button>');
-    pagination.innerHTML = parts.join('');
-  }
-
-  function render(scroll) {
-    var visible = visibleCards();
-    var totalPages = Math.max(1, Math.ceil(visible.length / PER_PAGE));
-    if (currentPage > totalPages) currentPage = totalPages;
-    allCards.forEach(function (card) { card.style.display = 'none'; });
-    var start = (currentPage - 1) * PER_PAGE;
-    visible.slice(start, start + PER_PAGE).forEach(function (card) { card.style.display = ''; });
-    renderPagination(totalPages);
-    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  if (bar) {
-    bar.addEventListener('click', function (e) {
-      var btn = e.target.closest('.blog-filter-btn');
-      if (!btn) return;
-      bar.querySelectorAll('.blog-filter-btn').forEach(function (b) { b.classList.remove('is-active'); });
-      btn.classList.add('is-active');
-      currentFilter = btn.dataset.filter;
-      currentPage = 1;
-      render(false);
-    });
-  }
-
-  if (pagination) {
-    pagination.addEventListener('click', function (e) {
-      var btn = e.target.closest('.blog-page-btn');
-      if (!btn || btn.disabled) return;
-      var page = parseInt(btn.dataset.page, 10);
-      if (!page || page < 1) return;
-      currentPage = page;
-      render(true);
-    });
-  }
-
-  render(false);
 })();
 </script>
 

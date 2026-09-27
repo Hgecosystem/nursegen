@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | NurseGen — Aged Care Workforce Insights</title>
-<meta name="description" content="Practical, provider-facing insight on aged care recruitment, retention and workforce strategy from NurseGen, the workforce business within the Health Generation ecosystem.">
 <link rel="icon" href="images/nursegen-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<title>From Recruitment to Retention: Why the First 90 Days Matter | NurseGen Blog</title>
+<meta name="description" content="From Recruitment to Retention: Why the First 90 Days Matter &mdash; insights on aged care workforce and recruitment from NurseGen.">
 <style>
 
 /* ═══════════════════════════════════════════════════════════════
@@ -553,7 +553,29 @@ section { position: relative; z-index: 1; }
 .blog-page-btn.is-active { background: var(--ng-teal); border-color: var(--ng-teal); color: #fff; }
 .blog-page-btn:disabled { opacity: 0.4; cursor: default; }
 
+
+/* ═══ POST ARTICLE (individual blog post pages) ═══════════════════ */
+.post-article { margin: 128px 0 0; }
+@media (max-width: 560px) { .post-article { margin-top: 104px; } }
+.post-wrap { max-width: 760px; margin: 0 auto; padding: 0 2.5vw; }
+.post-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--ink-2); margin-bottom: 28px; transition: color 0.18s; }
+.post-back:hover { color: var(--ink); }
+.post-cats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.post-cat-chip { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: var(--paper-tint); border: 1px solid rgba(22,23,31,0.10); border-radius: 100px; padding: 6px 14px; }
+.post-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.14; margin-bottom: 20px; color: var(--ink); text-wrap: balance; }
+.post-meta { font-size: 13.5px; color: var(--ink-3); margin-bottom: 36px; display: flex; align-items: center; gap: 8px; }
+.post-hero-media { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: var(--radius-card); overflow: hidden; margin-bottom: 44px; background: linear-gradient(135deg, color-mix(in srgb, var(--color-dark) 16%, var(--paper-tint)), color-mix(in srgb, var(--color-dominant) 20%, var(--paper-tint))); }
+.post-hero-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-body { font-size: 16.5px; line-height: 1.8; color: var(--ink-2); }
+.post-body p { margin-bottom: 22px; }
+.post-body h3 { font-size: 21px; font-weight: 800; color: var(--ink); letter-spacing: -0.015em; line-height: 1.3; margin: 40px 0 16px; }
+.post-body ul { list-style: none; margin: 0 0 22px; padding: 0; }
+.post-body li { position: relative; padding-left: 26px; margin-bottom: 12px; }
+.post-body li::before { content: ''; position: absolute; left: 4px; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--ng-purple); }
+.post-body a { color: var(--ng-teal); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.post-body a:hover { color: var(--ng-purple); }
 </style>
+
 </head>
 <body>
 
@@ -587,119 +609,263 @@ section { position: relative; z-index: 1; }
   <a href="contact.html" class="nav-drawer-cta nav-drawer-cta--primary">I Need Workforce</a>
   <a href="candidates.html" class="nav-drawer-cta nav-drawer-cta--secondary">I Want to Work</a>
 </div>
-
-<!-- BLOG PAGE HERO -->
-<section class="page-hero" aria-label="Page hero">
-  <div class="page-hero-card">
-    <span class="page-hero-badge">Blog</span>
-    <h1 class="page-hero-heading">Aged care workforce insight, from the people placing it.</h1>
-    <p class="page-hero-sub">Practical, provider-facing thinking on recruitment, retention and workforce strategy in residential aged care &mdash; the same thinking behind our client work.</p>
-  </div>
-</section>
-
-<nav class="blog-filter-bar" aria-label="Filter articles by category">
-      <button type="button" class="blog-filter-btn is-active" data-filter="all">All</button>
-      <button type="button" class="blog-filter-btn" data-filter="Aged Care">Aged Care</button>
-      <button type="button" class="blog-filter-btn" data-filter="Recruitment">Recruitment</button>
-      <button type="button" class="blog-filter-btn" data-filter="Recruitment Sprint">Recruitment Sprint</button>
-      <button type="button" class="blog-filter-btn" data-filter="Sourcing">Sourcing</button>
-      <button type="button" class="blog-filter-btn" data-filter="Campaign">Campaign</button>
-      <button type="button" class="blog-filter-btn" data-filter="Employer branding">Employer branding</button>
-      <button type="button" class="blog-filter-btn" data-filter="EVP">EVP</button>
-      <button type="button" class="blog-filter-btn" data-filter="ROI">ROI</button>
-</nav>
-
-<section class="section section--blog-grid" aria-label="Blog posts">
-  <div class="container container--wide">
-    <div class="blog-grid" id="blogGrid">
-      <a href="from-recruitment-to-retention-why-the-first-90-days-matter.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Recruitment">
-        <div class="blog-card-media"><img src="images/blog/from-recruitment-to-retention-why-the-first-90-days-matter.jpg" alt="From Recruitment to Retention: Why the First 90 Days Matter" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">From Recruitment to Retention: Why the First 90 Days Matter</h2>
-          <p class="blog-card-excerpt">Commencement isn&#x27;t the end of recruitment &mdash; it&#x27;s the beginning of retention. Why the first 90 days decide whether a new hire becomes part of the team, or another vacancy to fill.</p>
-          <div class="blog-card-meta"><span>11 Sept 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="is-recruitment-really-the-problem.html" class="blog-card js-reveal" data-reveal-delay="90" data-cats="Aged Care|Recruitment|Recruitment Sprint">
-        <div class="blog-card-media"><img src="images/blog/is-recruitment-really-the-problem.jpg" alt="Is Recruitment Really the Problem?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Is Recruitment Really the Problem?</h2>
-          <p class="blog-card-excerpt">When vacancies stay open and agency use climbs, it&#x27;s tempting to blame recruitment. Sometimes the real issue sits earlier &mdash; or later &mdash; in the workforce journey.</p>
-          <div class="blog-card-meta"><span>28 Aug 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="why-good-aged-care-candidates-drop-out-of-recruitment-processes.html" class="blog-card js-reveal" data-reveal-delay="180" data-cats="Aged Care|Recruitment">
-        <div class="blog-card-media"><img src="images/blog/why-good-aged-care-candidates-drop-out-of-recruitment-processes.jpg" alt="Why Good Aged Care Candidates Drop Out of Recruitment Processes" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Why Good Aged Care Candidates Drop Out of Recruitment Processes</h2>
-          <p class="blog-card-excerpt">Finding a strong candidate is only half the challenge. Eight reasons good candidates disappear between application and offer &mdash; and what to do about each one.</p>
-          <div class="blog-card-meta"><span>14 Aug 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="recruitment-success-isnt-measured-by-placements.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Aged Care|Campaign|Employer branding|EVP|Recruitment|Recruitment Sprint|ROI|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/recruitment-success-isnt-measured-by-placements.jpg" alt="Recruitment Success Isn't Measured by Placements" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Recruitment Success Isn&#x27;t Measured by Placements</h2>
-          <p class="blog-card-excerpt">For years, recruitment success has meant one number &mdash; positions filled. Today&#x27;s workforce challenges call for a broader measure of what success actually looks like.</p>
-          <div class="blog-card-meta"><span>30 Jul 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="recruitment-sprint-vs-traditional-recruitment-whats-different.html" class="blog-card js-reveal" data-reveal-delay="90" data-cats="Aged Care|Campaign|Recruitment|Recruitment Sprint|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/recruitment-sprint-vs-traditional-recruitment-whats-different.jpg" alt="Recruitment Sprint vs Traditional Recruitment: What's Different?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment Sprint</span>
-          <h2 class="blog-card-title">Recruitment Sprint vs Traditional Recruitment: What&#x27;s Different?</h2>
-          <p class="blog-card-excerpt">Is the traditional one-vacancy-at-a-time model still the right fit for today&#x27;s workforce pressures? Comparing two models built for very different workforce needs.</p>
-          <div class="blog-card-meta"><span>29 Jul 2026</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="are-you-ready-for-the-strengthened-aged-care-standards.html" class="blog-card js-reveal" data-reveal-delay="180" data-cats="Aged Care">
-        <div class="blog-card-media"><img src="images/blog/are-you-ready-for-the-strengthened-aged-care-standards.jpg" alt="Are You Ready for the Strengthened Aged Care Standards?" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Aged Care</span>
-          <h2 class="blog-card-title">Are You Ready for the Strengthened Aged Care Standards?</h2>
-          <p class="blog-card-excerpt">From 1 November 2025, the Strengthened Aged Care Quality Standards replace the current framework under the Aged Care Act 2024. What&#x27;s changing, and how to get your workforce ready.</p>
-          <div class="blog-card-meta"><span>31 Oct 2025</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
-      <a href="navigating-the-challenges-of-nurse-recruitment-in-aged-care.html" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Aged Care|Recruitment|Sourcing">
-        <div class="blog-card-media"><img src="images/blog/navigating-the-challenges-of-nurse-recruitment-in-aged-care.jpg" alt="Navigating the Challenges of Nurse Recruitment in Aged Care" loading="lazy"></div>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">Recruitment</span>
-          <h2 class="blog-card-title">Navigating the Challenges of Nurse Recruitment in Aged Care</h2>
-          <p class="blog-card-excerpt">Aged care recruitment is under mounting pressure as providers compete for skilled professionals. Practical strategies for sourcing, vetting and retaining experienced nursing staff.</p>
-          <div class="blog-card-meta"><span>30 Oct 2025</span></div>
-          <span class="blog-card-link">Read the full article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-      </a>
+<article class="post-article">
+  <div class="post-wrap">
+    <a href="blog.html" class="post-back">&larr; Back to all articles</a>
+    <div class="post-cats">
+          <span class="post-cat-chip">Recruitment</span>
     </div>
-    <nav class="blog-pagination" id="blogPagination" aria-label="Article pages"></nav>
+    <h1 class="post-title">From Recruitment to Retention: Why the First 90 Days Matter</h1>
+    <div class="post-meta"><span>NurseGen</span><span>&middot;</span><span>11 Sept 2026</span><span>&middot;</span><span>10 min read</span></div>
+    <div class="post-hero-media"><img src="images/blog/from-recruitment-to-retention-why-the-first-90-days-matter.jpg" alt="From Recruitment to Retention: Why the First 90 Days Matter" loading="lazy"></div>
+    <div class="post-body">
+<p>Recruitment teams spend considerable time getting someone to commencement.</p>
+<p>Sourcing. Screening. Interviews. References. Compliance. Offers. Contracts.</p>
+<p>Then the new employee arrives for their first day and, from a recruitment perspective, the vacancy is filled.</p>
+<p>But from a workforce perspective, the job is far from finished.</p>
+<p>The first 90 days are where the expectations created during recruitment meet the reality of the workplace.</p>
+<p>For residential aged care providers, this period matters.</p>
+<p>A new employee is learning the residents, the team, systems, processes, clinical expectations and culture of the home. At the same time, they&rsquo;re deciding whether the opportunity they accepted is one they can see themselves staying in.</p>
+<p>That&rsquo;s why commencement shouldn&rsquo;t be viewed as the end of recruitment.</p>
+<p>It&rsquo;s the beginning of retention.</p>
+<h3>A successful hire isn&rsquo;t simply someone who starts</h3>
+<p>Recruitment metrics often finish at commencement.</p>
+<ul>
+<li>How many vacancies were filled?</li>
+<li>How long did it take?</li>
+<li>How many offers were accepted?</li>
+<li>How many people commenced?</li>
+</ul>
+<p>These are useful measures of recruitment activity.</p>
+<p>But consider two different outcomes.</p>
+<p>Candidate A accepts an RN position, commences quickly and resigns six weeks later.</p>
+<p>Candidate B accepts the same position, completes onboarding, becomes established within the clinical team and is still contributing strongly 12 months later.</p>
+<p>Both may appear as a successful placement in a recruitment report.</p>
+<p>From a workforce perspective, they&rsquo;re very different outcomes.</p>
+<p>A more meaningful definition of recruitment success considers not only whether someone commenced, but whether the appointment worked for both the employee and the organisation.</p>
+<h3>The first 90 days begin before Day 1</h3>
+<p>The employee experience doesn&rsquo;t begin when someone walks through the door.</p>
+<p>It starts during recruitment.</p>
+<p>Every conversation creates expectations.</p>
+<ul>
+<li>The job advertisement.</li>
+<li>The interview.</li>
+<li>Discussions about the roster.</li>
+<li>Salary and benefits.</li>
+<li>Descriptions of the team.</li>
+<li>Promises about orientation and support.</li>
+<li>Conversations about workload and responsibilities.</li>
+<li>Information about the organisation and its culture.</li>
+</ul>
+<p>By the time a candidate accepts an offer, they&rsquo;ve formed a picture of what working with you will be like.</p>
+<p>The first 90 days test whether that picture was accurate.</p>
+<p>This is why realistic recruitment matters.</p>
+<p>There&rsquo;s little value in overselling an opportunity to secure an acceptance if the employee discovers a very different reality shortly after commencing.</p>
+<p>Retention starts with an honest recruitment conversation.</p>
+<h3>Between acceptance and commencement: maintain the relationship</h3>
+<p>Once a candidate accepts, it&rsquo;s easy for communication to slow down.</p>
+<p>But depending on their notice period, there may be several weeks between signing the contract and starting.</p>
+<p>During that time, the candidate may still be finishing with another employer, receiving approaches from recruiters or even considering a counteroffer.</p>
+<p>More importantly, they&rsquo;re preparing for a significant change.</p>
+<p>Simple communication can make the transition easier.</p>
+<p>Confirm practical information before commencement:</p>
+<ul>
+<li>Start date and time.</li>
+<li>Where to report.</li>
+<li>Who will meet them.</li>
+<li>What their first day will involve.</li>
+<li>Uniform requirements.</li>
+<li>Outstanding documentation.</li>
+<li>Onboarding requirements.</li>
+<li>Who to contact with questions.</li>
+</ul>
+<p>A check-in shortly before commencement doesn&rsquo;t need to be complicated.</p>
+<p>It simply demonstrates that the organisation is prepared for their arrival.</p>
+<h3>Day 1: someone should be expecting them</h3>
+<p>Few things undermine a first impression faster than arriving at a workplace where nobody seems to know you&rsquo;re starting.</p>
+<p>The manager is unavailable. System access hasn&rsquo;t been organised. The team hasn&rsquo;t been told. There&rsquo;s no orientation plan. The new employee spends the morning trying to work out where they&rsquo;re supposed to be.</p>
+<p>None of these things individually determines whether someone will stay.</p>
+<p>But collectively they communicate something about how organised and supported the workplace is.</p>
+<p>In residential aged care, a strong first day should begin helping the employee understand both the workplace and the people within it.</p>
+<p>For an RN, that might include:</p>
+<ul>
+<li>Meeting the Facility, Care or Clinical Manager.</li>
+<li>Introductions to the clinical and care team.</li>
+<li>Understanding the layout of the home.</li>
+<li>Systems and documentation access.</li>
+<li>Medication management processes.</li>
+<li>Clinical escalation pathways.</li>
+<li>Key policies and procedures.</li>
+<li>Orientation to resident care requirements.</li>
+<li>Understanding who to approach for support.</li>
+</ul>
+<p>Experienced employees still need orientation.</p>
+<p>Knowing how to be an RN doesn&rsquo;t mean knowing how to be an RN in your home.</p>
+<h3>Week 1: onboarding is more than compliance</h3>
+<p>Aged care onboarding necessarily involves compliance.</p>
+<ul>
+<li>Mandatory training.</li>
+<li>Policies.</li>
+<li>Systems.</li>
+<li>Documentation.</li>
+<li>Clinical processes.</li>
+<li>Work health and safety.</li>
+<li>Organisational requirements.</li>
+</ul>
+<p>All important.</p>
+<p>But completing an onboarding checklist doesn&rsquo;t necessarily mean someone feels onboarded.</p>
+<p>By the end of the first week, a new employee is also trying to understand the unwritten parts of the workplace.</p>
+<ul>
+<li>How does this team communicate?</li>
+<li>Who actually helps when things become busy?</li>
+<li>Can I comfortably ask questions?</li>
+<li>How does my manager respond when something goes wrong?</li>
+<li>Do people work together?</li>
+<li>Does the reality match what I was told during recruitment?</li>
+</ul>
+<p>This is where a meaningful check-in matters.</p>
+<p>Instead of simply asking: &ldquo;Everything going okay?&rdquo;</p>
+<p>Try:</p>
+<ul>
+<li>Is the role what you expected so far?</li>
+<li>Is there anything you feel you haven&rsquo;t been shown properly?</li>
+<li>Do you know who to approach when you need support?</li>
+<li>Is anything different from what you expected during recruitment?</li>
+</ul>
+<p>Specific questions are more likely to produce useful answers.</p>
+<h3>30 days: when expectations meet reality</h3>
+<p>By the one-month mark, the honeymoon period is largely over.</p>
+<p>The employee has experienced real shifts. They&rsquo;ve seen busy days. They&rsquo;ve worked with different colleagues. They understand the systems. They&rsquo;ve experienced the roster. They&rsquo;ve had interactions with residents and families.</p>
+<p>And they&rsquo;ve had enough exposure to leadership to begin forming an opinion about the workplace.</p>
+<p>This is an important point to compare expectation with experience.</p>
+<ul>
+<li>Was the roster described accurately?</li>
+<li>Does the role reflect what was discussed at interview?</li>
+<li>Is the workload what they expected?</li>
+<li>Is the clinical support actually available?</li>
+<li>Have they received sufficient orientation?</li>
+<li>Are they developing confidence?</li>
+<li>Are there barriers making their work unnecessarily difficult?</li>
+</ul>
+<p>Small issues at 30 days can become significant frustrations by 90 days if nobody asks about them.</p>
+<h3>60 days: don&rsquo;t mistake silence for engagement</h3>
+<p>Around the two-month mark, something often changes.</p>
+<p>The new employee isn&rsquo;t particularly new anymore. Formal onboarding has finished. Managers have other priorities. Check-ins become less frequent.</p>
+<p>The assumption can easily become: they&rsquo;re still here, so everything must be fine.</p>
+<p>But presence isn&rsquo;t the same as engagement.</p>
+<p>By 60 days, the conversation can move beyond orientation.</p>
+<ul>
+<li>How confident do they feel in the role?</li>
+<li>How are relationships developing within the team?</li>
+<li>Do they feel supported by their manager?</li>
+<li>Are there recurring frustrations?</li>
+<li>Is the roster sustainable for them?</li>
+<li>Are there areas where they&rsquo;d like more development?</li>
+<li>What would make their job easier to perform well?</li>
+</ul>
+<p>This is also an opportunity to recognise what is working.</p>
+<p>Retention shouldn&rsquo;t only become a conversation when someone appears unhappy.</p>
+<h3>90 days: ask a better question than &ldquo;Are they still here?&rdquo;</h3>
+<p>At 90 days, many organisations complete a probation review or similar process.</p>
+<p>Often, the focus is understandably on the employee. Are they meeting expectations? Is their performance satisfactory? Are there concerns?</p>
+<p>But the review can work both ways.</p>
+<p>The organisation should also be asking:</p>
+<ul>
+<li>Has the role met the employee&rsquo;s expectations?</li>
+<li>Do they feel supported?</li>
+<li>Do they understand what success looks like?</li>
+<li>Have they developed strong working relationships?</li>
+<li>Can they see themselves continuing here?</li>
+<li>What could we have done better during recruitment or onboarding?</li>
+</ul>
+<p>One particularly useful question is: knowing what you know now, is there anything you wish we&rsquo;d explained differently before you started?</p>
+<p>The answer can provide valuable insight for future recruitment.</p>
+<h3>Early turnover is workforce intelligence</h3>
+<p>When someone leaves within their first few months, the natural response is often to reopen the vacancy and begin recruiting again.</p>
+<p>Sometimes that&rsquo;s all that&rsquo;s required.</p>
+<p>But repeated early turnover deserves a closer look.</p>
+<p>If multiple employees leave the same home, team, role or shift shortly after commencing, that&rsquo;s a pattern.</p>
+<p>Consider tracking early turnover by:</p>
+<ul>
+<li>Role &mdash; are RNs leaving earlier than other classifications?</li>
+<li>Location &mdash; is one home experiencing more early turnover?</li>
+<li>Shift or roster &mdash; are employees recruited into certain patterns less likely to stay?</li>
+<li>Manager or team &mdash; are there differences between areas?</li>
+<li>Recruitment source &mdash; are some sourcing channels producing stronger long-term hires?</li>
+<li>Reason for leaving &mdash; what are people actually telling you?</li>
+<li>Expectation versus reality &mdash; were employees surprised by workload, roster, responsibilities or support?</li>
+</ul>
+<p>The purpose isn&rsquo;t to assign blame.</p>
+<p>It&rsquo;s to identify where the employee journey may need attention.</p>
+<h3>Recruitment and retention data should connect</h3>
+<p>Recruitment teams often hold one set of data. Operations another. People &amp; Culture another. Agency usage may sit somewhere else again.</p>
+<p>Connecting these can reveal much more.</p>
+<p>For example: you may have a role with a relatively short time-to-hire. On the surface, recruitment is performing well.</p>
+<p>But if the same position has been recruited four times in 18 months, the more important question isn&rsquo;t: how quickly can we fill it again?</p>
+<p>It&rsquo;s: why do we keep needing to?</p>
+<p>Likewise, strong application numbers don&rsquo;t necessarily indicate recruitment success if offer acceptance is low.</p>
+<p>And high offer acceptance doesn&rsquo;t necessarily indicate workforce success if 90-day retention is poor.</p>
+<p>Looking across the entire journey provides a clearer picture: attraction &rarr; recruitment &rarr; offer &rarr; commencement &rarr; onboarding &rarr; retention.</p>
+<h3>The hiring manager is part of the recruitment outcome</h3>
+<p>Recruiters can influence attraction, candidate experience, communication and expectations.</p>
+<p>But once someone commences, their day-to-day experience is largely shaped elsewhere.</p>
+<ul>
+<li>Their manager.</li>
+<li>Their roster.</li>
+<li>Their colleagues.</li>
+<li>Their workload.</li>
+<li>Their access to support.</li>
+<li>The way concerns are handled.</li>
+<li>The culture of the home.</li>
+</ul>
+<p>That&rsquo;s why the handover between recruitment and operations matters.</p>
+<p>Hiring managers should understand what was discussed with the candidate during recruitment.</p>
+<ul>
+<li>Were particular roster arrangements agreed?</li>
+<li>Was career development discussed?</li>
+<li>Were specific concerns raised?</li>
+<li>Was orientation support promised?</li>
+</ul>
+<p>The smoother that handover, the less chance there is of the new employee hearing: &ldquo;I&rsquo;m not sure who told you that.&rdquo;</p>
+<h3>Don&rsquo;t wait for the exit interview</h3>
+<p>Exit interviews can provide useful information.</p>
+<p>But by then, the decision has usually been made.</p>
+<p>The first 90 days provide multiple opportunities to ask similar questions while there&rsquo;s still time to act &mdash; before Day 1, week 1, 30 days, 60 days, and 90 days.</p>
+<p>None needs to involve a lengthy formal process.</p>
+<p>What matters is creating deliberate opportunities to understand how the employee is experiencing the organisation.</p>
+<p>Sometimes a small intervention is enough: clarifying an expectation, providing additional orientation, resolving a roster misunderstanding, connecting someone with the right support, or addressing a team issue.</p>
+<p>Having the conversation before resignation is far more useful than discovering the issue afterwards.</p>
+<h3>Measure the hire, not just the placement</h3>
+<p>Recruitment metrics matter.</p>
+<p>But for organisations trying to build workforce stability, consider extending measurement beyond commencement.</p>
+<p>Alongside time-to-hire and offer acceptance, look at:</p>
+<ul>
+<li>Commencement rate.</li>
+<li>30-day retention.</li>
+<li>60-day retention.</li>
+<li>90-day retention.</li>
+<li>Probation outcomes.</li>
+<li>Early turnover reasons.</li>
+<li>Retention by role and location.</li>
+<li>Retention by recruitment source.</li>
+</ul>
+<p>Over time, this can help identify not simply how successfully you&rsquo;re recruiting, but how successfully you&rsquo;re hiring.</p>
+<p>There&rsquo;s an important difference.</p>
+<h3>Filling the vacancy is only the beginning</h3>
+<p>In a tight aged care workforce market, significant effort goes into finding good people.</p>
+<p>Once you&rsquo;ve found them, it makes sense to put equal thought into what happens next.</p>
+<p>Recruitment creates the expectation. Onboarding establishes the experience. Leadership, support, roster, culture and development influence whether someone stays.</p>
+<p>The organisations that connect those stages are better placed to move away from repeatedly filling the same vacancies and towards building a more stable workforce.</p>
+<p>Because the ultimate recruitment outcome isn&rsquo;t simply: they accepted. Or even: they started.</p>
+<p>It&rsquo;s: they joined, they became part of the team, and they chose to stay.</p>
+<h3>How NurseGen can support</h3>
+<p>Sometimes the challenge is finding the right candidate. Sometimes it&rsquo;s recruitment capacity. And sometimes recurring vacancies point to a broader workforce issue that needs to be understood before another advertisement goes live.</p>
+<p>NurseGen works specifically within aged care, supporting providers with permanent recruitment, flexible workforce solutions and focused recruitment projects through Recruitment Sprint.</p>
+<p>Our approach is not simply about filling vacancies. It&rsquo;s about understanding the workforce requirement, finding people suited to the opportunity and helping providers build stronger, more sustainable teams.</p>
+
+    </div>
   </div>
-</section>
+</article>
 
 <!-- FINAL CTA -->
 <section class="section" aria-label="Get in touch">
@@ -717,7 +883,6 @@ section { position: relative; z-index: 1; }
     </div>
   </div>
 </section>
-
 <div class="footer-dark-wrap">
   <div class="bloom bloom--left" aria-hidden="true"></div>
   <div class="bloom bloom--right" aria-hidden="true"></div>
@@ -889,74 +1054,6 @@ section { position: relative; z-index: 1; }
     }, { threshold: 0.15 });
     reveals.forEach(function (el) { revealObserver.observe(el); });
   }
-})();
-</script>
-
-<script>
-(function () {
-  var bar = document.querySelector('.blog-filter-bar');
-  var grid = document.getElementById('blogGrid');
-  var pagination = document.getElementById('blogPagination');
-  if (!grid) return;
-  var PER_PAGE = 12;
-  var allCards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card'));
-  var currentFilter = 'all';
-  var currentPage = 1;
-
-  function visibleCards() {
-    return allCards.filter(function (card) {
-      var cats = (card.dataset.cats || '').split('|');
-      return currentFilter === 'all' || cats.indexOf(currentFilter) !== -1;
-    });
-  }
-
-  function renderPagination(totalPages) {
-    if (!pagination) return;
-    if (totalPages <= 1) { pagination.innerHTML = ''; return; }
-    var parts = [];
-    parts.push('<button type="button" class="blog-page-btn blog-page-nav" data-page="' + (currentPage - 1) + '"' + (currentPage === 1 ? ' disabled' : '') + ' aria-label="Previous page">&larr;</button>');
-    for (var i = 1; i <= totalPages; i++) {
-      parts.push('<button type="button" class="blog-page-btn' + (i === currentPage ? ' is-active' : '') + '" data-page="' + i + '" aria-current="' + (i === currentPage ? 'page' : 'false') + '">' + i + '</button>');
-    }
-    parts.push('<button type="button" class="blog-page-btn blog-page-nav" data-page="' + (currentPage + 1) + '"' + (currentPage === totalPages ? ' disabled' : '') + ' aria-label="Next page">&rarr;</button>');
-    pagination.innerHTML = parts.join('');
-  }
-
-  function render(scroll) {
-    var visible = visibleCards();
-    var totalPages = Math.max(1, Math.ceil(visible.length / PER_PAGE));
-    if (currentPage > totalPages) currentPage = totalPages;
-    allCards.forEach(function (card) { card.style.display = 'none'; });
-    var start = (currentPage - 1) * PER_PAGE;
-    visible.slice(start, start + PER_PAGE).forEach(function (card) { card.style.display = ''; });
-    renderPagination(totalPages);
-    if (scroll) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  if (bar) {
-    bar.addEventListener('click', function (e) {
-      var btn = e.target.closest('.blog-filter-btn');
-      if (!btn) return;
-      bar.querySelectorAll('.blog-filter-btn').forEach(function (b) { b.classList.remove('is-active'); });
-      btn.classList.add('is-active');
-      currentFilter = btn.dataset.filter;
-      currentPage = 1;
-      render(false);
-    });
-  }
-
-  if (pagination) {
-    pagination.addEventListener('click', function (e) {
-      var btn = e.target.closest('.blog-page-btn');
-      if (!btn || btn.disabled) return;
-      var page = parseInt(btn.dataset.page, 10);
-      if (!page || page < 1) return;
-      currentPage = page;
-      render(true);
-    });
-  }
-
-  render(false);
 })();
 </script>
 
