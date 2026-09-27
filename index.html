@@ -636,19 +636,6 @@ section { position: relative; z-index: 1; }
 @keyframes eco-breathe { from { transform: scale(1); } to { transform: scale(1.06); } }
 .eco-hero-overlay { position: absolute; inset: 0; background: rgba(255,255,255,0.18); }
 
-.eco-ring-outer,
-.eco-ring-inner {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 1px solid rgba(37,45,100,0.18);
-  pointer-events: none;
-  z-index: 1;
-}
-.eco-ring-outer { width: 60vw; height: 60vw; }
-.eco-ring-inner { width: 46vw; height: 46vw; }
-
 .eco-hero-content {
   position: relative;
   z-index: 2;
@@ -712,8 +699,6 @@ section { position: relative; z-index: 1; }
 }
 
 @media (max-width: 1100px) {
-  .eco-ring-outer { width: 76vw; height: 76vw; }
-  .eco-ring-inner { width: 58vw; height: 58vw; }
   .eco-circle { width: 170px; }
   .eco-circle-img { width: 170px; }
   .eco-circle--hg { left: calc(50% - 38vw - 85px); }
@@ -722,7 +707,6 @@ section { position: relative; z-index: 1; }
 }
 
 @media (max-width: 768px) {
-  .eco-ring-outer, .eco-ring-inner { display: none; }
   .eco-hero-card { min-height: auto; padding: 56px 6% 48px; }
   .eco-hero-content { margin-bottom: 36px; }
   .eco-circle { position: static; transform: none !important; margin: 0 auto; }
@@ -1109,10 +1093,6 @@ section { position: relative; z-index: 1; }
       <div class="eco-hero-bg-img"></div>
       <div class="eco-hero-overlay"></div>
     </div>
-
-    <!-- Concentric decorative rings -->
-    <div class="eco-ring-outer" aria-hidden="true"></div>
-    <div class="eco-ring-inner" aria-hidden="true"></div>
 
     <!-- Centered text content -->
     <div class="eco-hero-content">
