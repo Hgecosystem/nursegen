@@ -330,7 +330,14 @@ section { position: relative; z-index: 1; }
 .section { padding: 110px 0; }
 .section--tint { background: var(--paper-tint); }
 .section--purple-tint { background: var(--purple-tint); }
-.section--sea { background: linear-gradient(160deg, #09606D 0%, #075057 45%, #D2ECF2 100%); }
+.section--sea { position: relative; overflow: hidden; }
+/* Oversized + absolutely positioned so it can shift vertically on scroll
+   (same parallax technique as .cta-bg) without ever showing its edges. */
+.sea-bg {
+  position: absolute; top: -20%; bottom: -20%; left: 0; right: 0;
+  z-index: 0; will-change: transform;
+  background: linear-gradient(160deg, #09606D 0%, #075057 45%, #D2ECF2 100%);
+}
 
 /* Frosted glass card — exact match to Health Generation's real
    .proof-panel (hero-nested stat band), confirmed against their
@@ -338,6 +345,7 @@ section { position: relative; z-index: 1; }
    blur, shadow, and the same 2.5vw distance from the page edge
    (not a containered 1180px-max width). */
 .frost-panel {
+  position: relative; z-index: 1;
   margin: 0 2.5vw;
   border-radius: var(--radius-card);
   background: rgba(255,255,255,0.08);
@@ -650,6 +658,7 @@ section { position: relative; z-index: 1; }
 
 <!-- 2. MORE THAN FILLING SHIFTS -->
 <section class="section section--sea" aria-label="More than filling shifts">
+  <div class="sea-bg" aria-hidden="true"></div>
   <div class="frost-panel">
     <span class="eyebrow-teal eyebrow-teal--dark js-reveal">More than filling shifts.</span>
     <div class="mtfs-grid">
@@ -936,6 +945,34 @@ section { position: relative; z-index: 1; }
     pairs.forEach(function (p) {
       var rect = p.card.getBoundingClientRect();
       var shift = Math.max(-90, Math.min(90, -rect.top * 0.15));
+      p.bg.style.transform = 'translateZ(0) translateY(' + shift.toFixed(1) + 'px)';
+    });
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(render);
+  }, { passive: true });
+  render();
+})();
+</script>
+
+<!-- "More than filling shifts" sea-gradient background parallax -->
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var pairs = [];
+  document.querySelectorAll('.section--sea').forEach(function (section) {
+    var bg = section.querySelector('.sea-bg');
+    if (bg) pairs.push({ section: section, bg: bg });
+  });
+  if (!pairs.length) return;
+  var ticking = false;
+  function render() {
+    pairs.forEach(function (p) {
+      var rect = p.section.getBoundingClientRect();
+      var shift = Math.max(-60, Math.min(60, -rect.top * 0.12));
       p.bg.style.transform = 'translateZ(0) translateY(' + shift.toFixed(1) + 'px)';
     });
     ticking = false;
