@@ -214,10 +214,17 @@ section { position: relative; z-index: 1; }
 }
 .hero-bloom {
   position: absolute; z-index: 1; pointer-events: none;
-  right: -10%; top: -16%;
+  top: -16%;
   width: 50vw; height: 50vw; max-width: 680px; max-height: 680px;
-  background: radial-gradient(circle at 65% 65%, #41A39E 0%, color-mix(in srgb, #41A39E 85%, transparent) 40%, transparent 76%);
-  filter: blur(42px);
+  filter: blur(48px);
+}
+.hero-bloom--right {
+  right: -10%;
+  background: radial-gradient(circle at 65% 65%, #41A39E 0%, color-mix(in srgb, #41A39E 85%, transparent) 35%, color-mix(in srgb, #41A39E 40%, transparent) 55%, transparent 78%);
+}
+.hero-bloom--left {
+  left: -10%;
+  background: radial-gradient(circle at 35% 65%, #EFFFFE 0%, color-mix(in srgb, #EFFFFE 80%, transparent) 35%, color-mix(in srgb, #EFFFFE 35%, transparent) 55%, transparent 78%);
 }
 .hero-content { position: relative; z-index: 2; max-width: 1100px; width: 100%; display: flex; flex-direction: column; align-items: center; }
 
@@ -572,7 +579,8 @@ section { position: relative; z-index: 1; }
     <div class="hero-bg" aria-hidden="true">
       <div class="hero-bg-parallax"><div class="hero-bg-img"></div></div>
       <div class="hero-overlay"></div>
-      <div class="hero-bloom" aria-hidden="true"></div>
+      <div class="hero-bloom hero-bloom--right" aria-hidden="true"></div>
+      <div class="hero-bloom hero-bloom--left" aria-hidden="true"></div>
     </div>
     <div class="grain-overlay" aria-hidden="true">
       <svg xmlns="http://www.w3.org/2000/svg">
