@@ -645,8 +645,8 @@ section { position: relative; z-index: 1; }
   margin-bottom: 36px;
 }
 .eco-badge {
-  display: inline-flex; align-items: center;
-  font-size: 13px; font-weight: 600; letter-spacing: 0.01em;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
   color: #252D64;
   background: rgba(255,255,255,0.45);
   border: 1px solid rgba(37,45,100,0.55);
@@ -655,6 +655,7 @@ section { position: relative; z-index: 1; }
   margin-bottom: 26px;
   backdrop-filter: blur(8px);
 }
+.eco-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #252D64; flex-shrink: 0; }
 .eco-hero-heading { font-weight: 800; letter-spacing: -0.025em; margin: 0 0 16px; }
 .eco-line-1 { display: block; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.1; color: #252D64; }
 .eco-line-2 { display: block; font-size: clamp(30px, 4.2vw, 50px); line-height: 1.1; color: var(--ng-dark); }
