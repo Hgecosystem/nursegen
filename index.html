@@ -491,11 +491,35 @@ section { position: relative; z-index: 1; }
 .why-closing { margin-top: 26px; font-size: 15.5px; line-height: 1.75; color: var(--ink-2); }
 
 /* ═══ HG PROOF STATS ═══════════════════════════════════════════ */
-.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 44px; }
-.stat-tile { text-align: center; padding: 30px 14px; border-radius: var(--radius-card); background: var(--paper); border: 1px solid rgba(22,23,31,0.08); }
-.stat-tile-num { font-size: clamp(30px, 3.4vw, 42px); font-weight: 800; color: var(--ng-purple); letter-spacing: -0.02em; }
-.stat-tile-label { font-size: 13.5px; font-weight: 600; color: var(--ink-2); margin-top: 6px; }
+.proof-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ng-purple);
+  background: var(--purple-tint);
+  border: 1px solid rgba(87,81,149,0.28);
+  border-radius: var(--radius-pill); padding: 7px 16px;
+}
+.proof-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ng-purple); flex-shrink: 0; }
+.proof-card {
+  margin-top: 44px;
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  border: 1px solid rgba(22,23,31,0.08);
+  padding: 44px 3%;
+  box-shadow: 0 2px 0 rgba(22,23,31,0.02);
+}
+.proof-row { display: grid; grid-template-columns: repeat(4, 1fr); }
+.proof-stat { text-align: center; padding: 0 20px; position: relative; }
+.proof-stat::before { content: ''; position: absolute; left: 0; top: 4px; bottom: 4px; width: 1px; background: rgba(22,23,31,0.10); }
+.proof-stat:first-child::before { display: none; }
+.proof-num { font-size: clamp(30px, 3.4vw, 42px); font-weight: 800; color: var(--ng-purple); letter-spacing: -0.02em; }
+.proof-label { font-size: 13.5px; font-weight: 600; color: var(--ink-2); margin-top: 6px; }
 .stat-caption { margin-top: 26px; font-size: 12.5px; color: var(--ink-3); text-align: center; }
+@media (max-width: 700px) {
+  .proof-row { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+  .proof-stat::before { display: none; }
+  .proof-stat { padding: 0 12px; }
+}
 
 /* ═══ START WITH THE PROBLEM ═══════════════════════════════════ */
 .problem-chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 40px 0 40px; }
@@ -626,7 +650,6 @@ section { position: relative; z-index: 1; }
 @media (max-width: 980px) {
   .cap-grid { grid-template-columns: repeat(2, 1fr); }
   .mtfs-grid, .why-grid { grid-template-columns: 1fr; gap: 32px; }
-  .stat-row { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 80px 0; }
 }
 
@@ -848,13 +871,17 @@ section { position: relative; z-index: 1; }
 <!-- 5. HG PROOF STATS -->
 <section class="section" aria-label="Backed by Health Generation">
   <div class="container">
-    <span class="eyebrow-teal js-reveal" style="text-align:center; display:block;">Backed by Health Generation</span>
+    <div class="js-reveal" style="text-align:center;">
+      <span class="proof-eyebrow">Backed by Health Generation</span>
+    </div>
     <h2 class="stat-heading stat-heading--center js-reveal" data-reveal-delay="80">National aged-care capability behind NurseGen.</h2>
-    <div class="stat-row">
-      <div class="stat-tile js-reveal" data-reveal-delay="0"><div class="stat-tile-num">298+</div><div class="stat-tile-label">Providers supported</div></div>
-      <div class="stat-tile js-reveal" data-reveal-delay="80"><div class="stat-tile-num">30,900+</div><div class="stat-tile-label">Older Person reviews</div></div>
-      <div class="stat-tile js-reveal" data-reveal-delay="160"><div class="stat-tile-num">73+</div><div class="stat-tile-label">Remediation programs</div></div>
-      <div class="stat-tile js-reveal" data-reveal-delay="240"><div class="stat-tile-num">NATIONAL</div><div class="stat-tile-label">Aged-care capability</div></div>
+    <div class="proof-card js-reveal" data-reveal-delay="160">
+      <div class="proof-row">
+        <div class="proof-stat"><div class="proof-num">298+</div><div class="proof-label">Providers supported</div></div>
+        <div class="proof-stat"><div class="proof-num">30,900+</div><div class="proof-label">Older Person reviews</div></div>
+        <div class="proof-stat"><div class="proof-num">73+</div><div class="proof-label">Remediation programs</div></div>
+        <div class="proof-stat"><div class="proof-num">NATIONAL</div><div class="proof-label">Aged-care capability</div></div>
+      </div>
     </div>
     <p class="stat-caption">Figures represent the broader experience and capability of Health Generation.</p>
   </div>
