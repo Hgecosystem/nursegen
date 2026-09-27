@@ -263,6 +263,10 @@ section { position: relative; z-index: 1; }
   .hero-cta-divider { width: 100%; height: 1px; align-self: stretch; }
 }
 
+/* Hero CTA row — position matched to Health Generation's .hero-actions:
+   simple centered row directly under the sub copy, not a separate panel. */
+.hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
@@ -299,22 +303,28 @@ section { position: relative; z-index: 1; }
 
 
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  border-radius: var(--radius-pill); font-family: var(--font); font-size: 15px; font-weight: 700;
-  cursor: pointer; transition: all 0.22s ease; white-space: nowrap; padding: 15px 26px;
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 10px;
+  border-radius: var(--radius-pill); font-family: var(--font); font-size: 14px; font-weight: 700;
+  cursor: pointer; transition: all 0.22s ease; white-space: nowrap;
 }
-.btn-primary { background: var(--ng-teal); color: #fff; border: 1.5px solid transparent; }
+.btn-primary { background: var(--ng-teal); color: #fff; padding: 14.5px 21.5px 14.5px 29.5px; border: none; }
 .btn-primary:hover { background: #4aa39f; transform: translateY(-1px); box-shadow: 0 10px 28px rgba(87,182,178,0.4); }
-.btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.5); }
+.btn-primary:hover .btn-icon { transform: translateX(4px); }
+.btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.5); padding: 13px 20px 13px 27.5px; }
 .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.10); }
-.btn-purple { background: var(--ng-purple); color: #fff; border: 1.5px solid transparent; }
+.btn-outline:hover .btn-icon { transform: translateX(4px); }
+.btn-purple { background: var(--ng-purple); color: #fff; padding: 14.5px 21.5px 14.5px 29.5px; border: none; }
 .btn-purple:hover { background: #47426f; transform: translateY(-1px); box-shadow: 0 10px 28px rgba(87,81,149,0.4); }
-.btn-ghost-dark { background: transparent; color: var(--ink); border: 1.5px solid rgba(22,23,31,0.18); }
+.btn-purple:hover .btn-icon { transform: translateX(4px); }
+.btn-ghost-dark { background: transparent; color: var(--ink); border: 1.5px solid rgba(22,23,31,0.18); padding: 13px 20px 13px 27.5px; }
 .btn-ghost-dark:hover { border-color: var(--ink); background: rgba(22,23,31,0.04); }
+.btn-ghost-dark:hover .btn-icon { transform: translateX(4px); }
+.btn-icon { display: inline-flex; align-items: center; transition: transform 0.22s ease; flex-shrink: 0; }
 
 @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .hero-text-card  { opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s both; }
 .hero-cta-panel  { opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
+.hero-actions    { opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
 
 /* ═══ GENERIC SECTION RHYTHM ═══════════════════════════════════ */
 .section { padding: 110px 0; }
@@ -607,16 +617,17 @@ section { position: relative; z-index: 1; }
         <span class="hero-sub-line">flexible, permanent and specialist workforce</span>
         <span class="hero-sub-line">solutions for aged care.</span>
       </p>
+      <div class="hero-actions">
+        <a href="candidates.html" class="btn btn-purple">
+          I Want to Work
+          <span class="btn-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="contact.html" class="btn btn-primary">
+          I Need Workforce
+          <span class="btn-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="hero-cta-panel">
-    <a href="candidates.html" class="hero-cta-col">
-      <span class="btn btn-purple">I Want to Work</span>
-    </a>
-    <div class="hero-cta-divider" aria-hidden="true"></div>
-    <a href="contact.html" class="hero-cta-col">
-      <span class="btn btn-primary">I Need Workforce</span>
-    </a>
   </div>
   </div>
 </section>
@@ -725,7 +736,7 @@ section { position: relative; z-index: 1; }
     </div>
     <p class="lede lede--center js-reveal" data-reveal-delay="340">Tell us what's happening. We'll help identify the workforce solution that makes sense.</p>
     <div style="margin-top:30px;">
-      <a href="contact.html" class="btn btn-purple js-reveal" data-reveal-delay="380">Talk to NurseGen →</a>
+      <a href="contact.html" class="btn btn-purple js-reveal" data-reveal-delay="380">Talk to NurseGen<span class="btn-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
   </div>
 </section>
@@ -747,7 +758,7 @@ section { position: relative; z-index: 1; }
           <span class="cta-tag">Permanent Roles</span>
           <span class="cta-tag">Clinical &amp; Leadership Assignments</span>
         </div>
-        <div class="cta-actions"><a href="candidates.html" class="btn btn-primary">Join NurseGen →</a></div>
+        <div class="cta-actions"><a href="candidates.html" class="btn btn-primary">Join NurseGen<span class="btn-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
       </div>
     </div>
   </div>
@@ -777,8 +788,8 @@ section { position: relative; z-index: 1; }
         <span class="cta-eyebrow">Better workforce. Stronger care.</span>
         <h2 class="cta-heading">Whether you need one person, multiple hires, or a different approach to workforce altogether — start the conversation with NurseGen.</h2>
         <div class="cta-actions">
-          <a href="contact.html" class="btn btn-primary">I Need Workforce</a>
-          <a href="candidates.html" class="btn btn-outline">I Want to Work</a>
+          <a href="contact.html" class="btn btn-primary">I Need Workforce<span class="btn-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          <a href="candidates.html" class="btn btn-outline">I Want to Work<span class="btn-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </div>
       </div>
     </div>
