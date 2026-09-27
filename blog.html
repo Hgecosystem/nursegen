@@ -258,6 +258,7 @@ section { position: relative; z-index: 1; }
 
 /* ═══ GENERIC SECTION RHYTHM ═══════════════════════════════════ */
 .section { padding: 110px 0; }
+.section--blog-grid { padding-top: 64px; }
 .section--tint { background: var(--paper-tint); }
 .section--purple-tint { background: var(--purple-tint); }
 
@@ -522,7 +523,7 @@ section { position: relative; z-index: 1; }
 .blog-filter-btn.is-active { background: var(--ng-teal); border-color: var(--ng-teal); color: #fff; }
 
 /* ═══ BLOG GRID / CARDS ═══════════════════════════════════════════ */
-.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 20px; }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 @media (max-width: 980px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .blog-grid { grid-template-columns: 1fr; } }
 
@@ -608,7 +609,7 @@ section { position: relative; z-index: 1; }
       <button type="button" class="blog-filter-btn" data-filter="ROI">ROI</button>
 </nav>
 
-<section class="section" aria-label="Blog posts">
+<section class="section section--blog-grid" aria-label="Blog posts">
   <div class="container container--wide">
     <div class="blog-grid" id="blogGrid">
       <a href="https://nursegen.com.au/f/from-recruitment-to-retention-why-the-first-90-days-matter" target="_blank" rel="noopener" class="blog-card js-reveal" data-reveal-delay="0" data-cats="Recruitment">
