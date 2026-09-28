@@ -604,6 +604,12 @@ section { position: relative; z-index: 1; }
 }
 .candidate-tag:hover { background: var(--ng-teal); border-color: var(--ng-teal); color: #fff; }
 .candidate-tag--active { background: var(--ng-teal); border-color: var(--ng-teal); color: #fff; }
+/* While the cursor is anywhere over the tag list, the permanently-green
+   tag drops back to its normal look — unless it's the one being
+   hovered directly, in which case it just stays green as usual. */
+.candidate-tags:hover .candidate-tag--active:not(:hover) {
+  background: var(--paper-tint); border-color: rgba(22,23,31,0.08); color: var(--ink);
+}
 @media (max-width: 900px) {
   .candidate-grid { grid-template-columns: 1fr; gap: 28px; }
 }
