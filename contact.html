@@ -540,8 +540,12 @@ section { position: relative; z-index: 1; }
 }
 
 /* ═══ SUBPAGE LEAD (spacer under fixed nav, no hero on form pages) ═══ */
-.subpage-lead { height: 132px; }
-@media (max-width: 600px) { .subpage-lead { height: 108px; } }
+/* Height tuned so the .cta-card below lines up with .blog-card's top on
+   blog.html — that page reaches its first card via a full page-hero
+   banner (128px margin + hero text), so this spacer stands in for the
+   same vertical distance rather than the old fixed nav-clearance gap. */
+.subpage-lead { height: 570px; }
+@media (max-width: 560px) { .subpage-lead { height: 740px; } }
 
 /* ═══ FORM (structure copied from CareGen's contact.html discovery form) ═ */
 .contact-form { max-width: 520px; margin: 0 auto 8px; text-align: left; }
