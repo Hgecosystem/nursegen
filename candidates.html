@@ -95,13 +95,7 @@ section { position: relative; z-index: 1; }
    homepage's .page-bg treatment: two soft colour blooms replacing
    a pure white canvas. Nav sits above via its own z-index; every
    in-flow section is lifted to z-index:1 so it paints above this. */
-/* "I Want to Work" page: swapped the two-bloom teal/lavender wash for a
-   flat 3-step purple gradient (dark -> light), using the same purple
-   tokens as everything else on this page (nav pill, buttons, eyebrows). */
-.page-bg {
-  position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
-  background: linear-gradient(135deg, var(--ng-purple) 0%, var(--ng-purple-light) 55%, var(--purple-tint) 100%);
-}
+.page-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
 .page-bloom { position: absolute; width: 70vw; height: 120vh; top: -12vh; border-radius: 50%; filter: blur(120px); }
 .page-bloom--left {
   left: -26vw;
@@ -576,7 +570,10 @@ section { position: relative; z-index: 1; }
 </head>
 <body>
 
-<div class="page-bg" aria-hidden="true"></div>
+<div class="page-bg" aria-hidden="true">
+  <div class="page-bloom page-bloom--left"></div>
+  <div class="page-bloom page-bloom--right"></div>
+</div>
 
 <div class="nav-outer">
   <a href="index.html" class="nav-brand"><img src="images/nursegen-logo.png" alt="NurseGen" class="nav-brand-logo"></a>
