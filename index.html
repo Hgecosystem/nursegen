@@ -330,6 +330,15 @@ section { position: relative; z-index: 1; }
 
 /* ═══ GENERIC SECTION RHYTHM ═══════════════════════════════════ */
 .section { padding: 110px 0; }
+/* Both the eco card and the CTA card float directly on white with no
+   background of their own to blend the section padding into, so their
+   stacked top+bottom padding reads as one visible blank gap — unlike a
+   normal .section-to-.section transition, where the padding is invisible
+   background, not whitespace. Zeroing the CTA section's own top padding
+   makes that visible gap equal to the CTA→footer gap below it (which is
+   likewise a single section's bottom padding, since footer-dark-wrap
+   isn't wrapped in .section), so both visible card gaps match. */
+.section.section--tight-top { padding-top: 0; }
 .section--tint { background: var(--paper-tint); }
 .section--purple-tint { background: var(--purple-tint); }
 .section--sea { position: relative; overflow: hidden; }
@@ -1122,7 +1131,7 @@ section { position: relative; z-index: 1; }
 </section>
 
 <!-- 9. FINAL DUAL CTA -->
-<section class="section" aria-label="Get in touch">
+<section class="section section--tight-top" aria-label="Get in touch">
   <div class="cta-wrap">
     <div class="cta-card">
       <div class="cta-bg" aria-hidden="true"></div>
