@@ -339,6 +339,16 @@ section { position: relative; z-index: 1; }
    likewise a single section's bottom padding, since footer-dark-wrap
    isn't wrapped in .section), so both visible card gaps match. */
 .section.section--tight-top { padding-top: 0; }
+/* HealthGen's equivalent floating-card gap (.cap-section) runs 64px on
+   desktop down to a single 36px step at ≤560px — noticeably tighter than
+   this page's normal 110px/80px section padding. Matching that exact
+   scale (and its one breakpoint) here, on just the two sections whose
+   padding shows as visible whitespace, so the two sites read the same
+   side by side. */
+.section.section--gap-64 { padding-bottom: 64px; }
+@media (max-width: 560px) {
+  .section.section--gap-64 { padding-bottom: 36px; }
+}
 .section--tint { background: var(--paper-tint); }
 .section--purple-tint { background: var(--purple-tint); }
 .section--sea { position: relative; overflow: hidden; }
@@ -1094,7 +1104,7 @@ section { position: relative; z-index: 1; }
 </section>
 
 <!-- 8. ECOSYSTEM -->
-<section class="section" aria-label="Part of Health Generation">
+<section class="section section--gap-64" aria-label="Part of Health Generation">
   <div class="eco-hero-card">
 
     <div class="eco-hero-bg" aria-hidden="true">
@@ -1131,7 +1141,7 @@ section { position: relative; z-index: 1; }
 </section>
 
 <!-- 9. FINAL DUAL CTA -->
-<section class="section section--tight-top" aria-label="Get in touch">
+<section class="section section--tight-top section--gap-64" aria-label="Get in touch">
   <div class="cta-wrap">
     <div class="cta-card">
       <div class="cta-bg" aria-hidden="true"></div>
