@@ -277,7 +277,7 @@ section { position: relative; z-index: 1; }
   backdrop-filter: blur(8px);
 }
 .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #575195; }
-.hero-eyebrow--green { color: var(--ng-teal-soft); border-color: rgba(147,218,207,0.55); }
+.hero-eyebrow--green { color: var(--ng-teal-soft); background: transparent; border-color: rgba(147,218,207,0.55); backdrop-filter: none; }
 .hero-eyebrow--green::before { background: var(--ng-teal-soft); }
 
 .hero-heading { font-weight: 800; letter-spacing: -0.025em; margin-bottom: 20px; }
